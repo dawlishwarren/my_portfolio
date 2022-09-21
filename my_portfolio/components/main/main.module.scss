@@ -1,0 +1,31 @@
+$width: 100vw;
+
+.main {
+	width: $width;
+	min-height: calc($width / 1.618);
+	margin: auto;
+	display: grid;
+	font-family: "Work Sans", "Segoe UI", sans-serif;
+}
+
+.title_wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.box {
+	&_1 {
+		display: flex;
+	}
+	&_2 {
+		display: flex;
+	}
+	&_3 {
+		display: flex;
+	}
+	&_4 {
+		display: flex;
+	}
+}
