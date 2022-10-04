@@ -11,12 +11,12 @@ type E = MouseEvent<HTMLSpanElement>;
 const AnimatedTitle = (props: Props) => {
 	const { str } = props;
 	const arrayStr = str.split("");
-	console.log(arrayStr);
+	arrayStr.join(" ").split("");
 
 	return (
 		<h1>
 			{arrayStr.map((s, i) => (
-				<ElementAnimation timing={1500} children={s} />
+				<ElementAnimation timing={500} children={s} key={i} />
 			))}
 		</h1>
 	);

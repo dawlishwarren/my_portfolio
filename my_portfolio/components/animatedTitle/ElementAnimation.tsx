@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 
 type Props = {
 	timing?: number;
-	children: string | " ";
+	children: string;
 };
 
 const ElementAnimation = ({ timing, children }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const style = {
-		display: "inline-block",
+		display: "inline",
 		textDecoration: isHovered ? "underline" : "none",
 	};
 

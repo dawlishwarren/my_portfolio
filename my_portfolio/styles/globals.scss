@@ -4,6 +4,7 @@ body {
 	margin: 0;
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	overflow: hidden;
 }
 
 a {
@@ -26,13 +27,6 @@ h6,
 a,
 p {
 	font-family: "Work Sans", "Segoe UI", sans-serif;
-}
-
-.container {
-	padding: 0 2rem;
-	max-width: 60rem;
-	border: 2px solid red;
-	margin: 0 auto;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -93,4 +87,16 @@ img {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.container {
+	padding: 0;
+	margin: 0 auto;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 100vh;
+	scroll-snap-type: y mandatory;
+}
+.scroll-area {
+	scroll-snap-align: start;
 }
