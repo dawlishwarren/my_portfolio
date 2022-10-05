@@ -1,7 +1,10 @@
-.letter {
-	color: red;
-}
-
-.active {
-	text-decoration: underline;
+.title {
+	font-family: "Work Sans", sans-serif;
+	font-size: 1rem;
+	word-wrap: none;
+	color: #fff;
+	margin: 0 auto;
+	.active {
+		text-decoration: underline;
+	}
 }

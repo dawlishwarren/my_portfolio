@@ -8,15 +8,9 @@ const Main = () => {
 	return (
 		<>
 			<main className={`scroll-area ${[styles.main_section]}`}>
-				<div className={styles.title_wrapper}>
-					<AnimatedTitle str="Alex Warren // Developer" />
-				</div>
 				<div className={styles.main_container}>
 					{/* Left hand side */}
-					<div className={styles.left}>
-						<div>
-							<p>Square</p>
-						</div>
+					<div className={styles.logo_area}>
 						<div className={styles.left_bottom}>
 							<div className={styles.logo_container}>
 								<Logo className={styles.logo} />
@@ -26,8 +20,15 @@ const Main = () => {
 							</div>
 						</div>
 					</div>
+					{/* Center (mob) */}
+					<div className={styles.title_wrapper}>
+						<AnimatedTitle str="Alex Warren // Developer" id="main" />
+					</div>
 					{/* Right hand side */}
-					<div className={styles.right}>
+					<div className={styles.mobile_text_area}>
+						<p>Hi, welcome to my website</p>
+					</div>
+					<div className={styles.image_area}>
 						<div className={styles.image_container}>
 							<Image
 								src={heroImg}

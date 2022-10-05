@@ -1,20 +1,19 @@
 import styles from "./animatedTitle.module.scss";
-import React, { MouseEvent, useState } from "react";
+import React from "react";
 import ElementAnimation from "./ElementAnimation";
 
 type Props = {
-	str: String;
+	str: string;
+	id?: string;
 };
 
-type E = MouseEvent<HTMLSpanElement>;
-
 const AnimatedTitle = (props: Props) => {
-	const { str } = props;
+	const { str, id } = props;
 	const arrayStr = str.split("");
 	arrayStr.join(" ").split("");
 
 	return (
-		<h1>
+		<h1 id={id} className={styles.title}>
 			{arrayStr.map((s, i) => (
 				<ElementAnimation timing={500} children={s} key={i} />
 			))}

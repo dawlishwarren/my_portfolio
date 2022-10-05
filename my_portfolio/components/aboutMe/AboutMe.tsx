@@ -5,7 +5,7 @@ import styles from "./aboutMe.module.scss";
 const AboutMe = () => {
 	return (
 		<section className={`scroll-area ${[styles.about_section]}`}>
-			<AnimatedTitle str="About Me" />
+			<AnimatedTitle str="About Me" id="about" />
 		</section>
 	);
 };
