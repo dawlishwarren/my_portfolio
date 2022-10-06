@@ -16,6 +16,9 @@ $gr_rect: 100%;
 	padding: 0 10vw;
 	align-items: center;
 	justify-content: flex-start;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 .main_container {
 	min-width: 100vw;
@@ -27,6 +30,11 @@ $gr_rect: 100%;
 	justify-content: center;
 }
 
+// Inner containers
+.image_area,
+.buttons_square {
+	display: none;
+}
 .left_bottom,
 .image_area,
 .logo_area {
@@ -36,10 +44,14 @@ $gr_rect: 100%;
 .logo_area,
 .mobile_text_area {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	min-height: 35vh;
+
+	> * {
+		padding-top: 1rem;
+	}
 }
 .left_bottom {
 	display: flex;
@@ -51,40 +63,24 @@ $gr_rect: 100%;
 	}
 }
 .logo_container {
-	min-width: 50vw;
-}
-
-.image_area {
-	display: none;
-	// align-items: center;
-	// justify-content: flex-end;
+	min-width: 10rem;
 }
 
 // Text styling
 .title_wrapper {
 	width: 100vw;
 	min-height: 10vh;
-	background-color: red;
+	background: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab, #ee7752);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 	display: flex;
 	align-items: center;
 }
 // Image styling
-
 .main_section {
 	flex-direction: column;
 }
-.image_container {
-	position: relative;
-	display: block;
-	width: fit-content;
-	width: 50vw;
-	height: 50vw;
-	border: 0.75rem #00a85f solid;
-	background-color: #fff;
-	border-radius: 50%;
-	z-index: 1;
-	grid-template-columns: 1fr 1.618fr;
-}
+
 .main_image {
 	border-radius: 50%;
 }
@@ -93,45 +89,136 @@ $gr_rect: 100%;
 
 // Medium
 @media (min-width: 900px) {
+	.main_container {
+		display: grid;
+		grid-template-columns: 1fr 1.618fr;
+		width: 100%;
+		// Left hand side
+		.logo_area {
+			height: 100vh;
+			display: grid;
+			grid-template-rows: 1.618fr 1fr;
+			justify-content: stretch;
+			.buttons_square {
+				display: flex;
+				height: 100%;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 1em;
+			}
+			.left_bottom {
+				height: 100%;
+				display: grid;
+				grid-template-columns: 1.618fr 1fr;
+				.logo_container {
+					min-width: auto;
+					opacity: 0.8;
+				}
+				.left_bottom_right {
+					display: grid;
+					grid-template-columns: 1fr 1.618fr;
+					height: fit-content;
+					max-width: 100%;
+				}
+			}
+		}
+		// Right hand side
+		.image_area {
+			min-width: 100%;
+			height: 100vh;
+			justify-content: flex-end;
+			.image_container {
+				opacity: 0.8;
+				min-width: 20vw;
+				height: auto;
+				position: relative;
+				padding-bottom: 40%;
+			}
+		}
+	}
+	.left_bottom,
+	.image_area,
+	.logo_area {
+		min-width: 100%;
+	}
 	.title_wrapper {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translateX(-50%);
 		background-color: #00a85f;
-		width: 50vw;
-		height: 3rem;
+		opacity: 0.8;
+		border-radius: 10px;
+		padding: 0.5rem;
+		width: min(30rem, 50vw);
 		display: flex;
 		align-items: center;
 		z-index: 0;
 	}
-	.logo_area,
-	.image_area {
-		max-height: 100vh;
-	}
-	.title_wrapper {
-		width: 40rem;
-	}
-	.logo {
-		display: grid;
-		grid-template-rows: 1.618fr 1fr;
-		.left_bottom {
-			display: grid;
-			grid-template-columns: 1.618fr 1fr;
-			// SVG styling
-			.logo_container {
-				max-width: 90%;
-				.logo {
-					width: 100%;
-				}
-			}
-			.left_bottom_right {
-				display: flex;
-			}
-		}
-	}
+
+	// .logo_area {
+	// 	display: grid;
+	// 	grid-template-rows: 1.618fr 1fr;
+	// 	width: 10vw;
+	// 	.left_bottom {
+	// 		display: grid;
+	// 		grid-template-columns: 1.618fr 1fr;
+	// 		// SVG styling
+	// 		.logo_container {
+	// 			max-width: 90%;
+	// 			.logo {
+	// 				width: 100%;
+	// 			}
+	// 		}
+	// 		.left_bottom_right {
+	// 			display: flex;
+	// 		}
+	// 	}
+	// }
+	// 	.image_container {
+	// 		position: relative;
+	// 		display: block;
+	// 		width: fit-content;
+	// 		width: 25vw;
+	// 		height: 25vw;
+	// 		border: 0.75rem rgba($color: #00a85f, $alpha: 0.5) solid;
+	// 		background-color: #fff;
+	// 		border-radius: 50%;
+	// 		z-index: 1;
+	// 	}
+	// }
+
+	// .logo_area,
+	// .image_area {
+	// 	max-height: 100vh;
+	// }
+	// .title_wrapper {
+	// 	width: 40rem;
+	// }
 }
 
 // Small
 @media (min-width: 600px) {
+	.image_area {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 30rem;
+		height: 30rem;
+		.image_container {
+			position: relative;
+			display: block;
+			width: fit-content;
+			min-width: 20rem;
+			height: 20rem;
+			border: 0.75rem #00a85f solid;
+			background-color: #fff;
+			border-radius: 50%;
+			z-index: 1;
+			grid-template-columns: 1fr 1.618fr;
+		}
+	}
+	.mobile_text_area {
+		display: none;
+	}
 }

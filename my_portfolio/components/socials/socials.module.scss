@@ -1,0 +1,20 @@
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 2rem;
+}
+.large_container {
+	width: 4em;
+	> * {
+		font-size: 4em !important;
+	}
+}
+.large_container,
+.container > * {
+	border: 1px solid green;
+	border-radius: 25px;
+}
+.icon {
+	color: green;
+	font-size: 2rem;
+}
