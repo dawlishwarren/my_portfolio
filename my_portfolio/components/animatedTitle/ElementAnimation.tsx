@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "./animatedTitle.module.scss";
 
 type Props = {
 	timing?: number;
@@ -9,7 +10,11 @@ const ElementAnimation = ({ timing, children }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const style = {
 		display: "inline",
-		textDecoration: isHovered ? "underline" : "none",
+		textDecoration: isHovered ? "underline 1rem yellow" : "none",
+	};
+
+	const getClassName = () => {
+		return isHovered ? `${styles.active}` : "none";
 	};
 
 	useEffect(() => {
@@ -30,7 +35,7 @@ const ElementAnimation = ({ timing, children }: Props) => {
 	};
 
 	return (
-		<span onMouseEnter={trigger} style={style}>
+		<span onMouseEnter={trigger} className={getClassName()}>
 			{children}
 		</span>
 	);

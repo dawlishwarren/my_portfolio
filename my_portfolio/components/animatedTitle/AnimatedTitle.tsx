@@ -13,11 +13,18 @@ const AnimatedTitle = (props: Props) => {
 	arrayStr.join(" ").split("");
 
 	return (
-		<h1 id={id} className={styles.title}>
-			{arrayStr.map((s, i) => (
-				<ElementAnimation timing={500} children={s} key={i} />
-			))}
-		</h1>
+		<div className={styles.title_container}>
+			<h1 id={id} className={styles.title}>
+				{arrayStr.map((s, i) => (
+					<ElementAnimation timing={1000} children={s} key={i} />
+				))}
+			</h1>
+			<p className={styles.title} data-overlay aria-hidden="true">
+				{arrayStr.map((s, i) => (
+					<ElementAnimation timing={1000} children={s} key={i} />
+				))}
+			</p>
+		</div>
 	);
 };
 

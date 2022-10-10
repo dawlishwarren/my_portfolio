@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .container {
 	display: grid;
@@ -17,6 +17,21 @@
 	border-radius: 25px;
 }
 .icon {
-	// @include green-gradient(fill);
 	font-size: 2rem;
+	animation: color-change 15s infinite;
+}
+
+@keyframes color-change {
+	0% {
+		color: $color-dark;
+	}
+	25% {
+		color: $color-grey;
+	}
+	50% {
+		color: $color-light;
+	}
+	75% {
+		color: $color-lightest;
+	}
 }

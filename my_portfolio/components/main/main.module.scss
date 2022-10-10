@@ -1,15 +1,30 @@
 // Imports
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 // Mixins
-
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 // Containers
 .main_section {
 	width: 100vw;
 	height: 100vh;
 	position: relative;
-	display: flex;
 	padding: 0 10vw;
+	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	background: linear-gradient(
@@ -26,10 +41,8 @@
 	min-width: 100vw;
 	min-height: 100vh;
 	padding: 0 10vw;
-	display: flex;
+	@include flex-center();
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
 
 // Inner containers
@@ -45,10 +58,8 @@
 
 .logo_area,
 .mobile_text_area {
-	display: flex;
+	@include flex-center();
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	min-height: 35vh;
 
 	> * {
@@ -73,8 +84,7 @@
 	width: 100vw;
 	min-height: 10vh;
 	background-color: #00a85f;
-	display: flex;
-	align-items: center;
+	@include flex-center();
 }
 // Image styling
 .main_section {
@@ -115,12 +125,18 @@
 					opacity: 0.8;
 				}
 				.left_bottom_right {
+					padding-left: 1rem;
 					display: grid;
+					grid-gap: 1rem;
 					grid-template-columns: 1fr 1.618fr;
 					height: fit-content;
 					max-width: 100%;
 				}
 			}
+		}
+		// Center
+		.title_wrapper {
+			@include flex-center();
 		}
 		// Right hand side
 		.image_area {
@@ -172,9 +188,7 @@
 // Small
 @media (min-width: 600px) {
 	.image_area {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		@include flex-center();
 		min-width: 30rem;
 		height: 30rem;
 		.image_container {
@@ -193,17 +207,5 @@
 	}
 	.mobile_text_area {
 		display: none;
-	}
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
 	}
 }

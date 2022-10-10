@@ -1,10 +1,31 @@
+@import "styles/settings/_settings";
+
+.title_container {
+	position: relative;
+	isolation: isolate;
+	margin: 2rem 0;
+}
+
+.title,
+.title_overlay {
+	font-family: $font-family-default;
+	font-size: 2rem;
+	font-weight: 700;
+}
 .title {
-	font-family: "Work Sans", sans-serif;
-	font-size: 1rem;
-	word-wrap: none;
-	color: #fff;
-	margin: 0 auto;
-	.active {
-		text-decoration: underline;
-	}
+	margin: 0;
+	color: $color-white;
+	mix-blend-mode: color-burn;
+}
+.title[data-overlay] {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	color: $color-green;
+	z-index: 2;
+	opacity: 0.3;
+}
+.active {
+	text-decoration: underline $color-white;
+	mix-blend-mode: color-burn;
 }

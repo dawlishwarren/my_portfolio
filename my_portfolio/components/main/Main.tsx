@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import heroImg from '../../public/hero_image.png';
-import Logo from '../../assets/aw.svg';
-import styles from './main.module.scss';
-import AnimatedTitle from '../animatedTitle/AnimatedTitle';
-import Socials from '../socials/Socials';
+import Image from "next/image";
+import heroImg from "../../public/hero_image.png";
+import Logo from "../../assets/aw.svg";
+import styles from "./main.module.scss";
+import AnimatedTitle from "../animatedTitle/AnimatedTitle";
+import Socials from "../socials/Socials";
 
 const Main = () => {
 	return (
@@ -32,7 +32,7 @@ const Main = () => {
 					</div>
 					{/* Center (mob) */}
 					<div className={styles.title_wrapper}>
-						<AnimatedTitle str='Alex Warren // Developer' id='main' />
+						<AnimatedTitle str="Alex Warren // Developer" id="main" />
 					</div>
 					{/* Right hand side */}
 					<div className={styles.mobile_text_area}>
@@ -43,10 +43,10 @@ const Main = () => {
 						<div className={styles.image_container}>
 							<Image
 								src={heroImg}
-								alt='Picture of the author'
-								placeholder='blur'
-								layout='fill'
-								objectFit='contain'
+								alt="Picture of the author"
+								placeholder="blur"
+								layout="fill"
+								objectFit="contain"
 								className={styles.main_image}
 							/>
 						</div>
