@@ -1,3 +1,5 @@
+@import 'styles/settings/_settings';
+
 .container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -15,6 +17,6 @@
 	border-radius: 25px;
 }
 .icon {
-	color: green;
+	// @include green-gradient(fill);
 	font-size: 2rem;
 }

@@ -3,7 +3,7 @@ import heroImg from '../../public/hero_image.png';
 import Logo from '../../assets/aw.svg';
 import styles from './main.module.scss';
 import AnimatedTitle from '../animatedTitle/AnimatedTitle';
-import Socials from '../socials/socials';
+import Socials from '../socials/Socials';
 
 const Main = () => {
 	return (

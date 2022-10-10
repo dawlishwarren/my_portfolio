@@ -1,0 +1,25 @@
+// Primary shades
+$color-green-lightest: #e0eec6;
+$color-green-light: #00a85f;
+$color-green: #243e36;
+$color-green-dark: #003d2d;
+$color-green-darker: #162521;
+
+// Secondary shades
+$color-lavender: #e6e6ff;
+$color-blue-light: #0586ff;
+$color-blue-dark: #0000a8;
+$color-blue-darker: #000029;
+
+// Lights, greys, darks
+$color-lightest: #f5f9e9;
+$color-light: #f9ffe5;
+$color-grey: #738290;
+$color-dark: #291b00;
+$color-darkest: #171614;
+
+// Settings
+$color-primary: $color-green-light;
+$color-secondary: $color-blue-light;
+$color-white: $color-lightest;
+$color-dark: $color-dark;
