@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -10,6 +10,11 @@
 		background-position: 0% 50%;
 	}
 }
+
+// Font-size variable
+$font-size-title: clamp(3rem, 12vw + 1rem, 5rem);
+
+// Container class and stacking context
 .hero {
 	@include flex-center;
 	filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.5));
@@ -18,50 +23,7 @@
 	height: 100vh;
 	width: 100vw;
 }
-.title_container {
-	--max-width: 50rem;
-	width: min(100% - 2rem, var(--max-width));
-	margin-inline: auto;
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	.hero_title {
-		display: flex;
-		align-items: flex-end;
-		font-size: 5rem;
-		font-weight: 700;
-		max-width: 16ch;
-		line-height: 1.1;
-		color: #3a3a3a;
-		margin: 0;
-		letter-spacing: -6px;
-		z-index: -2;
-
-		// Color Burn Element
-		&_burn {
-			position: absolute;
-			top: 0px;
-			left: 0;
-			font-size: 5rem;
-			font-weight: 700;
-			max-width: 16ch;
-			line-height: 1.1;
-			letter-spacing: -6px;
-			color: #bdc6d2;
-			opacity: 1;
-			z-index: 2;
-			mix-blend-mode: color-burn;
-		}
-	}
-	.hero_title[data-overlay] {
-		position: absolute;
-		color: #3a3a3a;
-		top: 0;
-		left: 0;
-		z-index: 2;
-		opacity: 0.5;
-	}
-}
+// Background gradient and animations
 .gradient_wrapper {
 	position: absolute;
 	inset: 0;
@@ -72,7 +34,57 @@
 	@include flex-center;
 	@include green-gradient(background);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 12s linear infinite;
+	animation-delay: -1s;
 	height: 100%;
 	width: 100%;
+}
+
+// Typography
+.title_container {
+	--max-width: 50rem;
+	width: min(100% - 2rem, var(--max-width));
+	margin-inline: auto;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	// h1 Title element
+	.hero_title {
+		display: flex;
+		align-items: flex-end;
+		margin: 0;
+		font-size: $font-size-title;
+		font-weight: 700;
+		max-width: 16ch;
+		line-height: 1.1;
+		letter-spacing: -6px;
+		opacity: 0.3;
+		color: $color-grey;
+		z-index: -2;
+
+		// Color Burn Element
+		&_burn {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			font-size: $font-size-title;
+			font-weight: 700;
+			max-width: 16ch;
+			line-height: 1.1;
+			letter-spacing: -6px;
+			opacity: 1;
+			color: $color-darkest;
+			mix-blend-mode: color-burn;
+			z-index: 2;
+		}
+	}
+	// Low opacity dark overlay element
+	.hero_title[data-overlay] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0.1;
+		color: $color-green-dark;
+		z-index: 2;
+	}
 }

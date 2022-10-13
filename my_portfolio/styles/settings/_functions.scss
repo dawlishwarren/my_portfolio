@@ -1,11 +1,11 @@
 @mixin green-gradient($property, $opts: none) {
 	#{$property}: linear-gradient(
 			-45deg,
-			$color-green-darker,
-			$color-green-dark,
-			$color-green,
+			$color-green-lightest,
 			$color-green-light,
-			$color-green-lightest
+			$color-green,
+			$color-blue-light,
+			$color-light
 		),
 		$opts;
 }

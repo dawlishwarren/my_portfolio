@@ -1,9 +1,10 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .navigation {
 	position: fixed;
 	position: -webkit-sticky;
 	top: 0;
+	left: -20vw;
 	width: 20vw;
 	min-height: 100vh;
 	color: white;

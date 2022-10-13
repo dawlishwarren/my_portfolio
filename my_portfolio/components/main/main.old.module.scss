@@ -13,41 +13,79 @@
 		background-position: 0% 50%;
 	}
 }
-
 // Containers
 .main_section {
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	padding: 0 10vw;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-
-// Inner containers
-.hero_container {
+.main_container {
 	min-width: 100vw;
 	min-height: 100vh;
+	padding: 0 10vw;
 	@include flex-center();
 	flex-direction: column;
 }
 
-.image_container {
-	visibility: hidden;
+// Inner containers
+.image_area,
+.buttons_square {
+	display: none;
 }
-.socials_container {
-	visibility: visible;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+.left_bottom,
+.image_area,
+.logo_area {
+	min-width: 100vw;
+}
+
+.logo_area,
+.mobile_text_area {
+	@include flex-center();
+	flex-direction: column;
+	min-height: 35vh;
+
+	> * {
+		padding-top: 1rem;
+	}
+}
+.left_bottom {
+	display: flex;
+	justify-content: center;
+	min-width: 100vw;
+	max-height: 50vh;
+	.left_bottom_right {
+		display: none;
+	}
+}
+.logo_container {
+	min-width: 10rem;
+}
+
+// Text styling
+.title_wrapper {
+	width: 100vw;
+	min-height: 10vh;
+	background-color: #00a85f;
+	@include flex-center();
+}
+// Image styling
+.main_section {
+	flex-direction: column;
+}
+
+.main_image {
+	border-radius: 50%;
 }
 
 // Media queries and breakpoints
 
 // Medium
 @media (min-width: 900px) {
-	.hero_container {
+	.main_container {
 		width: 100%;
 		// Left hand side
 		.logo_area {
@@ -96,11 +134,14 @@
 				position: relative;
 				padding-bottom: 40%;
 				border: double 0.75rem transparent;
-				@include green-gradient(background-image, $color-light $color-light);
+				@include green-gradient(
+					background-image,
+					linear-gradient(white, white)
+				);
 				background-origin: border-box;
-				background-size: 80% 80%;
+				background-size: 400% 400%;
 				background-clip: border-box, content-box;
-				animation: gradient 9.6s linear infinite;
+				animation: gradient 15s ease infinite;
 				padding-left: 1rem;
 			}
 		}
@@ -130,28 +171,25 @@
 
 // Small
 @media (min-width: 600px) {
-	.image_container {
-		visibility: visible;
-		display: initial;
-		opacity: 0.8;
-		min-width: 25vw;
-		height: auto;
-		position: absolute;
-		right: 0;
-		bottom: 12.5%;
-		padding-bottom: 25%;
-		@include green-gradient(
-			background-image,
-			linear-gradient($color-dark, $color-dark)
-		);
-		background-origin: padding-box;
-		background-size: 400% 400%;
-		background-clip: content-box border-box;
-		animation: gradient 12s ease infinite;
-		border-radius: 50%;
-		margin: 1rem;
-		.main_image {
+	.image_area {
+		@include flex-center();
+		min-width: 30rem;
+		height: 30rem;
+		.image_container {
+			position: relative;
+			display: block;
+			width: fit-content;
+			min-width: 20rem;
+			height: 20rem;
+			border: 0.75rem solid;
+			border-color: $color-primary;
+			background-color: #fff;
 			border-radius: 50%;
+			z-index: 1;
+			grid-template-columns: 1fr 1.618fr;
 		}
+	}
+	.mobile_text_area {
+		display: none;
 	}
 }

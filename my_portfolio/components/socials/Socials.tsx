@@ -19,8 +19,6 @@ const Socials = () => {
 				<TiSocialGithub />
 				<TiSocialInstagram />
 				<TiSocialTwitter />
-			</div>
-			<div className={styles.large_container}>
 				<TiSocialLinkedin />
 			</div>
 		</IconContext.Provider>

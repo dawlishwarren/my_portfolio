@@ -1,19 +1,13 @@
 @import "styles/settings/_settings";
 
 .container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	width: 2rem;
-}
-.large_container {
-	width: 4em;
-	> * {
-		font-size: 4em !important;
-	}
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }
 .large_container,
 .container > * {
-	border: 1px solid green;
+	border: 1px solid $color-dark;
 	border-radius: 25px;
 }
 .icon {
@@ -21,17 +15,17 @@
 	animation: color-change 15s infinite;
 }
 
-@keyframes color-change {
-	0% {
-		color: $color-dark;
-	}
-	25% {
-		color: $color-grey;
-	}
-	50% {
-		color: $color-light;
-	}
-	75% {
-		color: $color-lightest;
-	}
-}
+// @keyframes color-change {
+// 	0% {
+// 		color: $color-dark;
+// 	}
+// 	25% {
+// 		color: $color-grey;
+// 	}
+// 	50% {
+// 		color: $color-light;
+// 	}
+// 	75% {
+// 		color: $color-lightest;
+// 	}
+// }
