@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 .title_container {
 	position: relative;
@@ -13,9 +13,9 @@
 	font-weight: 700;
 }
 .title {
-	margin: 0;
-	color: $color-white;
-	mix-blend-mode: color-burn;
+	font-size: 5rem;
+	max-width: 16ch;
+	line-height: 1.1;
 }
 .title[data-overlay] {
 	position: absolute;
@@ -26,6 +26,6 @@
 	opacity: 0.3;
 }
 .active {
-	text-decoration: underline $color-white;
+	text-decoration: underline;
 	mix-blend-mode: color-burn;
 }

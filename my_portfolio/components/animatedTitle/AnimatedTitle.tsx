@@ -1,6 +1,6 @@
-import styles from "./animatedTitle.module.scss";
-import React from "react";
-import ElementAnimation from "./ElementAnimation";
+import styles from './animatedTitle.module.scss';
+import React from 'react';
+import ElementAnimation from './ElementAnimation';
 
 type Props = {
 	str: string;
@@ -9,8 +9,8 @@ type Props = {
 
 const AnimatedTitle = (props: Props) => {
 	const { str, id } = props;
-	const arrayStr = str.split("");
-	arrayStr.join(" ").split("");
+	const arrayStr = str.split('');
+	arrayStr.join(' ').split('');
 
 	return (
 		<div className={styles.title_container}>
@@ -19,11 +19,6 @@ const AnimatedTitle = (props: Props) => {
 					<ElementAnimation timing={1000} children={s} key={i} />
 				))}
 			</h1>
-			<p className={styles.title} data-overlay aria-hidden="true">
-				{arrayStr.map((s, i) => (
-					<ElementAnimation timing={1000} children={s} key={i} />
-				))}
-			</p>
 		</div>
 	);
 };

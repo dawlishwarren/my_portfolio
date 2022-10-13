@@ -1,12 +1,7 @@
 // Imports
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 // Mixins
-@mixin flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;

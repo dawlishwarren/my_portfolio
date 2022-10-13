@@ -1,17 +1,36 @@
+@import 'styles/settings/_settings';
+
 .navigation {
 	position: fixed;
 	position: -webkit-sticky;
 	top: 0;
-	width: 10vw;
+	width: 20vw;
 	min-height: 100vh;
-	background-color: black;
 	color: white;
-	padding: 1rem;
+	border-right: solid 2px $color-dark;
 	z-index: 10;
-	display: none;
+	@include flex-center;
+	background-color: $color-primary;
 }
+.links_list {
+	display: flex;
+	flex-direction: column;
+	background-color: $color-primary;
+	height: 50vh;
+	width: 100%;
 
-.link {
-	text-decoration: underline;
-	cursor: default;
+	.link {
+		width: 100%;
+		height: 100%;
+		@include flex-center;
+
+		&:hover {
+			cursor: pointer;
+			color: red;
+		}
+	}
+	& :nth-child(odd) {
+		background-color: $color-light;
+		color: $color-dark;
+	}
 }
