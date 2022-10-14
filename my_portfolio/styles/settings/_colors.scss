@@ -7,14 +7,21 @@ $color-green-darker: #162521;
 
 // Secondary shades
 $color-lavender: #e6e6ff;
+$color-blue-lighter: #a7c6da;
 $color-blue-light: #0586ff;
 $color-blue-dark: #0000a8;
 $color-blue-darker: #000029;
+
+// Complimentary Shades
+$color-yellow-dark: #f1db4b;
+$color-red-dark: #c3423f;
+$color-orange: #eb4511;
 
 // Lights, greys, darks
 $color-lightest: #f5f9e9;
 $color-light: #f9ffe5;
 $color-grey: #738290;
+$color-charcoal: #2c4251;
 $color-dark: #291b00;
 $color-darkest: #171614;
 
@@ -23,3 +30,10 @@ $color-primary: $color-green-light;
 $color-secondary: $color-blue-light;
 $color-white: $color-lightest;
 $color-dark: $color-dark;
+
+// Color Gradient
+$color-gradient-1: $color-green-lightest;
+$color-gradient-2: $color-blue-light;
+$color-gradient-5: $color-orange;
+$color-gradient-3: $color-red-dark;
+$color-gradient-4: $color-yellow-dark;

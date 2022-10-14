@@ -1,7 +1,8 @@
-import Head from 'next/head';
-import { ReactNode } from 'react';
-import Footer from '../footer/Footer';
-import styles from './layout.module.scss';
+import Head from "next/head";
+import { ReactNode } from "react";
+import Footer from "../footer/Footer";
+import Navbar from "../navbar/Navbar";
+import styles from "./layout.module.scss";
 
 type Props = {
 	home?: boolean;
@@ -14,16 +15,18 @@ const Layout = ({ home, children, title }: Props) => {
 		<>
 			<Head>
 				<title>{title}</title>
-				<meta charSet='utf-8' />
-				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
 			{/* If index page */}
 			{home ? (
-				<div className='container'>{children}</div>
+				<div className="container">
+					<Navbar />
+					{children}
+				</div>
 			) : (
 				// if inner page
 				<>
-					<nav className={styles.navbar}>Navbar</nav>
 					<div className={styles.inner_container}>{children}</div>
 				</>
 			)}
