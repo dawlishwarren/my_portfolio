@@ -4,8 +4,8 @@ import styles from "./blog.module.scss";
 
 const Blog = () => {
 	return (
-		<section className={`scroll-area ${[styles.blog_section]}`}>
-			<AnimatedTitle str="My Blog" id="blog" />
+		<section id="blog" className={`scroll-area ${[styles.blog_section]}`}>
+			<AnimatedTitle str="My Blog" />
 		</section>
 	);
 };

@@ -1,4 +1,4 @@
-@import 'styles/settings/settings';
+@import "styles/settings/settings";
 html,
 body {
 	padding: 0;
@@ -27,7 +27,7 @@ h5,
 h6,
 a,
 p {
-	font-family: 'Work Sans', 'Segoe UI', sans-serif;
+	font-family: "Work Sans", "Segoe UI", sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -62,7 +62,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	font-weight: normal;
-	font-family: 'Work Sans', 'Segoe UI', sans-serif;
+	font-family: "Work Sans", "Segoe UI", sans-serif;
 }
 h1,
 h2,

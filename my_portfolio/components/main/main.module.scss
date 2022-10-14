@@ -1,157 +1,160 @@
 // Imports
 @import "styles/settings/_settings";
 
-// Mixins
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 // Containers
+// Fullscreen wrapper
 .main_section {
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+}
+// Content (Title/Image) container
+.content_container {
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
-
-// Inner containers
-.hero_container {
+.image_container {
+	visibility: hidden;
+}
+// Fullscreen gradient
+.gradient_container {
 	min-width: 100vw;
 	min-height: 100vh;
 	@include flex-center();
 	flex-direction: column;
-}
-
-.image_container {
-	visibility: hidden;
-}
-.socials_container {
-	visibility: visible;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+}
+
+// Typography and Color Burn
+.title_container {
+	--max-width: 50rem;
+	width: min(100% - 2rem, var(--max-width));
+	margin-inline: auto;
+	display: flex;
+	align-items: flex-end;
+	// h1 Title element
+	.hero_title {
+		display: flex;
+		align-items: flex-end;
+		margin: 0;
+		font-size: $font-size-title;
+		font-weight: 700;
+		max-width: 16ch;
+		line-height: 1.1;
+		letter-spacing: -6px;
+		opacity: 0.3;
+		color: $color-grey;
+		z-index: -2;
+
+		// Color Burn Element
+		&_burn {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			font-size: $font-size-title;
+			font-weight: 700;
+			max-width: 16ch;
+			line-height: 1.1;
+			letter-spacing: -6px;
+			opacity: 1;
+			color: $color-darkest;
+			mix-blend-mode: color-burn;
+			z-index: 2;
+		}
+	}
+	// Low opacity dark overlay element
+	.hero_title[data-overlay] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0.1;
+		color: $color-green-dark;
+		z-index: 2;
+	}
 }
 
 // Media queries and breakpoints
 
-// Medium
-@media (min-width: 900px) {
-	.hero_container {
-		width: 100%;
-		// Left hand side
-		.logo_area {
-			height: 100vh;
-			display: grid;
-			grid-template-rows: 1.618fr 1fr;
-			justify-content: stretch;
-			.buttons_square {
-				display: flex;
-				height: 100%;
-				justify-content: flex-start;
-				align-items: flex-start;
-				gap: 1em;
-			}
-			.left_bottom {
-				height: 100%;
-				display: grid;
-				grid-template-columns: 1.618fr 1fr;
-				.logo_container {
-					min-width: auto;
-					opacity: 0.8;
-				}
-				.left_bottom_right {
-					padding-left: 1rem;
-					display: grid;
-					grid-gap: 1rem;
-					grid-template-columns: 1fr 1.618fr;
-					height: fit-content;
-					max-width: 100%;
-				}
-			}
+// X-Large (Widescreens)
+// Refactor content container to keep central and sensible width
+@media (min-width: 1200px) {
+	.content_container {
+		min-width: 60vw !important;
+		margin: 0 20vw !important;
+		.title_container {
+			height: 50vh !important;
+			width: 60vw !important;
 		}
-		// Center
-		.title_wrapper {
-			@include flex-center();
+		.image_container {
+			min-width: 15vw !important;
+			padding-bottom: 85% !important;
 		}
-		// Right hand side
-		.image_area {
-			min-width: 100%;
-			height: 100vh;
-			justify-content: flex-end;
-			.image_container {
-				opacity: 0.8;
-				min-width: 20vw;
-				height: auto;
-				position: relative;
-				padding-bottom: 40%;
-				border: double 0.75rem transparent;
-				@include green-gradient(background-image, $color-light $color-light);
-				background-origin: border-box;
-				background-size: 80% 80%;
-				background-clip: border-box, content-box;
-				animation: gradient 9.6s linear infinite;
-				padding-left: 1rem;
-			}
-		}
-	}
-	.left_bottom,
-	.image_area,
-	.logo_area {
-		min-width: 100%;
-	}
-	.title_wrapper {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%);
-		@include green-gradient(background);
-		background-size: 400% 400%;
-		animation: gradient 15s ease infinite;
-		opacity: 0.8;
-		border-radius: 10px;
-		padding: 0.5rem;
-		width: min(30rem, 50vw);
-		display: flex;
-		align-items: center;
-		z-index: 0;
 	}
 }
 
-// Small
+// Large (Laptops - Screens)
+// Reposition title and image
+@media (min-width: 900px) {
+	.content_container {
+		min-width: 100vw;
+		display: grid;
+		margin: 0 5vw;
+		padding: 5vh 0;
+		grid-template-areas:
+			"title title"
+			". image";
+		.title_container {
+			grid-area: title;
+			width: 90vw;
+			height: 60vh;
+			display: flex;
+			align-self: flex-end;
+			justify-content: center;
+		}
+		.image_container {
+			position: relative;
+			right: auto;
+			bottom: auto;
+			display: flex;
+			min-width: min(10rem, 20vw);
+			padding-bottom: min(10rem, 100%);
+			justify-self: flex-end;
+			align-self: flex-end;
+			grid-area: image;
+		}
+	}
+}
+
+// Medium (Tablets - Laptops)
+// Add image
 @media (min-width: 600px) {
 	.image_container {
 		visibility: visible;
 		display: initial;
 		opacity: 0.8;
-		min-width: 25vw;
+		min-width: 20vw;
 		height: auto;
 		position: absolute;
 		right: 0;
 		bottom: 12.5%;
-		padding-bottom: 25%;
+		padding-bottom: 20%;
 		@include green-gradient(
 			background-image,
 			linear-gradient($color-dark, $color-dark)
 		);
+		@include gradient-animation;
 		background-origin: padding-box;
-		background-size: 400% 400%;
 		background-clip: content-box border-box;
-		animation: gradient 12s ease infinite;
 		border-radius: 50%;
 		margin: 1rem;
 		.main_image {
 			border-radius: 50%;
 		}
+		filter: drop-shadow(0px 0px 0.75rem rgba(0, 0, 0, 0.5));
 	}
 }

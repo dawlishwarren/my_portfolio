@@ -17,20 +17,11 @@ const MainHero = () => {
 					</clipPath>
 				</defs>
 			</svg>
-			<header className={styles.hero}>
+			<section className={styles.hero}>
 				<div className={styles.gradient_wrapper}>
 					<div className={styles.gradient} />
 				</div>
-				<div className={styles.title_container}>
-					<h1 className={styles.hero_title}>Hello, my name is Alex Warren.</h1>
-					<div className={styles.hero_title_burn} aria-hidden>
-						Hello, my name is Alex Warren.
-					</div>
-					<div className={styles.hero_title} data-overlay aria-hidden="true">
-						Hello, my name is Alex Warren.
-					</div>
-				</div>
-			</header>
+			</section>
 		</>
 	);
 };

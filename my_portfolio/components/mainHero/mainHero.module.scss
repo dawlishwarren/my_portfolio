@@ -1,18 +1,6 @@
 @import "styles/settings/_settings";
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
 // Font-size variable
-$font-size-title: clamp(3rem, 12vw + 1rem, 5rem);
 
 // Container class and stacking context
 .hero {
@@ -33,58 +21,7 @@ $font-size-title: clamp(3rem, 12vw + 1rem, 5rem);
 .gradient {
 	@include flex-center;
 	@include green-gradient(background);
-	background-size: 400% 400%;
-	animation: gradient 12s linear infinite;
-	animation-delay: -1s;
+	@include gradient-animation;
 	height: 100%;
 	width: 100%;
-}
-
-// Typography
-.title_container {
-	--max-width: 50rem;
-	width: min(100% - 2rem, var(--max-width));
-	margin-inline: auto;
-	position: relative;
-	display: flex;
-	align-items: flex-end;
-	// h1 Title element
-	.hero_title {
-		display: flex;
-		align-items: flex-end;
-		margin: 0;
-		font-size: $font-size-title;
-		font-weight: 700;
-		max-width: 16ch;
-		line-height: 1.1;
-		letter-spacing: -6px;
-		opacity: 0.3;
-		color: $color-grey;
-		z-index: -2;
-
-		// Color Burn Element
-		&_burn {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			font-size: $font-size-title;
-			font-weight: 700;
-			max-width: 16ch;
-			line-height: 1.1;
-			letter-spacing: -6px;
-			opacity: 1;
-			color: $color-darkest;
-			mix-blend-mode: color-burn;
-			z-index: 2;
-		}
-	}
-	// Low opacity dark overlay element
-	.hero_title[data-overlay] {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		opacity: 0.1;
-		color: $color-green-dark;
-		z-index: 2;
-	}
 }

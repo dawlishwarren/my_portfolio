@@ -1,0 +1,48 @@
+@import "styles/settings/_settings";
+
+.color_burn_wrapper {
+	--max-width: 50rem;
+	width: min(100% - 2rem, var(--max-width));
+	margin-inline: auto;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	.burn_element {
+		display: flex;
+		margin: 0;
+		font-size: $font-size-title;
+		font-weight: 700;
+		max-width: 16ch;
+		line-height: 1.1;
+		letter-spacing: -6px;
+		opacity: 0.3;
+		color: $color-grey;
+		z-index: -2;
+
+		// Color Burn Element
+		&_burn {
+			position: absolute;
+			display: flex;
+			top: 0px;
+			left: 0px;
+			font-size: $font-size-title;
+			font-weight: 700;
+			max-width: 16ch;
+			line-height: 1.1;
+			letter-spacing: -6px;
+			opacity: 0.75;
+			color: $color-darkest;
+			mix-blend-mode: color-burn;
+			z-index: 2;
+		}
+	}
+	// Low opacity dark overlay element
+	.burn_element[data-overlay] {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		opacity: 0.3;
+		color: $color-dark;
+		z-index: 2;
+	}
+}

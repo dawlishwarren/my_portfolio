@@ -1,31 +1,9 @@
 @import "styles/settings/_settings";
 
 .container {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-}
-.large_container,
-.container > * {
-	border: 1px solid $color-dark;
-	border-radius: 25px;
+	border: none;
 }
 .icon {
 	font-size: 2rem;
 	animation: color-change 15s infinite;
 }
-
-// @keyframes color-change {
-// 	0% {
-// 		color: $color-dark;
-// 	}
-// 	25% {
-// 		color: $color-grey;
-// 	}
-// 	50% {
-// 		color: $color-light;
-// 	}
-// 	75% {
-// 		color: $color-lightest;
-// 	}
-// }

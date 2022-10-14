@@ -1,11 +1,11 @@
 @mixin green-gradient($property, $opts: none) {
 	#{$property}: linear-gradient(
 			-45deg,
-			$color-green-lightest,
-			$color-green-light,
-			$color-green,
-			$color-blue-light,
-			$color-light
+			$color-gradient-1,
+			$color-gradient-2,
+			$color-gradient-3,
+			$color-gradient-4,
+			$color-gradient-5
 		),
 		$opts;
 }
@@ -14,4 +14,20 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+@mixin gradient-animation {
+	background-size: 500% 500%;
+	animation: gradient 12s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

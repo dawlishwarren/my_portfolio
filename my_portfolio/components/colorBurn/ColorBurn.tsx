@@ -12,7 +12,17 @@ interface Props {
 	children: ReactNode;
 }
 const ColorBurn = ({ children }: Props) => {
-	<div className={styles.color_burn_wrapper}>{children}</div>;
+	return (
+		<div className={styles.color_burn_wrapper}>
+			<h1 className={styles.burn_element}>{children}</h1>
+			<div className={styles.burn_element_burn} aria-hidden>
+				{children}
+			</div>
+			<div className={styles.burn_element} data-overlay aria-hidden="true">
+				{children}
+			</div>
+		</div>
+	);
 };
 
 export default ColorBurn;

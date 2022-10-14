@@ -4,8 +4,8 @@ import styles from "./contact.module.scss";
 
 const Contact = () => {
 	return (
-		<section className={`scroll-area ${[styles.contact_section]}`}>
-			<AnimatedTitle str="Contact Me" id="contact" />
+		<section id="contact" className={`scroll-area ${[styles.contact_section]}`}>
+			<AnimatedTitle str="Contact Me" />
 		</section>
 	);
 };
