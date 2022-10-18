@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 // Mobile Navbar and Navigation Layout
 
@@ -15,9 +15,10 @@
 
 	.socials_container {
 		visibility: hidden;
+		display: none;
 	}
 	.icons_container {
-		padding: 2rem 2rem 1rem 2rem;
+		padding: 1rem 2rem;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -61,13 +62,12 @@
 	left: 0px;
 	@include green-gradient(background);
 	@include gradient-animation();
+
 	.x_container {
 		display: flex;
 		justify-content: flex-end;
+		align-items: flex-start;
 		height: 2rem;
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
 	}
 	.links_list {
 		display: flex;
@@ -77,13 +77,61 @@
 		height: calc(100vh - 2rem);
 		padding-top: 2rem;
 		width: 100%;
+		.color_burn_fullsize {
+			visibility: visible;
+		}
+		.sidenav_styles {
+			visibility: hidden;
+			display: none;
+		}
 		.link {
+			mix-blend-mode: color-burn;
+			color: $color-light;
 			width: 100%;
 			height: 100%;
 		}
 	}
 }
 
+// Media Queries
+
+// Laptop
+@media (min-width: 900px) {
+	.site_navigation {
+		width: clamp(20rem, 25vw + 10%, 30vw);
+		background: $color-dark;
+		color: $color-light;
+		.nav_open {
+			opacity: 1;
+			transition: all linear 1s;
+		}
+		.links_list {
+			margin-top: 3rem;
+			height: calc(100vh - 10rem);
+			.link {
+				color: inherit;
+				mix-blend-mode: normal;
+				:hover {
+					color: $color-lavender;
+					background-color: $color-grey;
+				}
+			}
+			.color_burn_fullsize {
+				visibility: hidden;
+				display: none;
+			}
+			.sidenav_styles {
+				visibility: visible;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				padding: 3rem;
+			}
+		}
+	}
+}
+// Tablet - Laptop
 @media (min-width: 600px) {
 	.navbar {
 		flex-direction: row;
@@ -97,7 +145,7 @@
 	}
 	.socials_container {
 		visibility: visible !important;
-		display: flex;
+		display: flex !important;
 		justify-content: flex-end;
 		> * {
 			margin: 2rem 0.5rem 1rem 0.5rem;
@@ -105,6 +153,9 @@
 	}
 	.mobile_only {
 		visibility: hidden;
+		display: none;
+	}
+	.socials_dropdown {
 		display: none;
 	}
 }

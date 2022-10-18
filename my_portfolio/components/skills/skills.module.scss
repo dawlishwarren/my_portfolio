@@ -1,9 +1,35 @@
 .skills_section {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	background-color: blue;
+	background-color: white;
 	color: #00a85f;
+	.header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-top: min(5rem, 10vh);
+		align-content: flex-end;
+	}
+	.icons_container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		.skill {
+			padding: 0.5rem;
+			font-size: min(1.2rem);
+			.icon {
+				border-radius: 50%;
+				border: 2px solid black;
+				box-sizing: content-box;
+				padding: 0.75rem;
+			}
+		}
+
+		.name {
+			display: none;
+		}
+	}
 }

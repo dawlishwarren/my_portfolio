@@ -1,9 +1,10 @@
+@import 'styles/settings/_settings';
 .about_section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	background-color: #00a85f;
+	background-color: $color-lavender;
 	color: #fff;
 }
