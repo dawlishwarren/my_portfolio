@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 // Mobile Navbar and Navigation Layout
 
@@ -65,9 +65,11 @@
 
 	.x_container {
 		display: flex;
-		justify-content: flex-end;
-		align-items: flex-start;
-		height: 2rem;
+		justify-content: flex-start;
+		width: 100vw;
+		align-items: center;
+		padding-left: 2rem;
+		padding-top: 1rem;
 	}
 	.links_list {
 		display: flex;
@@ -157,5 +159,8 @@
 	}
 	.socials_dropdown {
 		display: none;
+	}
+	.x_container {
+		margin-left: 1rem;
 	}
 }
