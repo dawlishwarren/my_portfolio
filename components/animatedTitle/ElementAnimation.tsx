@@ -3,10 +3,10 @@ import styles from "./animatedTitle.module.scss";
 
 type Props = {
 	timing?: number;
-	children: string;
+	string: string;
 };
 
-const ElementAnimation = ({ timing, children }: Props) => {
+const ElementAnimation = ({ timing, string }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const style = {
 		display: "inline",
@@ -36,7 +36,7 @@ const ElementAnimation = ({ timing, children }: Props) => {
 
 	return (
 		<span onMouseEnter={trigger} className={getClassName()}>
-			{children}
+			{string}
 		</span>
 	);
 };
