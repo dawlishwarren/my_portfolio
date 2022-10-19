@@ -1,35 +1,120 @@
+@import 'styles/settings/_settings';
+
+// Section
 .skills_section {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	background-color: white;
-	color: #00a85f;
+	@include gradient_light(background);
+	@include gradient-animation;
+	color: $color-charcoal;
+	overflow: hidden;
+	// Heading
 	.header {
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		padding-top: min(5rem, 10vh);
-		align-content: flex-end;
+		align-content: flex-start;
+		min-height: 20%;
 	}
-	.icons_container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		.skill {
-			padding: 0.5rem;
-			font-size: min(1.2rem);
-			.icon {
-				border-radius: 50%;
-				border: 2px solid black;
-				box-sizing: content-box;
-				padding: 0.75rem;
-			}
-		}
+	// Buttons
+	.categories_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-width: 75%;
 
-		.name {
-			display: none;
+		.category_header {
+			border: none;
+			// border-radius: 10px;
+
+			border-top: 2px solid black;
+			background: scroll;
+			// background: $color-charcoal;
+			color: $color-charcoal;
+			padding: 0.5rem;
+			margin: 0.5rem;
 		}
+	}
+}
+
+// Media Queries
+// Laptop - X Large
+@media (min-width: 900px) {
+}
+// Tablet - Laptop
+@media (min-width: 600px) {
+	.categories_container {
+		flex-direction: row !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		min-width: 50% !important;
+		.category_header {
+			min-width: calc(45% - 1rem);
+		}
+		:first-child {
+			min-width: calc(90% - 1rem);
+		}
+	}
+}
+
+// <!-- HTML !-->
+// <button class="button-59" role="button">Button 59</button>
+
+/* CSS */
+.button-59 {
+	align-items: center;
+	background-color: #fff;
+	border: 2px solid #000;
+	box-sizing: border-box;
+	color: #000;
+	cursor: pointer;
+	display: inline-flex;
+	fill: #000;
+	font-family: Inter, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	height: 48px;
+	justify-content: center;
+	letter-spacing: -0.8px;
+	line-height: 24px;
+	min-width: 140px;
+	outline: 0;
+	padding: 0 17px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.button-59:focus {
+	color: #171e29;
+}
+
+.button-59:hover {
+	border-color: #06f;
+	color: #06f;
+	fill: #06f;
+}
+
+.button-59:active {
+	border-color: #06f;
+	color: #06f;
+	fill: #06f;
+}
+
+@media (min-width: 768px) {
+	.button-59 {
+		min-width: 170px;
+	}
+}
+@media (min-width: 768px) {
+	.button-51 {
+		padding: 16px 32px;
 	}
 }

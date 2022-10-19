@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 // Mobile Navbar and Navigation Layout
 
@@ -60,7 +60,7 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	@include green-gradient(background);
+	@include gradient(background);
 	@include gradient-animation();
 
 	.x_container {
