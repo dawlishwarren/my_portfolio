@@ -1,42 +1,24 @@
-import {
-	TiSocialFacebook,
-	TiSocialGithub,
-	TiSocialInstagram,
-	TiSocialLinkedin,
-	TiSocialTwitter,
-} from "react-icons/ti";
-import { IconContext } from "react-icons";
+import React, { useRef } from "react";
+import { motion, useCycle } from "framer-motion";
+import SocialToggle from "../socialToggle/SocialToggle";
+import SocialsSidebar from "../sidebar/SocialsSidebar";
 import styles from "./socials.module.scss";
-import ColorBurn from "../colorBurn/ColorBurn";
+import { useDimensions } from "../../utils/use-dimensions";
 
-interface Props {
-	colorBurn: boolean;
-}
-
-const Socials = ({ colorBurn }: Props) => {
+const Socials = () => {
+	const [isOpen, toggleOpen] = useCycle(false, true);
+	const containerRef = useRef(null);
+	const { height } = useDimensions(containerRef);
 	return (
-		<IconContext.Provider
-			value={{
-				className: `${styles.icon}`,
-			}}>
-			{colorBurn ? (
-				<ColorBurn>
-					<TiSocialFacebook />
-					<TiSocialGithub />
-					<TiSocialInstagram />
-					<TiSocialTwitter />
-					<TiSocialLinkedin />
-				</ColorBurn>
-			) : (
-				<>
-					<TiSocialFacebook />
-					<TiSocialGithub />
-					<TiSocialInstagram />
-					<TiSocialTwitter />
-					<TiSocialLinkedin />
-				</>
-			)}
-		</IconContext.Provider>
+		<motion.nav
+			initial={false}
+			animate={isOpen ? "open" : "closed"}
+			className={styles.nav}
+			custom={height}
+			ref={containerRef}>
+			<SocialsSidebar />
+			<SocialToggle toggle={() => toggleOpen()} />
+		</motion.nav>
 	);
 };
 

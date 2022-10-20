@@ -1,6 +1,6 @@
 import styles from "./navbar.old.module.scss";
 import Link from "next/link";
-import Socials from "../socials/Socials";
+import Socials from "../socials/Socials.old";
 
 import { Squash as Hamburger } from "hamburger-react";
 import { VscColorMode } from "react-icons/vsc";

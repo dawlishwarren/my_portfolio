@@ -1,25 +1,25 @@
-import { motion } from 'framer-motion';
-import { IconType } from 'react-icons/lib';
-import Backdrop from '../backdrop/Backdrop';
-import styles from './skillModal.module.scss';
+import { motion } from "framer-motion";
+import { IconType } from "react-icons/lib";
+import Backdrop from "../Backdrop/Backdrop";
+import styles from "./skillModal.module.scss";
 
 const dropIn = {
 	hidden: {
-		y: '-100vh',
+		y: "-100vh",
 		opacity: 0,
 	},
 	visible: {
-		y: '0',
-		opacity: '1',
+		y: "0",
+		opacity: "1",
 		transition: {
 			duration: 1,
-			type: 'Spring',
+			type: "Spring",
 			damping: 25,
 			stiffness: 500,
 		},
 	},
 	exit: {
-		y: '100vh',
+		y: "100vh",
 		opacity: 0,
 	},
 };
@@ -49,9 +49,9 @@ const SkillModal = ({
 				onClick={(e) => e.stopPropagation()}
 				className={styles.modal}
 				variants={dropIn}
-				initial='hidden'
-				animate='visible'
-				exit='exit'
+				initial="hidden"
+				animate="visible"
+				exit="exit"
 				drag={true}>
 				<div className={styles.header}>
 					<h2 className={styles.title}>{name}</h2>
