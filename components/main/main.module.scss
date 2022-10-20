@@ -1,5 +1,5 @@
 // Imports
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 // Containers
 // Fullscreen wrapper
@@ -7,6 +7,7 @@
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	background-color: #f6f6f6;
 }
 // Content (Title/Image) container
 .content_container {
@@ -37,45 +38,6 @@
 	margin-inline: auto;
 	display: flex;
 	align-items: flex-end;
-	// h1 Title element
-	.hero_title {
-		display: flex;
-		align-items: flex-end;
-		margin: 0;
-		font-size: $font-size-title;
-		font-weight: 700;
-		max-width: 16ch;
-		line-height: 1.1;
-		letter-spacing: -6px;
-		opacity: 0.3;
-		color: $color-grey;
-		z-index: -2;
-
-		// Color Burn Element
-		&_burn {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			font-size: $font-size-title;
-			font-weight: 700;
-			max-width: 16ch;
-			line-height: 1.1;
-			letter-spacing: -6px;
-			opacity: 1;
-			color: $color-darkest;
-			mix-blend-mode: color-burn;
-			z-index: 2;
-		}
-	}
-	// Low opacity dark overlay element
-	.hero_title[data-overlay] {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		opacity: 0.1;
-		color: $color-green-dark;
-		z-index: 2;
-	}
 }
 
 // Media queries and breakpoints
@@ -106,8 +68,8 @@
 		margin: 0 5vw;
 		padding: 5vh 0;
 		grid-template-areas:
-			'title title'
-			'. image';
+			"title title"
+			". image";
 		.title_container {
 			grid-area: title;
 			width: 90vw;

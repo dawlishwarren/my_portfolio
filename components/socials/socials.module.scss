@@ -5,5 +5,17 @@
 }
 .icon {
 	font-size: 2rem;
-	animation: color-change 15s infinite;
+	display: inline-block;
+	position: relative;
+	&:hover {
+		cursor: pointer;
+		// color: $color-light;
+	}
+	&::after {
+		@include underline_after;
+		z-index: 2;
+	}
+	&:hover::after {
+		@include underline_hover_after;
+	}
 }

@@ -1,42 +1,93 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 // Section
 .skills_section {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
+	position: relative;
 	width: 100vw;
 	height: 100vh;
 	@include gradient_light(background);
 	@include gradient-animation;
 	color: $color-charcoal;
 	overflow: hidden;
+
+	// SVG
+	.waves {
+		width: 200%;
+		height: 100px;
+		position: absolute;
+		top: -1px;
+		left: 0;
+	}
+	.waves > * {
+		fill: $color-charcoal;
+	}
+
 	// Heading
 	.header {
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-content: flex-start;
-		min-height: 20%;
+		min-height: 20vh;
 	}
-	// Buttons
-	.categories_container {
+	.categories_wrapper {
+		padding-top: 1rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		min-width: 75%;
-
-		.category_header {
-			border: none;
-			// border-radius: 10px;
-
-			border-top: 2px solid black;
-			background: scroll;
-			// background: $color-charcoal;
-			color: $color-charcoal;
+		align-items: center;
+		.subtitle {
 			padding: 0.5rem;
-			margin: 0.5rem;
+		}
+		// Categories and Buttons
+		.buttons_container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0.25rem;
+			justify-content: space-evenly;
+			min-width: 100vw;
+			padding-bottom: 1rem;
+			// Buttons
+			.category_header {
+				display: inline-flex;
+				align-items: center;
+				background-color: #fff;
+				border: 2px solid #000;
+				border-radius: 10px;
+				box-sizing: border-box;
+				color: #000;
+				fill: #000;
+				cursor: pointer;
+				font-family: $font-family-default;
+				font-size: 1rem;
+				font-weight: 600;
+				height: 48px;
+				width: calc(50% - 1.25rem);
+				justify-content: center;
+				letter-spacing: -0.8px;
+				line-height: 24px;
+				outline: 0;
+				padding: 0 1rem;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.3s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+				&:focus {
+					color: #171e29;
+				}
+				&:hover,
+				&:active {
+					border-color: #06f;
+					color: #06f;
+					fill: #06f;
+				}
+			}
 		}
 	}
 }
@@ -44,10 +95,39 @@
 // Media Queries
 // Laptop - X Large
 @media (min-width: 900px) {
+	.skills_section {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: flex-start;
+
+		.waves {
+			display: initial;
+			width: 100%;
+			margin-top: -0.25rem;
+		}
+		.waves > * {
+			fill: $color-charcoal;
+		}
+
+		.header {
+			min-height: 15vh;
+			align-self: flex-start;
+			margin-bottom: 5rem;
+		}
+
+		.categories_wrapper {
+			width: 50vw;
+			height: 50%;
+			justify-content: flex-start;
+		}
+	}
 }
 // Tablet - Laptop
 @media (min-width: 600px) {
-	.categories_container {
+	.waves {
+		display: none;
+	}
+	.buttons_container {
 		flex-direction: row !important;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -56,65 +136,13 @@
 			min-width: calc(45% - 1rem);
 		}
 		:first-child {
-			min-width: calc(90% - 1rem);
+			min-width: calc(100% - 1.5rem);
 		}
 	}
 }
 
-// <!-- HTML !-->
-// <button class="button-59" role="button">Button 59</button>
-
-/* CSS */
-.button-59 {
-	align-items: center;
-	background-color: #fff;
-	border: 2px solid #000;
-	box-sizing: border-box;
-	color: #000;
-	cursor: pointer;
-	display: inline-flex;
-	fill: #000;
-	font-family: Inter, sans-serif;
-	font-size: 16px;
-	font-weight: 600;
-	height: 48px;
-	justify-content: center;
-	letter-spacing: -0.8px;
-	line-height: 24px;
-	min-width: 140px;
-	outline: 0;
-	padding: 0 17px;
-	text-align: center;
-	text-decoration: none;
-	transition: all 0.3s;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-}
-
-.button-59:focus {
-	color: #171e29;
-}
-
-.button-59:hover {
-	border-color: #06f;
-	color: #06f;
-	fill: #06f;
-}
-
-.button-59:active {
-	border-color: #06f;
-	color: #06f;
-	fill: #06f;
-}
-
 @media (min-width: 768px) {
-	.button-59 {
+	.category_header {
 		min-width: 170px;
-	}
-}
-@media (min-width: 768px) {
-	.button-51 {
-		padding: 16px 32px;
 	}
 }

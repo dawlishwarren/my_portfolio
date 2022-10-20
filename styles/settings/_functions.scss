@@ -51,3 +51,21 @@
 		background-position: 0% 50%;
 	}
 }
+
+@mixin underline_after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	color: $color-light;
+	background-color: $color-light;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+@mixin underline_hover_after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}

@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .icons_container {
 	display: flex;
@@ -6,7 +6,7 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	border-bottom: 0.5px dashed $color-charcoal;
+	border-top: 0.5px dashed $color-charcoal;
 	width: 100vw;
 	min-height: 40%;
 	.skill {
@@ -16,6 +16,7 @@
 		padding: 0.5rem;
 		font-size: clamp(1.2rem, 10% + 1.2rem, 5rem);
 		.icon {
+			cursor: pointer;
 			border-radius: 50%;
 			border: 2px solid black;
 			box-sizing: content-box;
@@ -32,6 +33,19 @@
 }
 
 // Media Queries
+@media (min-width: 900px) {
+	.icons_container {
+		width: 50vw;
+		min-height: 50%;
+		align-content: flex-start;
+		border-top: none;
+		border-left: 0.5px dashed $color-charcoal;
+		flex-wrap: wrap;
+		.skill {
+			min-width: 12.5vw;
+		}
+	}
+}
 @media (min-width: 600px) {
 	.icons_container {
 		.skill {
