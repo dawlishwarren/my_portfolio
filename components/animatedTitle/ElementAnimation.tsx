@@ -1,4 +1,6 @@
+// React/Next/NPM
 import React, { useState, useEffect } from "react";
+// Styles/Assets
 import styles from "./animatedTitle.module.scss";
 
 type Props = {

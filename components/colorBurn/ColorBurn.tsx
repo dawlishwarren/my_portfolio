@@ -1,23 +1,22 @@
-// Takes in a string
-// Repeats it 3 times,
-// Once as the element passed through (icon, h1, p etc.)
-// Once with a color burn
-// Another with an overlay
-
-// Props are children: any
-
+// React/Next/NPM
 import { ReactNode } from "react";
+// Styles/Assets
 import styles from "./colorBurn.module.scss";
+
 interface Props {
 	children: ReactNode;
 }
 const ColorBurn = ({ children }: Props) => {
 	return (
+		// Wrapper
 		<div className={styles.color_burn_wrapper}>
+			{/* Header */}
 			<h1 className={styles.burn_element}>{children}</h1>
-			<div className={styles.burn_element_burn} aria-hidden>
+			{/* Color burn underlay */}
+			<div className={styles.burn_element_burn} aria-hidden="true">
 				{children}
 			</div>
+			{/* High opacity overlay */}
 			<div className={styles.burn_element} data-overlay aria-hidden="true">
 				{children}
 			</div>

@@ -1,9 +1,12 @@
+// React/Next/NPM
 import React, { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import SocialToggle from "../socialToggle/SocialToggle";
-import SocialsSidebar from "../sidebar/SocialsSidebar";
-import styles from "./socials.module.scss";
 import { useDimensions } from "../../utils/use-dimensions";
+// Components
+import SocialsSidebar from "../sidebar/SocialsSidebar";
+import MenuToggle from "../navigation/menuToggle/MenuToggle";
+// Styles/Assets
+import styles from "./socials.module.scss";
 
 const Socials = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);
@@ -17,7 +20,7 @@ const Socials = () => {
 			custom={height}
 			ref={containerRef}>
 			<SocialsSidebar />
-			<SocialToggle toggle={() => toggleOpen()} />
+			<MenuToggle type="social" size={30} toggle={() => toggleOpen()} />
 		</motion.nav>
 	);
 };

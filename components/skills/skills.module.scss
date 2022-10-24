@@ -55,11 +55,11 @@
 			.category_header {
 				display: inline-flex;
 				align-items: center;
-				background-color: #fff;
-				border: 2px solid #000;
+				background-color: $color-charcoal;
+				border: 2px solid $color-charcoal;
 				border-radius: 10px;
 				box-sizing: border-box;
-				color: #000;
+				color: $color-light;
 				fill: #000;
 				cursor: pointer;
 				font-family: $font-family-default;
@@ -79,7 +79,7 @@
 				-webkit-user-select: none;
 				touch-action: manipulation;
 				&:focus {
-					color: #171e29;
+					color: $color-primary;
 				}
 				&:hover,
 				&:active {
@@ -119,6 +119,11 @@
 			width: 50vw;
 			height: 50%;
 			justify-content: flex-start;
+			.buttons_container {
+				.category_header {
+					margin: 0.5rem;
+				}
+			}
 		}
 	}
 }
@@ -138,11 +143,5 @@
 		:first-child {
 			min-width: calc(100% - 1.5rem);
 		}
-	}
-}
-
-@media (min-width: 768px) {
-	.category_header {
-		min-width: 170px;
 	}
 }

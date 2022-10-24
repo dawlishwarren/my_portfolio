@@ -16,15 +16,10 @@ const Home: NextPage = () => {
 			</Head>
 			<Layout title="Alex Warren | Frontend Developer" home>
 				<Main />
-				{/* About */}
 				<AboutMe />
-				{/* Skills */}
 				<Skills />
-				{/* Portfolio */}
 				<Portfolio />
-				{/* Blog */}
 				<Blog />
-				{/* Contact */}
 				<Contact />
 			</Layout>
 		</>

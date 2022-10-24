@@ -1,6 +1,7 @@
-import styles from "./animatedTitle.module.scss";
-import React from "react";
+// Components
 import ElementAnimation from "./ElementAnimation";
+// Styles/Assets
+import styles from "./animatedTitle.module.scss";
 
 type Props = {
 	str: string;

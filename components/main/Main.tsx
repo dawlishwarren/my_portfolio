@@ -1,13 +1,13 @@
-// Next
+// React/Next/NPM
 import Image from "next/image";
 // Components
 import MainHero from "../mainHero/mainHero";
-// Stylesheet and assets
+import ScrollDown from "../scrollDown/ScrollDown";
+import ColorBurn from "../colorBurn/ColorBurn";
+// Styles/Assets
 import styles from "./main.module.scss";
 import heroImg from "../../public/hero_image.png";
 import Logo from "../../assets/aw.svg";
-import ScrollDown from "../scrollDown/ScrollDown";
-import ColorBurn from "../colorBurn/ColorBurn";
 
 const Main = () => {
 	return (

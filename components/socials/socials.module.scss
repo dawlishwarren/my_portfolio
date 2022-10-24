@@ -1,34 +1,10 @@
 @import "styles/settings/_settings";
 
-.container {
-	border: none;
-}
-.icon {
-	font-size: 2rem;
-	display: inline-block;
-	position: relative;
-	&:hover {
-		cursor: pointer;
-		// color: $color-light;
-	}
-	&::after {
-		@include underline_after;
-		z-index: 2;
-	}
-	&:hover::after {
-		@include underline_hover_after;
-	}
-}
-.ul {
-	padding: 25px;
-	position: absolute;
-	top: 100px;
-	width: 230px;
-}
 .nav {
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 300px;
+	width: 230px;
+	z-index: -3;
 }

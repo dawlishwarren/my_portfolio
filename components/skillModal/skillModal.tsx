@@ -1,7 +1,10 @@
+// React/Next/NPM
 import { motion } from "framer-motion";
-import { IconType } from "react-icons/lib";
+// Components
 import Backdrop from "../Backdrop/Backdrop";
+// Styles/Assets
 import styles from "./skillModal.module.scss";
+import { IconType } from "react-icons/lib";
 
 const dropIn = {
 	hidden: {

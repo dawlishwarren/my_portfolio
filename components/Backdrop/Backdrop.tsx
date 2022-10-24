@@ -1,6 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './backdrop.module.scss';
+// React/Next/NPM
+import React from "react";
+import { motion } from "framer-motion";
+// Styles/Assets
+import styles from "./backdrop.module.scss";
 
 interface Props {
 	onClick: React.MouseEventHandler;
