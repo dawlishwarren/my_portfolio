@@ -1,8 +1,10 @@
-import Head from "next/head";
+// React/Next/NPM
 import { ReactNode } from "react";
-import Footer from "../footer/Footer";
+import Head from "next/head";
+// Components
 import Header from "../header/Header";
-import Navbar from "../navigation/Navbar.old";
+import Footer from "../footer/Footer";
+// Styles/Assets
 import styles from "./layout.module.scss";
 
 type Props = {

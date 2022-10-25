@@ -11,7 +11,7 @@
 }
 // Content (Title/Image) container
 .content_container {
-	width: 100vw;
+	max-width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -46,7 +46,7 @@
 // Refactor content container to keep central and sensible width
 @media (min-width: 1200px) {
 	.content_container {
-		min-width: 60vw !important;
+		max-width: 60rem !important;
 		margin: 0 20vw !important;
 		.title_container {
 			height: 50vh !important;
@@ -63,7 +63,7 @@
 // Reposition title and image
 @media (min-width: 900px) {
 	.content_container {
-		min-width: 100vw;
+		max-width: 100vw;
 		display: grid;
 		margin: 0 5vw;
 		padding: 5vh 0;

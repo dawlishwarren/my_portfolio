@@ -1,5 +1,7 @@
+// React/Next/NPM
 import type { NextPage } from "next";
 import Head from "next/head";
+// Components
 import Main from "../components/main/Main";
 import Layout from "../components/layout/Layout";
 import AboutMe from "../components/aboutMe/AboutMe";

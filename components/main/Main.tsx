@@ -7,7 +7,6 @@ import ColorBurn from "../colorBurn/ColorBurn";
 // Styles/Assets
 import styles from "./main.module.scss";
 import heroImg from "../../public/hero_image.png";
-import Logo from "../../assets/aw.svg";
 
 const Main = () => {
 	return (

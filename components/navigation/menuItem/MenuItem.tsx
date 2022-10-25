@@ -43,12 +43,6 @@ const MenuItem = ({ i, name, href, icon }: any) => {
 						<motion.div
 							className={styles.link_after}
 							style={{
-								content: "",
-								position: "absolute",
-								bottom: "-2px",
-								left: "0",
-								width: "100%",
-								height: "2px",
 								backgroundColor: colors[i],
 							}}
 						/>

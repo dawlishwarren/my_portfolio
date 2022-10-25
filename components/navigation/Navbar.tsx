@@ -14,6 +14,7 @@ const Navbar = () => {
 	const { height } = useDimensions(containerRef);
 	return (
 		<motion.nav
+			style={{ pointerEvents: isOpen ? "auto" : "none" }}
 			initial={false}
 			animate={isOpen ? "open" : "closed"}
 			custom={height}

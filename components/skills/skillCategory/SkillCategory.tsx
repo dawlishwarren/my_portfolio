@@ -1,12 +1,12 @@
 // Components
-import SkillModal from '../skillModal/skillModal';
-import { motion, AnimatePresence } from 'framer-motion';
-import { DiHtml5 } from 'react-icons/di';
+import SkillModal from "../skillModal/skillModal";
+import { motion, AnimatePresence } from "framer-motion";
+import { DiHtml5 } from "react-icons/di";
 // React and TS imports
-import { useState } from 'react';
-import { IconType } from 'react-icons';
+import { useState } from "react";
+import { IconType } from "react-icons";
 // Styles
-import styles from './skillCategory.module.scss';
+import styles from "./skillCategory.module.scss";
 
 interface Props {
 	skills: any;
@@ -23,11 +23,11 @@ const SkillCategory = ({ skills }: Props) => {
 	// Modal State
 	const [modalOpen, setModalOpen] = useState(false);
 	const [activeSkill, setActiveSkill] = useState<Skill>({
-		name: 'HTML',
+		name: "HTML",
 		icon: DiHtml5,
-		text: '',
+		text: "",
 		when: 0,
-		where: '',
+		where: "",
 	});
 	const close = () => setModalOpen(false);
 	return (
@@ -50,7 +50,7 @@ const SkillCategory = ({ skills }: Props) => {
 							<motion.p className={styles.name}>{skill.name}</motion.p>
 						</motion.button>
 					))}
-				<AnimatePresence initial={false} mode='wait'>
+				<AnimatePresence initial={false} mode="wait">
 					{modalOpen && (
 						<SkillModal
 							modalOpen={modalOpen}

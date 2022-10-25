@@ -13,6 +13,7 @@
 	@include gradient-animation;
 	color: $color-charcoal;
 	overflow: hidden;
+	z-index: 0;
 
 	// SVG
 	.waves {
@@ -23,7 +24,7 @@
 		left: 0;
 	}
 	.waves > * {
-		fill: $color-charcoal;
+		fill: $color-primary;
 	}
 
 	// Heading
@@ -55,8 +56,8 @@
 			.category_header {
 				display: inline-flex;
 				align-items: center;
-				background-color: $color-charcoal;
-				border: 2px solid $color-charcoal;
+				background-color: $color-primary;
+				border: 2px solid $color-primary;
 				border-radius: 10px;
 				box-sizing: border-box;
 				color: $color-light;
@@ -106,7 +107,7 @@
 			margin-top: -0.25rem;
 		}
 		.waves > * {
-			fill: $color-charcoal;
+			fill: $color-primary;
 		}
 
 		.header {

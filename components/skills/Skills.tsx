@@ -1,6 +1,6 @@
 // Components
 import AnimatedTitle from "../animatedTitle/AnimatedTitle";
-import SkillCategory from "../skillCategory/SkillCategory";
+import SkillCategory from "./skillCategory/SkillCategory";
 import Waves from "../../assets/waves.svg";
 // Styles
 import styles from "./skills.module.scss";
