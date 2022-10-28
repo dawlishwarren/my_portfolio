@@ -1,0 +1,11 @@
+@import 'styles/settings/_settings';
+
+.backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba($color: $color-charcoal, $alpha: 0.8);
+	@include flex-center();
+}

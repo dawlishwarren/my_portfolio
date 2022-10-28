@@ -1,0 +1,53 @@
+@import "styles/settings/_settings";
+.header {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	padding-left: 80px;
+	padding-right: 8px;
+	width: 100vw;
+	height: 80px;
+	z-index: 2;
+	overflow: hidden;
+	isolation: isolate;
+	.icons_container {
+		display: flex;
+		width: calc(100vw - 88px);
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		.icon {
+			border-radius: 50%;
+			border: none;
+			box-sizing: border-box;
+			max-width: 60px;
+			padding: 0.5rem;
+			height: 60px;
+			background-color: #fff;
+			cursor: pointer;
+		}
+		.socials_icon {
+			border-radius: 50%;
+		}
+		.socials_dropdown {
+			background-color: $color-light;
+			color: $color-dark;
+			opacity: 0.8;
+			display: flex;
+			justify-content: space-between;
+			width: calc(100vw - 2rem);
+			border-radius: 25px;
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.mobile_only {
+		visibility: hidden;
+		display: none;
+	}
+}

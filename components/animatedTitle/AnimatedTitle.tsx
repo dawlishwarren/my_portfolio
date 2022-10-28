@@ -1,6 +1,7 @@
-import styles from "./animatedTitle.module.scss";
-import React from "react";
+// Components
 import ElementAnimation from "./ElementAnimation";
+// Styles/Assets
+import styles from "./animatedTitle.module.scss";
 
 type Props = {
 	str: string;
@@ -18,7 +19,7 @@ const AnimatedTitle = (props: Props) => {
 			<h1
 				id={id}
 				className={styles.title}
-				style={{ fontSize: size ? size : "5rem" }}>
+				style={{ fontSize: size ? size : "min(10vw, 5rem)" }}>
 				{arrayStr.map((s, i) => (
 					<ElementAnimation timing={1000} string={s} key={i} />
 				))}

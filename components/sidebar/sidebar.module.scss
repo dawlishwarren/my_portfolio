@@ -1,0 +1,41 @@
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	background: #fff;
+	opacity: 1;
+	z-index: 2;
+	pointer-events: none;
+}
+.ul {
+	padding: 25px;
+	position: absolute;
+	top: 100px;
+	width: 230px;
+	z-index: 2;
+}
+
+.socials_background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100vw;
+	background: #fff;
+}
+.socials_ul {
+	padding: 25px;
+	position: absolute;
+	top: 100px;
+	width: 230px;
+	z-index: 2;
+}
+
+@media (min-width: 600px) {
+	.background,
+	.socials_background {
+		width: 300px;
+	}
+}

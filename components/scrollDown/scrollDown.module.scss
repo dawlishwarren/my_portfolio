@@ -20,7 +20,7 @@
 	bottom: 20px;
 	left: 0;
 	@include flex-center;
-	animation: bounce 2s infinite ease-out;
+	animation: bounce 1s infinite ease-in-out;
 	animation-delay: 2s;
 	animation-iteration-count: 10;
 	p {

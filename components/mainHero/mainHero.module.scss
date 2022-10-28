@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 // Font-size variable
 
@@ -20,7 +20,7 @@
 }
 .gradient {
 	@include flex-center;
-	@include green-gradient(background);
+	@include gradient(background);
 	@include gradient-animation;
 	height: 100%;
 	width: 100%;

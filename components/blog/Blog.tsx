@@ -1,5 +1,8 @@
+// React/Next/NPM
 import React from "react";
+// Components
 import AnimatedTitle from "../animatedTitle/AnimatedTitle";
+// Styles/Assets
 import styles from "./blog.module.scss";
 
 const Blog = () => {

@@ -1,14 +1,17 @@
-import { NextPage } from "next";
-import MainHero from "../components/mainHero/mainHero";
-import Socials from "../components/socials/Socials";
+import { NextPage } from 'next';
+import AboutMe from '../components/aboutMe/AboutMe';
+import Header from '../components/header/Header';
+import Layout from '../components/layout/Layout';
+import Skills from '../components/skills/Skills';
 
-const CanvasPage: NextPage = () => {
+const TestingPage: NextPage = () => {
 	return (
-		<>
-			<MainHero />
-			<Socials colorBurn={true} />;
-		</>
+		<Layout title='Alex Warren | Frontend Developer' home>
+			<Header />
+			<AboutMe />
+			<Skills />
+		</Layout>
 	);
 };
 
-export default CanvasPage;
+export default TestingPage;

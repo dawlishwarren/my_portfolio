@@ -1,86 +1,88 @@
-import React from "react";
-import AnimatedTitle from "../animatedTitle/AnimatedTitle";
-import styles from "./skills.module.scss";
+// React
+import { useState } from 'react';
+// Components
+import AnimatedTitle from '../animatedTitle/AnimatedTitle';
+import SkillCategory from './skillCategory/SkillCategory';
+import Waves from '../../assets/waves.svg';
+// Styles/Assets
+import styles from './skills.module.scss';
 import {
-	DiAws,
-	DiGithubFull,
-	DiCss3,
-	DiHtml5,
-	DiJavascript1,
-	DiMongodb,
-	DiMysql,
-	DiNodejs,
-	DiPhp,
-	DiReact,
-	DiSass,
-	DiWordpress,
-} from "react-icons/di";
-import {
-	SiCanva,
-	SiFigma,
-	SiGraphql,
-	SiJest,
-	SiJss,
-	SiMamp,
-	SiNextdotjs,
-	SiNotion,
-	SiPostman,
-	SiRedux,
-	SiSvg,
-	SiTypescript,
-} from "react-icons/si";
-import { IconType } from "react-icons/lib";
-
-interface Skill {
-	name: string;
-	icon: IconType;
-	color?: string;
-}
+	languageSkills,
+	designSkills,
+	databaseSkills,
+	testingPlanningSkills,
+	frameworkSkills,
+} from '../../data/skills';
 
 const Skills = () => {
-	const skills = [
-		{ name: "AWS", icon: DiAws },
-		{ name: "GitHub", icon: DiGithubFull },
-		{ name: "JavaScript", icon: DiJavascript1 },
-		{ name: "CSS", icon: DiCss3, color: "red" },
-		{ name: "HTML", icon: DiHtml5 },
-		{ name: "MongoDB", icon: DiMongodb },
-		{ name: "MySQL", icon: DiMysql },
-		{ name: "NodeJS", icon: DiNodejs },
-		{ name: "PHP", icon: DiPhp },
-		{ name: "React", icon: DiReact },
-		{ name: "Sass", icon: DiSass },
-		{ name: "WordPress", icon: DiWordpress },
-		{ name: "Canva", icon: SiCanva },
-		{ name: "Figma", icon: SiFigma },
-		{ name: "GraphQL", icon: SiGraphql },
-		{ name: "Jest", icon: SiJest },
-		{ name: "JSS", icon: SiJss },
-		{ name: "MAMP", icon: SiMamp },
-		{ name: "NextJS", icon: SiNextdotjs },
-		{ name: "Notion", icon: SiNotion },
-		{ name: "Postman", icon: SiPostman },
-		{ name: "Redux", icon: SiRedux },
-		{ name: "SVG", icon: SiSvg },
-		{ name: "TypeScript", icon: SiTypescript },
-	];
+	const [activeCategory, setActiveCategory] = useState('');
+
+	function toggleActive(category: string) {
+		setActiveCategory(category);
+	}
 
 	return (
-		<section id="skills" className={`scroll-area ${[styles.skills_section]}`}>
+		<section id='skills' className={`scroll-area ${[styles.skills_section]}`}>
+			{/* SVG overlay */}
+			<Waves className={styles.waves} />
+			{/* Section Header */}
 			<header className={styles.header}>
-				<AnimatedTitle str="My Skills" size="clamp(2rem, 6vw + 1rem, 5rem)" />
+				<AnimatedTitle str='My Skills' size='clamp(1rem, 6vw + 1rem, 5rem)' />
 			</header>
-			<div className={styles.icons_container}>
-				{skills.map((skill: Skill, index) => (
-					<div className={styles.skill} key={index}>
-						<skill.icon
-							className={styles.icon}
-							style={{ color: skill.color }}
-						/>
-						<p className={styles.name}>{skill.name}</p>
-					</div>
-				))}
+			<div className={styles.categories_wrapper}>
+				<h4 className={styles.subtitle}>Select a category:</h4>
+
+				<div className={styles.buttons_container}>
+					{/* Language */}
+					<button
+						onClick={() => toggleActive('language')}
+						className={styles.category_header}>
+						Language
+					</button>
+					{/* Design */}
+					<button
+						onClick={() => toggleActive('design')}
+						className={styles.category_header}>
+						Design
+					</button>
+					{/* Database */}
+					<button
+						onClick={() => toggleActive('database')}
+						className={styles.category_header}>
+						Backend Development
+					</button>
+					{/* Testing */}
+					<button
+						onClick={() => toggleActive('testing')}
+						className={styles.category_header}>
+						Testing and Planning
+					</button>
+					{/* Other */}
+					<button
+						onClick={() => toggleActive('frameworks')}
+						className={styles.category_header}>
+						Frameworks
+					</button>
+				</div>
 			</div>
+			<>
+				{(() => {
+					switch (activeCategory) {
+						case 'language':
+							return <SkillCategory skills={languageSkills} />;
+						case 'design':
+							return <SkillCategory skills={designSkills} />;
+						case 'database':
+							return <SkillCategory skills={databaseSkills} />;
+						case 'testing':
+							return <SkillCategory skills={testingPlanningSkills} />;
+						case 'frameworks':
+							return <SkillCategory skills={frameworkSkills} />;
+						default:
+							return;
+					}
+				})()}
+			</>
 		</section>
 	);
 };

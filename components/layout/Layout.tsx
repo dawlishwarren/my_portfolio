@@ -1,7 +1,10 @@
-import Head from "next/head";
+// React/Next/NPM
 import { ReactNode } from "react";
+import Head from "next/head";
+// Components
+import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Navbar from "../navbar/Navbar";
+// Styles/Assets
 import styles from "./layout.module.scss";
 
 type Props = {
@@ -21,7 +24,7 @@ const Layout = ({ home, children, title }: Props) => {
 			{/* If index page */}
 			{home ? (
 				<div className="container">
-					<Navbar />
+					<Header />
 					{children}
 				</div>
 			) : (

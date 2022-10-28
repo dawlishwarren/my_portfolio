@@ -1,9 +1,10 @@
 @import "styles/settings/_settings";
 
-.container {
-	border: none;
-}
-.icon {
-	font-size: 2rem;
-	animation: color-change 15s infinite;
+.nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 230px;
+	z-index: -3;
 }

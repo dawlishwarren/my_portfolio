@@ -1,4 +1,4 @@
-@mixin green-gradient($property, $opts: none) {
+@mixin gradient($property, $opts: none) {
 	#{$property}: linear-gradient(
 			-45deg,
 			$color-gradient-1,
@@ -8,6 +8,26 @@
 			$color-gradient-5
 		),
 		$opts;
+}
+@mixin gradient_blue($property) {
+	#{$property}: linear-gradient(
+		-45deg,
+		$color-blue-darker,
+		$color-blue-dark,
+		$color-blue-light,
+		$color-blue-lighter,
+		$color-lightest
+	);
+}
+@mixin gradient_light($property) {
+	#{$property}: linear-gradient(
+		-45deg,
+		$color-light,
+		$color-lightest,
+		$color-lavender,
+		$color-blue-lighter,
+		$color-green-lightest
+	);
 }
 
 @mixin flex-center {
@@ -30,4 +50,22 @@
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+@mixin underline_after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	color: $color-dark;
+	background-color: $color-dark;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+@mixin underline_hover_after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
 }
