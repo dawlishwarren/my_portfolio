@@ -13,7 +13,7 @@ const dropIn = {
 	},
 	visible: {
 		y: "0",
-		opacity: "1",
+		opacity: 1,
 		transition: {
 			duration: 1,
 			type: "Spring",

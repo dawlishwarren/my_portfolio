@@ -10,7 +10,8 @@ $color-lavender: #e6e6ff;
 $color-blue-lighter: #a7c6da;
 $color-blue-light: #0586ff;
 $color-blue-dark: #0000a8;
-$color-blue-darker: #000029;
+$color-blue-darker: #141c3a;
+$color-blue-darkest: #000029;
 
 // Complimentary Shades
 $color-yellow-dark: #f1db4b;
@@ -31,6 +32,12 @@ $color-primary: $color-green-light;
 $color-secondary: $color-blue-light;
 $color-white: $color-lightest;
 $color-dark: $color-dark;
+
+// Skills
+$color-plan: $color-red-dark;
+$color-design: $color-green-light;
+$color-build: $color-blue-light;
+$color-backdrop: $color-blue-darker;
 
 // Color Gradient
 $color-gradient-1: $color-green-lightest;
