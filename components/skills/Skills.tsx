@@ -1,88 +1,50 @@
-// React
-import { useState } from 'react';
-// Components
-import AnimatedTitle from '../animatedTitle/AnimatedTitle';
-import SkillCategory from './skillCategory/SkillCategory';
-import Waves from '../../assets/waves.svg';
-// Styles/Assets
+import React from 'react';
 import styles from './skills.module.scss';
 import {
 	languageSkills,
-	designSkills,
 	databaseSkills,
+	designSkills,
 	testingPlanningSkills,
 	frameworkSkills,
 } from '../../data/skills';
+import { plan, test } from '../../data/skills';
+import SkillCategory from './skillCategory/SkillCategory';
 
 const Skills = () => {
-	const [activeCategory, setActiveCategory] = useState('');
-
-	function toggleActive(category: string) {
-		setActiveCategory(category);
-	}
-
 	return (
 		<section id='skills' className={`scroll-area ${[styles.skills_section]}`}>
-			{/* SVG overlay */}
-			<Waves className={styles.waves} />
-			{/* Section Header */}
-			<header className={styles.header}>
-				<AnimatedTitle str='My Skills' size='clamp(1rem, 6vw + 1rem, 5rem)' />
-			</header>
-			<div className={styles.categories_wrapper}>
-				<h4 className={styles.subtitle}>Select a category:</h4>
-
-				<div className={styles.buttons_container}>
-					{/* Language */}
-					<button
-						onClick={() => toggleActive('language')}
-						className={styles.category_header}>
-						Language
-					</button>
-					{/* Design */}
-					<button
-						onClick={() => toggleActive('design')}
-						className={styles.category_header}>
-						Design
-					</button>
-					{/* Database */}
-					<button
-						onClick={() => toggleActive('database')}
-						className={styles.category_header}>
-						Backend Development
-					</button>
-					{/* Testing */}
-					<button
-						onClick={() => toggleActive('testing')}
-						className={styles.category_header}>
-						Testing and Planning
-					</button>
-					{/* Other */}
-					<button
-						onClick={() => toggleActive('frameworks')}
-						className={styles.category_header}>
-						Frameworks
-					</button>
+			<div className={styles.container}>
+				<div className={styles.box}>
+					<div className={styles.content}>
+						<div className={styles.columns}>
+							<div className={styles.column}>
+								<h1 className={styles.title}>Planner</h1>
+								<p>
+									A career accidentally built on red, green, refactor. I now
+									know the importance of planning.
+								</p>
+								<p className={styles.primary}>How I work:</p>
+								<SkillCategory skills={plan} />
+								<p className={styles.primary}>How I test:</p>
+								<SkillCategory skills={test} />
+							</div>
+							<div className={styles.column}>
+								<h1 className={styles.title}>Designer</h1>
+								<p>I work with the goal of design so nice it goes unnoticed.</p>
+								<p className={styles.primary}>Tools I use:</p>
+							</div>
+							<div className={styles.column}>
+								<h1 className={styles.title}>Builder</h1>
+								<p>
+									Beguiled by the magic of code, I love building things from
+									scratch.
+								</p>
+								<p className={styles.primary}>Languages I love:</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<>
-				{(() => {
-					switch (activeCategory) {
-						case 'language':
-							return <SkillCategory skills={languageSkills} />;
-						case 'design':
-							return <SkillCategory skills={designSkills} />;
-						case 'database':
-							return <SkillCategory skills={databaseSkills} />;
-						case 'testing':
-							return <SkillCategory skills={testingPlanningSkills} />;
-						case 'frameworks':
-							return <SkillCategory skills={frameworkSkills} />;
-						default:
-							return;
-					}
-				})()}
-			</>
 		</section>
 	);
 };

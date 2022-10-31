@@ -1,3 +1,4 @@
+import { BsJournalBookmarkFill } from 'react-icons/bs';
 import {
 	DiGithubFull,
 	DiCss3,
@@ -25,6 +26,53 @@ import {
 	SiSvg,
 	SiTypescript,
 } from 'react-icons/si';
+
+export const plan = [
+	{
+		name: 'Figma',
+		icon: SiFigma,
+		when: 2022,
+		where: 'Tutorials',
+		text: 'Used more recently in the planning and wire-framing stage of any project or idea.',
+	},
+	{
+		name: 'Notion',
+		icon: SiNotion,
+		when: 2022,
+		where: 'Tutorial',
+		text: 'My go-to productivity and planning tool for project-management and day-to-day life.',
+	},
+	{
+		name: 'Passion Planner',
+		icon: BsJournalBookmarkFill,
+		when: 2020,
+		text: `I've greatly benefited from using planners and reflecting on a regular basis. https://passionplanner.com/`,
+	},
+];
+
+export const test = [
+	{
+		name: 'Jest',
+		icon: SiJest,
+		when: 2022,
+		where: 'Documentation',
+		text: 'Red, green, refactor. Along with end-to-end testing I have endeavoured to improve my productivity and programming by writing unit tests as I build.',
+	},
+	{
+		name: 'Postman',
+		icon: SiPostman,
+		when: 2021,
+		where: 'Udemy, tutorial',
+		text: 'Learned in conjuction with Express and MongoDB when building MERN stack apps.',
+	},
+	{
+		name: 'TypeScript',
+		icon: SiTypescript,
+		when: 2022,
+		where: 'Documentation, Stack Overflow',
+		text: `Learnt directly from the TypeScript docs in an effort to increase productivity and write more robust code. Now I know why all my old projects don't work!`,
+	},
+];
 
 // Languages
 export const languageSkills = [
@@ -77,13 +125,7 @@ export const languageSkills = [
 		where: 'Documentation, YouTube',
 		text: `I have aware of and using SVGs since 2020, but it's 2022 that I began trawling the documentation to learn how to integrate and manipulate them.`,
 	},
-	{
-		name: 'TypeScript',
-		icon: SiTypescript,
-		when: 2022,
-		where: 'Documentation, Stack Overflow',
-		text: `Learnt directly from the TypeScript docs in an effort to increase productivity and write more robust code. Now I know why all my old projects don't work!`,
-	},
+
 	{
 		name: 'Sass',
 		icon: DiSass,
@@ -170,34 +212,7 @@ export const testingPlanningSkills = [
 		where: 'Tutorials and googling it.',
 		text: `While all of my projects and sites have been solo and self-taught endeavours, the importance of version control has not been lost on me.`,
 	},
-	{
-		name: 'Figma',
-		icon: SiFigma,
-		when: 2022,
-		where: 'Tutorials',
-		text: 'Used more recently in the planning and wire-framing stage of any project or idea.',
-	},
-	{
-		name: 'Jest',
-		icon: SiJest,
-		when: 2022,
-		where: 'Documentation',
-		text: 'Red, green, refactor. Along with end-to-end testing I have endeavoured to improve my productivity and programming by writing unit tests as I build.',
-	},
-	{
-		name: 'Notion',
-		icon: SiNotion,
-		when: 2022,
-		where: 'Tutorial',
-		text: 'My go-to productivity and planning tool for project-management and day-to-day life.',
-	},
-	{
-		name: 'Postman',
-		icon: SiPostman,
-		when: 2021,
-		where: 'Udemy, tutorial',
-		text: 'Learned in conjuction with Express and MongoDB when building MERN stack apps.',
-	},
+
 	{
 		name: 'TypeScript',
 		icon: SiTypescript,

@@ -1,0 +1,148 @@
+@import "styles/settings/_settings";
+
+// Section
+.skills_section {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	@include gradient_light(background);
+	@include gradient-animation;
+	color: $color-charcoal;
+	overflow: hidden;
+	z-index: 0;
+
+	// SVG
+	.waves {
+		width: 200%;
+		height: 100px;
+		position: absolute;
+		top: -1px;
+		left: 0;
+	}
+	.waves > * {
+		fill: $color-primary;
+	}
+
+	// Heading
+	.header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-content: flex-start;
+		min-height: 20vh;
+	}
+	.categories_wrapper {
+		padding-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		.subtitle {
+			padding: 0.5rem;
+		}
+		// Categories and Buttons
+		.buttons_container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0.25rem;
+			justify-content: space-evenly;
+			min-width: 100vw;
+			padding-bottom: 1rem;
+			// Buttons
+			.category_header {
+				display: inline-flex;
+				align-items: center;
+				background-color: $color-primary;
+				border: 2px solid $color-primary;
+				border-radius: 10px;
+				box-sizing: border-box;
+				color: $color-light;
+				fill: #000;
+				cursor: pointer;
+				font-family: $font-family-default;
+				font-size: 1rem;
+				font-weight: 600;
+				height: 48px;
+				width: calc(50% - 1.25rem);
+				justify-content: center;
+				letter-spacing: -0.8px;
+				line-height: 24px;
+				outline: 0;
+				padding: 0 1rem;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.3s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+				&:focus {
+					color: $color-primary;
+				}
+				&:hover,
+				&:active {
+					border-color: #06f;
+					color: #06f;
+					fill: #06f;
+				}
+			}
+		}
+	}
+}
+
+// Media Queries
+// Laptop - X Large
+@media (min-width: 900px) {
+	.skills_section {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-content: flex-start;
+
+		.waves {
+			display: initial;
+			width: 100%;
+			margin-top: -0.25rem;
+		}
+		.waves > * {
+			fill: $color-primary;
+		}
+
+		.header {
+			min-height: 15vh;
+			align-self: flex-start;
+			margin-bottom: 5rem;
+		}
+
+		.categories_wrapper {
+			width: 50vw;
+			height: 50%;
+			justify-content: flex-start;
+			.buttons_container {
+				.category_header {
+					margin: 0.5rem;
+				}
+			}
+		}
+	}
+}
+// Tablet - Laptop
+@media (min-width: 600px) {
+	.waves {
+		display: none;
+	}
+	.buttons_container {
+		flex-direction: row !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		min-width: 50% !important;
+		.category_header {
+			min-width: calc(45% - 1rem);
+		}
+		:first-child {
+			min-width: calc(100% - 1.5rem);
+		}
+	}
+}
