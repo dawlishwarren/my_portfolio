@@ -1,9 +1,64 @@
+@import 'styles/settings/_settings';
+
 .portfolio_section {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	width: 100vw;
 	height: 100vh;
-	background-color: red;
+	background-color: $color-silver;
 	color: #fff;
+	.header_wrapper {
+		align-self: flex-end;
+		min-height: fit-content;
+		padding-inline: 3rem;
+		color: $color-secondary;
+	}
+	.carousel_container {
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.carousel {
+			min-width: 60rem;
+			aspect-ratio: 1.618/1;
+			background-color: white;
+			border: 3px solid black;
+			border-radius: 12.5px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			// Arrows
+			.right_arrow {
+				left: calc(50vw + 48px);
+			}
+
+			.left_arrow {
+				right: calc(50vw + 48px);
+			}
+
+			.left_arrow,
+			.right_arrow {
+				position: absolute;
+				top: 25vh;
+				font-size: 3rem;
+				color: black;
+				z-index: 10;
+				cursor: pointer;
+				user-select: none;
+				padding: 0.5rem;
+				border: 1px solid black;
+				border-radius: 12.5px;
+			}
+			.slide {
+				filter: brightness(0.5);
+				border-radius: 12.5px;
+				padding: 2rem;
+				position: relative;
+				width: 40rem;
+				aspect-ratio: 1.618 /1;
+			}
+		}
+	}
 }
