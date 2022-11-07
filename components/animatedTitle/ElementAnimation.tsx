@@ -1,7 +1,7 @@
 // React/Next/NPM
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 // Styles/Assets
-import styles from "./animatedTitle.module.scss";
+import styles from './animatedTitle.module.scss';
 
 type Props = {
 	timing?: number;
@@ -10,13 +10,9 @@ type Props = {
 
 const ElementAnimation = ({ timing, string }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
-	const style = {
-		display: "inline",
-		textDecoration: isHovered ? "underline 1rem yellow" : "none",
-	};
 
 	const getClassName = () => {
-		return isHovered ? `${styles.active}` : "none";
+		return isHovered ? `${styles.active}` : `${styles.inactive}`;
 	};
 
 	useEffect(() => {

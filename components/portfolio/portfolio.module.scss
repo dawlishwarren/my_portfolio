@@ -5,60 +5,99 @@
 	flex-direction: column;
 	justify-content: center;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	background-color: $color-silver;
 	color: #fff;
 	.header_wrapper {
-		align-self: flex-end;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 		min-height: fit-content;
-		padding-inline: 3rem;
+		padding-bottom: 1rem;
 		color: $color-secondary;
+		.progress {
+			align-self: center;
+			margin-top: min(1.5vh, 0.3rem);
+			margin-left: 2px;
+			margin-right: -1px;
+
+			.bg {
+				opacity: 0.3;
+				fill: $color-secondary;
+			}
+
+			.indicator {
+				stroke: $color-secondary;
+			}
+			.bg path,
+			.indictator path {
+				stroke-dashoffset: 0;
+				stroke-width: 15%;
+				fill: none;
+			}
+		}
 	}
 	.carousel_container {
-		width: 100vw;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		position: relative;
 		.carousel {
-			min-width: 60rem;
-			aspect-ratio: 1.618/1;
-			background-color: white;
-			border: 3px solid black;
-			border-radius: 12.5px;
-			position: relative;
 			display: flex;
-			align-items: center;
-			justify-content: center;
-			// Arrows
-			.right_arrow {
-				left: calc(50vw + 48px);
-			}
-
-			.left_arrow {
-				right: calc(50vw + 48px);
-			}
-
-			.left_arrow,
-			.right_arrow {
-				position: absolute;
-				top: 25vh;
-				font-size: 3rem;
-				color: black;
-				z-index: 10;
-				cursor: pointer;
-				user-select: none;
-				padding: 0.5rem;
+			list-style: none;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			flex: 0 0 600px;
+			margin: 0 auto;
+			.list_item {
+				flex: 0 0 200px;
+				background: white;
 				border: 1px solid black;
 				border-radius: 12.5px;
-			}
-			.slide {
-				filter: brightness(0.5);
-				border-radius: 12.5px;
-				padding: 2rem;
+				margin: 0 20px 0 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 				position: relative;
-				width: 40rem;
-				aspect-ratio: 1.618 /1;
+				cursor: pointer;
+				&::after {
+					content: '';
+					border: 2px solid #5c777e;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					position: absolute;
+					opacity: 0;
+					transition: all 0.5s ease-in;
+				}
+				.slide_title {
+					flex-wrap: wrap;
+					text-align: center;
+					color: $color-secondary;
+					padding-top: 15px;
+				}
+				&:hover {
+					&::after {
+						left: 15px;
+						right: 15px;
+						bottom: 15px;
+						top: 15px;
+						opacity: 1;
+						border-radius: 12.5px;
+					}
+					.slide_image {
+						transform: scale(1.2);
+						transition: all 0.5s ease-in;
+					}
+				}
 			}
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	.portfolio_section {
+		.carousel_container {
+			max-width: 60rem;
+			margin: 0 auto;
 		}
 	}
 }

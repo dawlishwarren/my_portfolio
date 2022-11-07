@@ -1,0 +1,29 @@
+@import 'styles/settings/_settings';
+.modal {
+	width: clamp(50%, 700px, 90%);
+	height: clamp(50%, 55vh + 10rem, 75%);
+	margin: auto;
+	padding: 2rem;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	background-color: $color-lavender;
+	color: $color-charcoal;
+
+	.close_wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		.close_button {
+			border: none;
+			border-radius: 25px;
+			background: $color-charcoal;
+			color: $color-lavender;
+			padding: 0.5rem;
+			margin: 0.5rem;
+			cursor: pointer;
+		}
+	}
+}

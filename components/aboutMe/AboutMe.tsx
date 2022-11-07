@@ -1,5 +1,4 @@
 // React/Next/NPM
-import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 // Components
@@ -11,7 +10,7 @@ import biopic from '../../public/bio.jpeg';
 
 const bioSentences = [
 	`Hello world, lorem ipsum dolor sit amet… just kidding! I'm a Leeds
-	(UK) web developer, with a passion for front-end and interactivity.`,
+	(UK) based web developer, with a passion for front-end and interactivity.`,
 	`Coming from a background in professional music and restaurant
 	management I am entirely self taught in the field of development;
 	but my skills with time-management, collaboration and creative
