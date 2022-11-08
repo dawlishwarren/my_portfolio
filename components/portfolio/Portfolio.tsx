@@ -25,14 +25,35 @@ interface Carousel {
 	title: string;
 	url: StaticImageData;
 	index: number;
+	alt: string;
 }
 // Data to map
 const carouselData = [
-	{ index: 0, title: 'Vanilla HTML', url: tourism },
-	{ index: 1, title: 'Custom UI', url: directory },
-	{ index: 2, title: 'SVG Design', url: logo },
-	{ index: 3, title: 'Responsive Layout', url: portfolio },
-	{ index: 4, title: 'Consultation', url: consultation },
+	{
+		index: 0,
+		title: 'Vanilla HTML',
+		url: tourism,
+		alt: 'HTML Tourism website homepage screenshot',
+	},
+	{
+		index: 1,
+		title: 'Custom UI',
+		url: directory,
+		alt: 'Business directory UI',
+	},
+	{ index: 2, title: 'SVG Design', url: logo, alt: 'Website logo' },
+	{
+		index: 3,
+		title: 'Responsive Layout',
+		url: portfolio,
+		alt: 'Landing page with responsive layout',
+	},
+	{
+		index: 4,
+		title: 'Consultation',
+		url: consultation,
+		alt: 'Screenshot of tourism website',
+	},
 ];
 
 const Portfolio = () => {
@@ -42,6 +63,7 @@ const Portfolio = () => {
 		title: '',
 		url: { src: '', height: 0, width: 0 },
 		index: 0,
+		alt: '',
 	});
 	const close = () => setModalOpen(false);
 
@@ -124,6 +146,7 @@ const Portfolio = () => {
 								width={300}
 								height={500}
 								objectFit={'scale-down'}
+								alt={slide.alt}
 							/>
 						</motion.li>
 					))}
@@ -138,6 +161,7 @@ const Portfolio = () => {
 								width={300}
 								height={500}
 								objectFit={'scale-down'}
+								alt={activePanel.alt}
 							/>
 						</Modal>
 					)}
