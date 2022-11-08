@@ -1,7 +1,7 @@
 // React/Next/NPM
 import Image from 'next/image';
 // Components
-import MainHero from '../mainHero/MainHero';
+import MainHero from '../mainHero/mainHero';
 import ScrollDown from '../scrollDown/ScrollDown';
 import ColorBurn from '../colorBurn/ColorBurn';
 // Styles/Assets
