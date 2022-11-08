@@ -36,8 +36,8 @@ const Skills = () => {
 							<div className={styles.column}>
 								<h1 className={`${styles.title} ${styles.design}`}>Designer</h1>
 								<p>
-									Whether it's front or back end, I work with the goal of design
-									so nice it goes unnoticed.
+									Whether it&apos;s front or back end, I work with the goal of
+									design so nice it goes unnoticed.
 								</p>
 								<p className={`${styles.primary} ${styles.design}`}>
 									Business in the front:
