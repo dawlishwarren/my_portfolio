@@ -10,16 +10,15 @@ import {
 } from 'framer-motion';
 // Components
 import AnimatedTitle from '../animatedTitle/AnimatedTitle';
+import Modal from '../modal/Modal';
 // Styles/Assets
 import styles from './portfolio.module.scss';
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import tourism from '../../public/tourism.png';
 import directory from '../../public/directory.png';
 import logo from '../../public/logo.png';
 import portfolio from '../../public/portfolio.png';
 import consultation from '../../public/consultation.png';
-import { Url } from 'url';
-import Modal from '../modal/Modal';
+
 // Prop Types
 interface Carousel {
 	title: string;
@@ -147,6 +146,7 @@ const Portfolio = () => {
 								height={500}
 								objectFit={'scale-down'}
 								alt={slide.alt}
+								priority
 							/>
 						</motion.li>
 					))}

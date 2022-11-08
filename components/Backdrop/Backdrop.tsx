@@ -10,7 +10,7 @@ interface Props {
 }
 
 // Backdrop for a modal component
-const Backdrop = ({ children, onClick }: Props) => {
+const Backdrop = ({ onClick, children }: Props) => {
 	return (
 		<motion.div
 			className={styles.backdrop}

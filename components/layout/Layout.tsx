@@ -22,7 +22,6 @@ const Layout = ({ children, title }: Props) => {
 				<Header />
 				{children}
 			</div>
-			<Footer />
 		</>
 	);
 };

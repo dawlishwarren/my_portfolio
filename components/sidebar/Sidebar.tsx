@@ -7,7 +7,7 @@ import MenuItem from '../siteNavigation/menuItem/MenuItem';
 import styles from './sidebar.module.scss';
 import { VscColorMode } from 'react-icons/vsc';
 import { links } from '../../data/navbarLinks';
-
+// Prop Types
 interface Props {
 	toggle: VoidFunction;
 }
