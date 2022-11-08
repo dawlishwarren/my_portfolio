@@ -9,7 +9,7 @@ import {
 	languages,
 	frameworks,
 } from '../../data/skills';
-import SkillCategory from './skillCategory/SkillCategory';
+import SkillCategory from '../skillCategory/SkillCategory';
 
 const Skills = () => {
 	return (

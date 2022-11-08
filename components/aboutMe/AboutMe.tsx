@@ -21,22 +21,23 @@ const bioSentences = [
 	cocktails, with a saxophone, or on a road bike, just never at the
 	same time.`,
 ];
-const AboutMe = () => {
-	// When visible:
-	// Appear from center (left),
-	// Quickly change opacity
 
+// Component Render
+const AboutMe = () => {
 	return (
 		<section id='about' className={`scroll-area ${[styles.about_section]}`}>
+			{/* SVG background element */}
 			<Tilt className={styles.tilt} />
+			{/* Title */}
 			<header className={styles.header_wrapper}>
 				<AnimatedTitle str='About Me' />
 			</header>
+			{/* Content */}
 			<div className={styles.content_container}>
 				<div className={styles.image_container}>
 					<Image src={biopic} objectFit='fill' alt='Picture of author' />
 				</div>
-				{/* Container */}
+				{/* Sentences mapped to animated divs */}
 				<motion.div className={styles.bio_container}>
 					{bioSentences.map((sentence, i) => (
 						<motion.div

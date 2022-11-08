@@ -4,7 +4,14 @@ import { motion } from 'framer-motion';
 import Backdrop from '../backdrop/Backdrop';
 // Styles/Assets
 import styles from './modal.module.scss';
+// Prop types
+interface Props {
+	children: any;
+	handleClose: React.MouseEventHandler;
+	modalOpen: boolean;
+}
 
+// Motion variants
 const dropIn = {
 	hidden: {
 		y: '-100vh',
@@ -26,13 +33,7 @@ const dropIn = {
 	},
 };
 
-interface Props {
-	children: any;
-	handleClose: React.MouseEventHandler;
-	modalOpen: boolean;
-}
-
-const SkillModal = ({ modalOpen, handleClose, children }: Props) => {
+const Modal = ({ modalOpen, handleClose, children }: Props) => {
 	return (
 		<Backdrop onClick={handleClose}>
 			<motion.div
@@ -54,4 +55,4 @@ const SkillModal = ({ modalOpen, handleClose, children }: Props) => {
 	);
 };
 
-export default SkillModal;
+export default Modal;

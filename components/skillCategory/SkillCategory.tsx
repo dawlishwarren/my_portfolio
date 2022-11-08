@@ -1,5 +1,5 @@
 // Components
-import Modal from '../../modal/Modal';
+import Modal from '../modal/Modal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DiHtml5 } from 'react-icons/di';
 // React and TS imports
@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { IconType } from 'react-icons';
 // Styles
 import styles from './skillCategory.module.scss';
-
+// Prop Types
 interface Props {
 	skills: any;
 	category: string;

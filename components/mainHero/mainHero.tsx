@@ -1,18 +1,19 @@
-import styles from "./mainHero.module.scss";
+// Styles/Assets
+import styles from './mainHero.module.scss';
 
 const MainHero = () => {
 	return (
 		<>
-			<svg width="0" height="0">
+			<svg width='0' height='0'>
 				<defs>
-					<clipPath id="myCurve" clipPathUnits="objectBoundingBox">
+					<clipPath id='myCurve' clipPathUnits='objectBoundingBox'>
 						<path
-							d="M 0,1
+							d='M 0,1
                             L 0,0
                             L 1,0
                             L 1,0.3
                             C 0.8 .3, .2 .75, 0 .7
-                            Z"
+                            Z'
 						/>
 					</clipPath>
 				</defs>
