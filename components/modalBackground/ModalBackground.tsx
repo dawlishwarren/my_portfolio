@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 // Styles/Assets
-import styles from './backdrop.module.scss';
+import styles from './modalBackground.module.scss';
 // Prop types
 interface Props {
 	onClick: React.MouseEventHandler;
@@ -10,7 +10,7 @@ interface Props {
 }
 
 // Backdrop for a modal component
-const Backdrop = ({ onClick, children }: Props) => {
+const ModalBackground = ({ onClick, children }: Props) => {
 	return (
 		<motion.div
 			className={styles.backdrop}
@@ -23,4 +23,4 @@ const Backdrop = ({ onClick, children }: Props) => {
 	);
 };
 
-export default Backdrop;
+export default ModalBackground;
