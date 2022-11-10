@@ -30,6 +30,17 @@
 	);
 }
 
+@mixin skillHover($color) {
+	&:hover {
+		.icon {
+			color: $color;
+		}
+		.name {
+			color: $color;
+		}
+	}
+}
+
 @mixin flex-center {
 	display: flex;
 	align-items: center;

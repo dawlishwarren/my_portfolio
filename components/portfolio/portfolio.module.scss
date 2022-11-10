@@ -1,9 +1,121 @@
+@import 'styles/settings/_settings';
+
 .portfolio_section {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	width: 100vw;
-	height: 100vh;
-	background-color: red;
+	min-height: 100vh;
+	background-color: $color-silver;
 	color: #fff;
+	.header_wrapper {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		min-height: fit-content;
+		padding-bottom: 1rem;
+		color: $color-secondary;
+		.progress {
+			align-self: center;
+			margin-top: min(1.5vh, 0.3rem);
+			margin-left: 2px;
+			margin-right: -1px;
+
+			.bg {
+				opacity: 0.3;
+				fill: $color-secondary;
+			}
+
+			.indicator {
+				stroke: red;
+			}
+			.indictator path {
+				stroke-dashoffset: 0;
+				stroke-width: 15%;
+				fill: none;
+			}
+		}
+	}
+	.carousel_container {
+		position: relative;
+		.carousel {
+			display: flex;
+			list-style: none;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			flex: 0 0 600px;
+			margin: 0 auto;
+			.list_item {
+				flex: 0 0 200px;
+				background: white;
+				border: 1px solid black;
+				border-radius: 12.5px;
+				margin: 0 20px 0 0;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+				cursor: pointer;
+				&::after {
+					content: '';
+					border: 2px solid #5c777e;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					position: absolute;
+					opacity: 0;
+					transition: all 0.5s ease-in;
+				}
+				.slide_title {
+					flex-wrap: wrap;
+					text-align: center;
+					color: $color-secondary;
+					padding-top: 15px;
+				}
+				.slide_image {
+					transform: scale(1);
+					transition: all 0.5s ease-in;
+				}
+				&:hover {
+					&::after {
+						left: 15px;
+						right: 15px;
+						bottom: 15px;
+						top: 15px;
+						opacity: 1;
+						border-radius: 12.5px;
+					}
+					.slide_image {
+						transform: scale(1.2);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.portfolio_section {
+		.carousel_container {
+			.carousel {
+				.list_item {
+					flex: 0 0 300px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 900px) {
+	.portfolio_section {
+		.carousel_container {
+			max-width: 60rem;
+			margin: 0 auto;
+		}
+		.carousel {
+			.list_item {
+				flex: 0 0 350px !important;
+			}
+		}
+	}
 }

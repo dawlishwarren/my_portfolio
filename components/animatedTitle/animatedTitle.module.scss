@@ -26,8 +26,20 @@
 	z-index: 2;
 	opacity: 0.3;
 }
+.inactive {
+	letter-spacing: -3px;
+	display: inline-block;
+	white-space: pre;
+	transform: skewX(0);
+	transition: all 1s ease-in-out;
+}
 .active {
-	text-decoration: underline;
-	font-size: 5.5rem;
+	display: inline-block;
+	white-space: pre;
+	transition: all 0.5s ease-in-out;
+	transform: scaleX(1.3);
+	transform: skewX(-12.5deg);
+	text-decoration-line: underline;
+	text-decoration-thickness: 4px;
 	mix-blend-mode: color-burn;
 }
