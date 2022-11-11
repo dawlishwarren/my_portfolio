@@ -1,3 +1,4 @@
+@import 'styles/settings/_settings';
 .nav_button,
 .social_button {
 	outline: none;
@@ -23,5 +24,19 @@
 
 .social_button {
 	right: calc(10vw - 25px);
-	color: black;
+}
+
+[data-theme='light'] {
+	.nav_button,
+	.social_button {
+		color: $color-darkest;
+		stroke: $color-darkest;
+	}
+}
+[data-theme='dark'] {
+	.nav_button,
+	.social_button {
+		color: $color-lightest;
+		stroke: $color-lightest;
+	}
 }

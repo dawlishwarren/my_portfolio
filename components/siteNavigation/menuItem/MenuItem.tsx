@@ -1,8 +1,9 @@
 // React/Next/NPM
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 // Styles/Assets
-import styles from "./menuItem.module.scss";
+import styles from './menuItem.module.scss';
+// import { color1 } from '../../../styles/settings/_colors.module.scss';
 
 const variants = {
 	open: {
@@ -14,7 +15,7 @@ const variants = {
 		},
 	},
 	closed: {
-		x: "-100%",
+		x: '-100%',
 		y: 50,
 		opacity: 0,
 		transition: {
@@ -23,7 +24,7 @@ const variants = {
 	},
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
 	const style = { border: `2px solid ${colors[i]}` };
@@ -38,7 +39,7 @@ const MenuItem = ({ i, name, href, icon }: any) => {
 					{icon}
 				</div>
 				<Link href={`#${href}`}>
-					<a className={styles.link}>
+					<a className={styles.link} style={{ color: colors[i] }}>
 						{name}
 						<motion.div
 							className={styles.link_after}

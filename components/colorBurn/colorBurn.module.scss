@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 .color_burn_wrapper {
 	--max-width: 50rem;
@@ -15,10 +15,7 @@
 		max-width: 16ch;
 		line-height: 1.1;
 		letter-spacing: -6px;
-		opacity: 0.75;
-		color: $color-dark;
 		z-index: -2;
-
 		// Color Burn Element
 		&_burn {
 			position: absolute;
@@ -30,19 +27,43 @@
 			max-width: 16ch;
 			line-height: 1.1;
 			letter-spacing: -6px;
-			opacity: 0.75;
-			color: $color-darkest;
 			mix-blend-mode: color-burn;
 			z-index: 1;
 		}
+		// Low opacity dark overlay element
+		&[data-overlay] {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			z-index: 1;
+		}
 	}
-	// Low opacity dark overlay element
-	.burn_element[data-overlay] {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		opacity: 0.3;
+}
+
+[data-theme='light'] {
+	.burn_element {
 		color: $color-dark;
-		z-index: 1;
+		opacity: 0.75;
+		&_burn {
+			color: $color-darkest;
+			opacity: 0.75;
+		}
+		&[data-overlay] {
+			color: $color-dark;
+			opacity: 0.3;
+		}
+	}
+}
+[data-theme='dark'] {
+	.burn_element {
+		color: $color-light;
+		opacity: 0.7;
+		&_burn {
+			color: $color-lavender;
+			opacity: 1;
+		}
+		&[data-overlay] {
+			color: $color-lightest;
+		}
 	}
 }

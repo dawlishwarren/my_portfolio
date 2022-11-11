@@ -20,8 +20,19 @@
 }
 .gradient {
 	@include flex-center;
-	@include gradient(background);
-	@include gradient-animation;
 	height: 100%;
 	width: 100%;
+}
+
+[data-theme='light'] {
+	.gradient {
+		@include gradient(background);
+		@include gradient-animation;
+	}
+}
+[data-theme='dark'] {
+	.gradient {
+		@include gradient_blue(background);
+		@include gradient-animation;
+	}
 }

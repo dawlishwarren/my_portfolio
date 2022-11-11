@@ -1,5 +1,5 @@
 // Imports
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 // Containers
 // Fullscreen wrapper
@@ -7,7 +7,6 @@
 	width: 100vw;
 	height: 100vh;
 	position: relative;
-	background-color: #f6f6f6;
 }
 // Content (Title/Image) container
 .content_container {
@@ -68,8 +67,8 @@
 		margin: 0 5vw;
 		padding: 5vh 0;
 		grid-template-areas:
-			"title title"
-			". image";
+			'title title'
+			'. image';
 		.title_container {
 			grid-area: title;
 			width: 90vw;
@@ -105,11 +104,6 @@
 		right: 0;
 		bottom: 12.5%;
 		padding-bottom: 20%;
-		@include gradient(
-			background-image,
-			linear-gradient($color-dark, $color-dark)
-		);
-		@include gradient-animation;
 		background-origin: padding-box;
 		background-clip: content-box border-box;
 		border-radius: 50%;
@@ -118,5 +112,27 @@
 			border-radius: 50%;
 		}
 		filter: drop-shadow(0px 0px 0.75rem rgba(0, 0, 0, 0.5));
+	}
+}
+
+[data-theme='light'] {
+	.main_section {
+		background-color: #f6f6f6;
+	}
+	.image_container {
+		@include gradient(
+			background-image,
+			linear-gradient($color-dark, $color-dark)
+		);
+		@include gradient-animation;
+	}
+}
+[data-theme='dark'] {
+	.main_section {
+		background-color: $color-blue-darker;
+	}
+	.image_container {
+		@include gradient_blue(background-image);
+		@include gradient-animation;
 	}
 }

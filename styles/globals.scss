@@ -1,4 +1,5 @@
 @import 'styles/settings/settings';
+// Global settings
 html,
 body {
 	padding: 0;
@@ -8,64 +9,35 @@ body {
 	overflow: hidden;
 	scroll-behavior: smooth;
 }
-
-a {
-	color: inherit;
-	text-decoration: none;
+:root {
+	/* Your default theme */
+	$color-background: white;
+	$color-text: black;
 }
+// [data-theme='dark'] {
+// 	$color-background: $color-lightest;
+// 	$color-text: $color-darkest;
+// }
 
-* {
-	box-sizing: border-box;
-}
 // Colours
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
-	body {
-		$color-primary: $color-dark;
-		color: $color-primary;
-		background: black;
-	}
+	$color-background: black;
+	$color-text: blue;
 }
-@media (prefers-color-scheme: light) {
-	html {
-		color-scheme: light;
-	}
-	body {
-		// Variables/Settings
-		$color-text: $color-charcoal;
-		$color-white: $color-lightest;
 
-		// Implementation
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		a,
-		p {
-			font-family: 'Work Sans', 'Segoe UI', sans-serif;
-			color: $color-text;
-		}
-		h1 {
-			color: $color-text;
-		}
-		background: $color-white;
-	}
-}
-// Fonts
-
-// Settings
-
+// Style resets
 html {
-	box-sizing: border-box;
 	font-size: 16px;
 }
+// Box sizing
+html,
 *,
 *:before,
 *:after {
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 body,
 h1,
@@ -81,14 +53,6 @@ ul {
 	padding: 0;
 	font-weight: normal;
 	font-family: 'Work Sans', 'Segoe UI', sans-serif;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: bold;
 }
 
 ol,
@@ -106,6 +70,7 @@ a {
 	text-decoration: none;
 }
 
+// Scroll container classes
 .container {
 	padding: 0;
 	margin: 0 auto;

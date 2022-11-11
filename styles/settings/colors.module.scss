@@ -1,0 +1,16 @@
+@import './colors';
+$color-lavender: #e6e6ff;
+$color-blue-lighter: #a7c6da;
+$color-blue-light: #0586ff;
+$color-blue-dark: #0000a8;
+$color-blue-darker: #141c3a;
+$color-blue-darkest: #000029;
+$color-lightest: #f5f9e9;
+
+:export {
+	colorOne: $color-lavender;
+	color2: $color-blue-dark;
+	color3: $color-blue-light;
+	color4: $color-blue-lighter;
+	color5: $color-lightest;
+}
