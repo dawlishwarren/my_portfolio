@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .portfolio_section {
 	display: flex;
@@ -6,15 +6,12 @@
 	justify-content: center;
 	width: 100vw;
 	min-height: 100vh;
-	background-color: $color-silver;
-	color: #fff;
 	.header_wrapper {
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
 		min-height: fit-content;
 		padding-bottom: 1rem;
-		color: $color-secondary;
 		.progress {
 			align-self: center;
 			margin-top: min(1.5vh, 0.3rem);
@@ -23,7 +20,6 @@
 
 			.bg {
 				opacity: 0.3;
-				fill: $color-secondary;
 			}
 
 			.indicator {
@@ -57,7 +53,7 @@
 				position: relative;
 				cursor: pointer;
 				&::after {
-					content: '';
+					content: "";
 					border: 2px solid #5c777e;
 					left: 0;
 					right: 0;
@@ -70,7 +66,7 @@
 				.slide_title {
 					flex-wrap: wrap;
 					text-align: center;
-					color: $color-secondary;
+					color: $color-light-secondary;
 					padding-top: 15px;
 				}
 				.slide_image {
@@ -115,6 +111,36 @@
 		.carousel {
 			.list_item {
 				flex: 0 0 350px !important;
+			}
+		}
+	}
+}
+
+[data-theme="light"] {
+	.portfolio_section {
+		background-color: rgba($color-light-primary, 0.75);
+
+		color: $color-light-text-white;
+		.header_wrapper {
+			color: $color-light-text-white;
+			.progress {
+				.bg {
+					fill: $color-light-secondary;
+				}
+			}
+		}
+	}
+}
+[data-theme="dark"] {
+	.portfolio_section {
+		background-color: $color-dark-mid;
+		color: $color-dark-text;
+		.header_wrapper {
+			color: $color-dark-secondary;
+			.progress {
+				.bg {
+					fill: $color-dark-secondary;
+				}
 			}
 		}
 	}

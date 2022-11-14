@@ -13,10 +13,10 @@
 	#{$property}: linear-gradient(
 		-45deg,
 		$color-blue-darker,
-		$color-blue-dark,
+		$color-blue,
 		$color-blue-light,
-		$color-blue-lighter,
-		$color-lightest
+		$color-teal,
+		$color-teal-light
 	);
 }
 @mixin gradient_light($property) {

@@ -8,10 +8,13 @@ $color-green-darker: #162521;
 // Secondary shades
 $color-lavender: #e6e6ff;
 $color-blue-lighter: #a7c6da;
+$color-teal-light: #21e6c1;
+$color-teal: #278ea5;
 $color-blue-light: #0586ff;
+$color-blue: #1f4287;
 $color-blue-dark: #0000a8;
 $color-blue-darker: #141c3a;
-$color-blue-darkest: #000029;
+$color-blue-darkest: #071e3d;
 
 // Complimentary Shades
 $color-yellow-dark: #f1db4b;
@@ -27,11 +30,6 @@ $color-charcoal: #2c4251;
 $color-dark: #363645;
 $color-darkest: #171614;
 
-// Settings
-$color-secondary: $color-blue-light;
-$color-white: $color-lightest;
-$color-dark: $color-dark;
-
 // Skills
 $color-plan: $color-red-dark;
 $color-design: $color-green-light;
@@ -44,3 +42,20 @@ $color-gradient-2: $color-blue-light;
 $color-gradient-3: $color-red-dark;
 $color-gradient-4: $color-yellow-dark;
 $color-gradient-5: $color-orange;
+
+// Light Mode Shades:
+$color-light-primary: $color-green-light;
+$color-light-secondary: $color-blue-light;
+$color-light-background: $color-light;
+$color-light-accent: $color-yellow-dark;
+$color-light-text-black: $color-darkest;
+$color-light-text-white: $color-lightest;
+
+// Dark Mode Shades:
+$color-dark-primary: $color-orange;
+$color-dark-secondary: $color-green;
+$color-dark-background: $color-blue-darkest;
+$color-dark-mid: $color-blue;
+$color-dark-accent-1: $color-teal;
+$color-dark-accent-2: $color-teal-light;
+$color-dark-text: $color-lightest;

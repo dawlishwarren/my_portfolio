@@ -1,4 +1,4 @@
-@import 'styles/settings/settings';
+@import "styles/settings/settings";
 // Global settings
 html,
 body {
@@ -24,8 +24,6 @@ body {
 	html {
 		color-scheme: dark;
 	}
-	$color-background: black;
-	$color-text: blue;
 }
 
 // Style resets
@@ -52,7 +50,7 @@ ul {
 	margin: 0;
 	padding: 0;
 	font-weight: normal;
-	font-family: 'Work Sans', 'Segoe UI', sans-serif;
+	font-family: "Work Sans", "Segoe UI", sans-serif;
 }
 
 ol,

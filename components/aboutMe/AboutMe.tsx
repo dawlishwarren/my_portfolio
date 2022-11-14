@@ -1,12 +1,15 @@
 // React/Next/NPM
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 // Components
-import AnimatedTitle from '../animatedTitle/AnimatedTitle';
+import AnimatedTitle from "../animatedTitle/AnimatedTitle";
 // Styles/Assets
-import styles from './aboutMe.module.scss';
-import Tilt from '../../assets/tilt.svg';
-import biopic from '../../public/bio.jpeg';
+import styles from "./aboutMe.module.scss";
+import Tilt from "../../assets/tilt.svg";
+import Arrow from "../../assets/arrow.svg";
+import MobileArrow from "../../assets/mobileArrow.svg";
+import biopic from "../../public/bio.jpeg";
+import { useEffect, useState } from "react";
 
 const bioSentences = [
 	`Hello world, lorem ipsum dolor sit amet… just kidding! I'm a Leeds
@@ -24,18 +27,37 @@ const bioSentences = [
 
 // Component Render
 const AboutMe = () => {
+	// Media query state to only show svg arrow on mobile and tablet
+	const [isDesktop, setDesktop] = useState(false);
+	useEffect(() => {
+		if (window.innerWidth > 900) {
+			setDesktop(true);
+		} else {
+			setDesktop(false);
+		}
+		const updateMedia = () => {
+			if (window.innerWidth > 900) {
+				setDesktop(true);
+			} else {
+				setDesktop(false);
+			}
+		};
+		window.addEventListener("resize", updateMedia);
+		return () => window.removeEventListener("resize", updateMedia);
+	}, []);
 	return (
-		<section id='about' className={`scroll-area ${[styles.about_section]}`}>
+		<section id="about" className={`scroll-area ${[styles.about_section]}`}>
 			{/* SVG background element */}
 			<Tilt className={styles.tilt} />
 			{/* Title */}
 			<header className={styles.header_wrapper}>
-				<AnimatedTitle str='About Me' />
+				<AnimatedTitle str="About Me" />
+				{!isDesktop && <MobileArrow className={styles.arrow} />}
 			</header>
 			{/* Content */}
 			<div className={styles.content_container}>
 				<div className={styles.image_container}>
-					<Image src={biopic} objectFit='fill' alt='Picture of author' />
+					<Image src={biopic} objectFit="fill" alt="Picture of author" />
 				</div>
 				{/* Sentences mapped to animated divs */}
 				<motion.div className={styles.bio_container}>

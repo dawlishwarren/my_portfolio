@@ -1,21 +1,20 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 .skills_section {
 	margin-top: -14rem;
-	padding: 5rem 1.5rem;
 	vertical-align: baseline;
+	width: 100vw;
+	height: fit-content;
 }
 .container {
 	flex-grow: 1;
 	margin: 0 auto;
 	position: relative;
 	max-width: 1200px;
+	padding-top: 1.5rem;
 
 	.box {
 		padding: 0;
 		border-radius: 12px;
-		background-color: #ffffff;
-		box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
-		color: #141c3a;
 		display: block;
 		.content {
 			.columns {
@@ -30,7 +29,6 @@
 				.column {
 					padding: 1rem;
 					border-bottom: 0px solid #e6ecf8;
-
 					display: block;
 					flex-basis: 0;
 					flex-grow: 1;
@@ -46,7 +44,6 @@
 					.primary {
 						margin-top: 50px;
 						margin-bottom: 1rem;
-						// color: $color-primary;
 					}
 					.plan {
 						color: $color-plan;
@@ -64,21 +61,51 @@
 }
 
 @media (min-width: 600px) {
-	.container {
-		.box {
-			.content {
-				.columns {
-					display: flex;
-					flex-direction: row;
-					align-content: normal;
-					justify-content: center;
-					align-items: normal;
-					padding-block: 2rem;
-					.column {
-						border-right: 1px solid #e6ecf8;
+	.skills_section {
+		height: 100vh;
+		.container {
+			.box {
+				.content {
+					.columns {
+						display: flex;
+						flex-direction: row;
+						align-content: normal;
+						justify-content: center;
+						align-items: normal;
+						padding-block: 2rem;
+						.column {
+							border-right: 1px solid #e6ecf8;
+							&:last-child {
+								border-right: none;
+							}
+						}
 					}
 				}
 			}
+		}
+	}
+}
+@media (min-width: 900px) {
+}
+
+[data-theme="light"] {
+	.skills_section {
+		background: none;
+		.box {
+			background-color: #f6f6f6;
+			color: #141c3a;
+			box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+		}
+	}
+}
+[data-theme="dark"] {
+	.skills_section {
+		background-color: $color-blue-darkest;
+
+		.box {
+			background-color: $color-blue-darker;
+			color: rgba($color: $color-dark-text, $alpha: 0.7);
+			box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 2px #e6ecf8;
 		}
 	}
 }

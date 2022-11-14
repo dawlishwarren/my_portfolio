@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 .modal {
 	width: clamp(50%, 700px, 90%);
 	height: clamp(50%, 55vh + 10rem, 75%);
@@ -9,8 +9,6 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	background-color: $color-lavender;
-	color: $color-charcoal;
 
 	.close_wrapper {
 		width: 100%;
@@ -25,5 +23,22 @@
 			margin: 0.5rem;
 			cursor: pointer;
 		}
+	}
+}
+
+@media (min-width: 600px) {
+	.modal {
+		max-height: 100vh;
+	}
+}
+
+[data-theme="light"] {
+	.modal {
+		background-color: $color-grey;
+	}
+}
+[data-theme="dark"] {
+	.modal {
+		background-color: $color-dark-background;
 	}
 }

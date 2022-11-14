@@ -27,3 +27,18 @@
 		font-weight: 600;
 	}
 }
+
+[data-theme="light"] {
+	.scroll_down {
+		> * {
+			color: $color-light-text-black;
+		}
+	}
+}
+[data-theme="dark"] {
+	.scroll_down {
+		> * {
+			color: $color-light-text-white;
+		}
+	}
+}

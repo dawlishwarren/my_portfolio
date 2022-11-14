@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .about_section {
 	display: flex;
@@ -8,12 +8,9 @@
 	max-width: 100vw;
 	max-height: fit-content;
 	padding-bottom: 240px;
-	background-color: $color-blue-light;
-	color: $color-lightest;
+
 	// SVG
 	.tilt {
-		filter: drop-shadow(0px 14px 7px rgba(0, 0, 0, 0.5));
-		color: #f6f6f6;
 		position: absolute;
 		top: -1px;
 		left: 0;
@@ -25,6 +22,16 @@
 		padding-top: 20vh;
 		padding-left: 1rem;
 		align-self: flex-start;
+		align-items: center;
+		margin-bottom: -4rem;
+		display: flex;
+		width: 100%;
+		.arrow {
+			width: 10rem;
+			height: 10rem;
+			padding: 1rem;
+			margin-left: -3rem;
+		}
 	}
 	.content_container {
 		display: flex;
@@ -54,6 +61,12 @@
 		.header_wrapper {
 			padding-left: 3rem;
 			padding-top: 15vh;
+			margin-bottom: -2rem;
+			.arrow {
+				width: 12.5rem;
+				height: 12.5rem;
+				margin-left: -4rem;
+			}
 		}
 		.content_container {
 			.bio_container {
@@ -67,7 +80,10 @@
 @media (min-width: 900px) {
 	.about_section {
 		max-height: 100vh;
-
+		.header_wrapper {
+			padding-left: 10vw !important;
+			margin-bottom: 1rem;
+		}
 		.content_container {
 			flex-direction: row;
 			max-width: 60rem;
@@ -79,6 +95,7 @@
 				align-self: flex-start;
 				min-width: 20vw;
 				padding: 0;
+				filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
 			}
 			.bio_container {
 				text-align: justify;
@@ -89,6 +106,45 @@
 					border-radius: 12.5px;
 					margin-bottom: 1rem;
 					padding: 1rem;
+				}
+			}
+		}
+	}
+}
+[data-theme="light"] {
+	.about_section {
+		background-color: rgba($color-light-primary, 0.75);
+		color: $color-light-text-white;
+		.tilt {
+			filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
+			fill: $color-light-text-white;
+		}
+		.header_wrapper {
+			.arrow {
+				stroke: $color-light-text-white;
+				fill: $color-light-text-white;
+			}
+		}
+	}
+}
+[data-theme="dark"] {
+	.about_section {
+		background-color: $color-dark-mid;
+		color: $color-dark-text;
+		.tilt {
+			filter: drop-shadow(0px 5px 3px rgba(97, 95, 95, 0.5));
+			fill: $color-dark-background;
+		}
+		.header_wrapper {
+			.arrow {
+				stroke: $color-dark-text;
+				fill: $color-dark-text;
+			}
+		}
+		.content_container {
+			.image_container {
+				img {
+					filter: brightness(0.8) contrast(1.1);
 				}
 			}
 		}

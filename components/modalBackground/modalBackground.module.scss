@@ -1,13 +1,33 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .backdrop {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba($color: $color-backdrop, $alpha: 0.8);
-	border: 1px solid rgba($color: $color-backdrop, $alpha: 0.8);
-	border-radius: 12px;
+	height: 100vh;
+	width: 100vw;
+	overflow: auto;
+	z-index: 2;
 	@include flex-center();
+}
+
+@media (min-width: 600px) {
+	.backdrop {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border: 1px solid rgba($color: $color-backdrop, $alpha: 0.8);
+		border-radius: 12px;
+	}
+}
+
+[data-theme="light"] {
+	.backdrop {
+		background: rgba($color: $color-backdrop, $alpha: 0.8);
+	}
+}
+[data-theme="dark"] {
+	.backdrop {
+		background: rgba($color: $color-dark-background, $alpha: 0.8);
+	}
 }

@@ -6,7 +6,7 @@ const ScrollDown = () => {
 		<div className={styles.scroll_down}>
 			{/* <FiCornerLeftDown /> */}
 			<CgArrowLongDown />
-			<p>(Scroll down to learn all about me)</p>
+			<p>(Scroll down to find out more)</p>
 			<CgArrowLongDown />
 		</div>
 	);

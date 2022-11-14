@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .icons_container {
 	.skills_list {
@@ -21,7 +21,7 @@
 			.icon {
 				width: min(2.5em, 25vw);
 				height: min(2.5em, 25vh);
-				border: 2px solid black;
+				border: 2px solid;
 				font-size: clamp(0.7rem, 10% + 1.2rem, 5rem);
 				border-radius: 50%;
 				padding: 0.75rem;
@@ -44,7 +44,7 @@
 
 		.icon {
 			border-radius: 50%;
-			border: 2px solid black;
+			border: 2px solid;
 			box-sizing: content-box;
 			padding: 0.5rem;
 		}
