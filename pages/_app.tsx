@@ -5,7 +5,7 @@ import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<ThemeProvider>
+		<ThemeProvider enableSystem={true}>
 			<Head>
 				<link rel='icon' href='my_favicon.ico' />
 				<link
