@@ -52,10 +52,9 @@ $color-light-text-black: $color-darkest;
 $color-light-text-white: $color-lightest;
 
 // Dark Mode Shades:
-$color-dark-primary: $color-orange;
-$color-dark-secondary: $color-green;
-$color-dark-background: $color-blue-darkest;
-$color-dark-mid: $color-blue;
-$color-dark-accent-1: $color-teal;
-$color-dark-accent-2: $color-teal-light;
-$color-dark-text: $color-lightest;
+$color-dark-text-primary: rgba(#f9ffe5, 0.87);
+$color-dark-text-secondary: rgba(#f9ffe5, 0.6);
+$color-dark-text-disabled: rgba(#f9ffe5, 0.3);
+$color-dark-background: #121212;
+$color-dark-elevated-secondary: #1e1e1e;
+$color-dark-elevated-primary: #2e2e2e;

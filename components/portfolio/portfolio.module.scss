@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 
 .portfolio_section {
 	display: flex;
@@ -43,7 +43,6 @@
 			margin: 0 auto;
 			.list_item {
 				flex: 0 0 200px;
-				background: white;
 				border: 1px solid black;
 				border-radius: 12.5px;
 				margin: 0 20px 0 0;
@@ -53,7 +52,7 @@
 				position: relative;
 				cursor: pointer;
 				&::after {
-					content: "";
+					content: '';
 					border: 2px solid #5c777e;
 					left: 0;
 					right: 0;
@@ -116,10 +115,9 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.portfolio_section {
 		background-color: rgba($color-light-primary, 0.75);
-
 		color: $color-light-text-white;
 		.header_wrapper {
 			color: $color-light-text-white;
@@ -129,17 +127,34 @@
 				}
 			}
 		}
+		.carousel_container {
+			.carousel {
+				.list_item {
+					background-color: $color-light-primary;
+				}
+			}
+		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.portfolio_section {
-		background-color: $color-dark-mid;
-		color: $color-dark-text;
+		background-color: $color-dark-background;
+		color: $color-dark-text-primary;
 		.header_wrapper {
-			color: $color-dark-secondary;
+			color: $color-dark-text-secondary;
 			.progress {
 				.bg {
-					fill: $color-dark-secondary;
+					fill: $color-dark-text-secondary;
+				}
+			}
+		}
+		.carousel_container {
+			.carousel {
+				.list_item {
+					background-color: $color-dark-elevated-secondary;
+					&:hover {
+						background-color: $color-backdrop;
+					}
 				}
 			}
 		}

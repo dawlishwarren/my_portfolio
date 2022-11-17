@@ -1,9 +1,9 @@
-@import "styles/settings/_settings";
+@import 'styles/settings/_settings';
 .skills_section {
-	margin-top: -14rem;
 	vertical-align: baseline;
 	width: 100vw;
 	height: fit-content;
+	isolation: isolate;
 }
 .container {
 	flex-grow: 1;
@@ -62,7 +62,9 @@
 
 @media (min-width: 600px) {
 	.skills_section {
-		height: 100vh;
+		height: fit-content;
+		margin-top: -15vh;
+
 		.container {
 			.box {
 				.content {
@@ -74,7 +76,7 @@
 						align-items: normal;
 						padding-block: 2rem;
 						.column {
-							border-right: 1px solid #e6ecf8;
+							border-right: 1px solid;
 							&:last-child {
 								border-right: none;
 							}
@@ -88,7 +90,7 @@
 @media (min-width: 900px) {
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.skills_section {
 		background: none;
 		.box {
@@ -98,14 +100,27 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.skills_section {
-		background-color: $color-blue-darkest;
-
+		background-color: $color-dark-background;
 		.box {
-			background-color: $color-blue-darker;
-			color: rgba($color: $color-dark-text, $alpha: 0.7);
-			box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 2px #e6ecf8;
+			background-color: $color-dark-elevated-primary;
+			color: $color-dark-text-secondary;
+			box-shadow: 0 1px 5px 0 $color-dark-text-disabled,
+				0 0 0 2px $color-dark-text-secondary;
+			.content {
+				.columns {
+					.column {
+						border-color: $color-dark-text-disabled;
+						.primary {
+							color: $color-dark-text-primary;
+						}
+						> p {
+							color: $color-dark-text-primary;
+						}
+					}
+				}
+			}
 		}
 	}
 }

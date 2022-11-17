@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 // Components
-import MenuItem from '../siteNavigation/menuItem/MenuItem';
+import MenuItem from '../menuItem/MenuItem';
 // Styles/Assets
 import styles from './sidebar.module.scss';
 import {

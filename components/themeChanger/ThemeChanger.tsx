@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import styles from './themeChanger.module.scss';
+import { GrMoon, GrSun, GrSystem } from 'react-icons/gr';
 
 interface Props {
 	isMouse: boolean;
@@ -56,19 +57,19 @@ const ThemeChanger = ({ isMouse }: Props) => {
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value='system'>
-					System
+					<GrSystem size={30} />
 				</button>
 				<button
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value='light'>
-					Light
+					<GrSun size={30} />
 				</button>
 				<button
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value='dark'>
-					Dark
+					<GrMoon size={30} />
 				</button>
 			</div>
 		</motion.div>

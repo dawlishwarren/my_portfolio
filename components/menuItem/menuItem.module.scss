@@ -3,21 +3,34 @@
 .li {
 	list-style: none;
 	margin-bottom: 20px;
+	width: 100vw;
 	display: flex;
-	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	padding-top: 1rem;
+	border-top: 1px solid black;
 	cursor: pointer;
+	&:first-child {
+		border-top: none;
+	}
+	&:last-child {
+		border-bottom: 1px solid black;
+	}
 	.icon {
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
 		flex: 40px 0;
-		margin-right: 20px;
+		margin-left: 2rem;
 		display: flex;
 		align-items: center;
+		align-self: flex-start;
 		justify-content: center;
 	}
 	.link {
 		position: relative;
+		margin: auto;
+
 		&:hover > .link_after {
 			transform: scaleX(1);
 			transform-origin: 'bottom left';
@@ -33,5 +46,11 @@
 			width: '100%';
 			height: '2px';
 		}
+	}
+}
+
+@media (min-width: 900px) {
+	.li {
+		width: 300px;
 	}
 }

@@ -6,11 +6,12 @@
 
 .sub_menu {
 	position: absolute;
-	top: 30px;
-	padding: 15px;
-	// background-color: #ccc;
+	top: 100%;
+	left: 25vw;
+	width: 50vw;
 	border-radius: 6px;
 	transform-origin: 50% -30px;
+	z-index: 3;
 	&_background {
 		position: absolute;
 		top: 0;
@@ -29,5 +30,12 @@
 		padding-inline: 1rem;
 		cursor: pointer;
 		z-index: 2;
+	}
+}
+
+@media (min-width: 900px) {
+	.sub_menu {
+		left: 0;
+		width: 100%;
 	}
 }

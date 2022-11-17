@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 // Components
-import MenuItem from '../siteNavigation/menuItem/MenuItem';
+import MenuItem from '../menuItem/MenuItem';
 import ThemeChanger from '../themeChanger/ThemeChanger';
 
 // Styles/Assets
@@ -86,11 +86,8 @@ const Sidebar = ({ toggle }: Props) => {
 			{/* Background */}
 			<motion.div className={styles.background} variants={backgroundVariants} />
 			{/* Content */}
-			<ul className={styles.ul}>
-				<motion.ul
-					className={styles.nav_ul}
-					variants={linksVariants}
-					onClick={toggle}>
+			<motion.ul className={styles.ul} variants={linksVariants}>
+				<motion.ul className={styles.nav_ul} onClick={toggle}>
 					{links.map((link) => (
 						<MenuItem
 							i={link.index}
@@ -103,6 +100,7 @@ const Sidebar = ({ toggle }: Props) => {
 				</motion.ul>
 				{/* WRAPPER */}
 				<motion.ul
+					className={styles.theme_ul}
 					variants={linksVariants}
 					onMouseEnter={toggleMouseMenu}
 					onMouseLeave={toggleMouseMenu}>
@@ -116,7 +114,7 @@ const Sidebar = ({ toggle }: Props) => {
 					{/* SUB-MENU */}
 					{isMouse && <ThemeChanger isMouse />}
 				</motion.ul>
-			</ul>
+			</motion.ul>
 		</>
 	);
 };
