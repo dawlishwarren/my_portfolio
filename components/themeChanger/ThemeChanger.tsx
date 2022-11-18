@@ -58,18 +58,21 @@ const ThemeChanger = ({ isMouse }: Props) => {
 					onClick={handleClick}
 					value='system'>
 					<GrSystem size={30} />
+					System
 				</button>
 				<button
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value='light'>
 					<GrSun size={30} />
+					Light
 				</button>
 				<button
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value='dark'>
 					<GrMoon size={30} />
+					Dark
 				</button>
 			</div>
 		</motion.div>

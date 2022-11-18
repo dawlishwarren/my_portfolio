@@ -24,7 +24,14 @@ const variants = {
 	},
 };
 
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
+const colors = [
+	'#eb4511',
+	'#00a85f',
+	'#f1db4b',
+	'#278ea5',
+	'#0586ff',
+	'#0000a8',
+];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
 	const style = { border: `2px solid ${colors[i]}` };

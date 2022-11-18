@@ -4,9 +4,10 @@
 	list-style: none;
 	margin-bottom: 20px;
 	width: 100vw;
+	min-height: 6vh;
 	display: flex;
 	align-content: center;
-	justify-content: space-between;
+	align-items: center;
 	padding-top: 1rem;
 	border-top: 1px solid black;
 	cursor: pointer;
@@ -24,18 +25,13 @@
 		margin-left: 2rem;
 		display: flex;
 		align-items: center;
-		align-self: flex-start;
 		justify-content: center;
+		align-self: flex-start;
 	}
 	.link {
 		position: relative;
-		margin: auto;
-
-		&:hover > .link_after {
-			transform: scaleX(1);
-			transform-origin: 'bottom left';
-		}
-		.link_after {
+		margin-inline: auto;
+		&_after {
 			transform: scaleX(0);
 			transform-origin: 'bottom right';
 			transition: transform 0.25s ease-in;
@@ -45,6 +41,10 @@
 			left: '0';
 			width: '100%';
 			height: '2px';
+		}
+		&:hover > .link_after {
+			transform: scaleX(1);
+			transform-origin: 'bottom left';
 		}
 	}
 }
