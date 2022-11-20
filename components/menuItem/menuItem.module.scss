@@ -1,19 +1,15 @@
 @import 'styles/settings/_settings';
 
-.li {
+.menu_item {
+	background: rgba(255, 255, 255, 0.1);
 	list-style: none;
-	margin-bottom: 20px;
-	width: 100vw;
-	min-height: 6vh;
+	width: 300px;
+	min-height: calc(100vh / 8);
+	border-radius: 10px;
 	display: flex;
 	align-content: center;
 	align-items: center;
-	padding-top: 1rem;
-	border-top: 1px solid black;
 	cursor: pointer;
-	&:first-child {
-		border-top: none;
-	}
 	&:last-child {
 		border-bottom: 1px solid black;
 	}

@@ -34,27 +34,32 @@ const colors = [
 ];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
-	const style = { border: `2px solid ${colors[i]}` };
+	const style = { borderBottom: `2px solid ${colors[i]}` };
 	return (
 		<motion.li
-			className={styles.li}
+			className={styles.menu_item}
 			variants={variants}
 			whileHover={{ scale: 1.1 }}
 			whileTap={{ scale: 0.95 }}>
-			<div className={styles.icon} style={style}>
-				{icon}
+			<div className={styles.border} />
+			<div className={styles.content}>
+				{icon && (
+					<div className={styles.icon} style={style}>
+						{icon}
+					</div>
+				)}
+				<Link href={`#${href}`}>
+					<a className={styles.link} style={{ color: colors[i] }}>
+						{name}
+						<motion.div
+							className={styles.link_after}
+							style={{
+								backgroundColor: colors[i],
+							}}
+						/>
+					</a>
+				</Link>
 			</div>
-			<Link href={`#${href}`}>
-				<a className={styles.link} style={{ color: colors[i] }}>
-					{name}
-					<motion.div
-						className={styles.link_after}
-						style={{
-							backgroundColor: colors[i],
-						}}
-					/>
-				</a>
-			</Link>
 		</motion.li>
 	);
 };
