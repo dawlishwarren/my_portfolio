@@ -78,11 +78,11 @@ const Portfolio = () => {
 				<svg
 					id={styles.progress}
 					className={styles.progress}
-					width="4rem"
-					height="4rem"
+					width="min(8vw, 4rem)"
+					height="min(10vh, 4rem)"
 					viewBox="0 0 100 100">
 					<motion.ellipse
-						cx="44"
+						cx="40"
 						cy="50"
 						rx="24"
 						ry="25"
@@ -91,7 +91,7 @@ const Portfolio = () => {
 						style={{ pathLength: scrollXProgress }}
 					/>
 					<ellipse
-						cx="44"
+						cx="40"
 						cy="50"
 						rx="35"
 						ry="36"
@@ -99,7 +99,7 @@ const Portfolio = () => {
 						className={styles.bg_outer}
 					/>
 					<ellipse
-						cx="44"
+						cx="40"
 						cy="50"
 						rx="12"
 						ry="6"

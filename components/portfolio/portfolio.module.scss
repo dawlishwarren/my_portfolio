@@ -8,39 +8,32 @@
 	min-height: 100vh;
 	.header_wrapper {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: center;
 		min-height: fit-content;
 		padding-bottom: 1rem;
 		// SVG
 		#progress {
-			filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
+			filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
 			transform: rotate(-90deg);
 			fill: none;
-			align-self: center;
-			margin-left: -5px;
-			margin-right: -10px;
-			margin-top: min(1.5vh, 0.3rem);
-
+			margin: 0;
+			margin-right: -4px;
 			.indicator {
 				stroke-width: 20%;
-				stroke: $color-dark-text-primary;
 				z-index: -1;
 				fill: none;
 			}
 			ellipse {
 				stroke-dashoffset: 0;
 				stroke-width: 15%;
-				fill: $color-dark-background;
 			}
 			.bg_inner {
-				fill: $color-dark-background;
 				opacity: 1;
-				stroke: $color-dark-background;
+
 				z-index: 2;
 			}
 			.bg_outer {
-				fill: $color-dark-text-primary;
 				opacity: 0.3;
 			}
 		}
@@ -105,6 +98,12 @@
 
 @media (min-width: 600px) {
 	.portfolio_section {
+		.header_wrapper {
+			#progress {
+				margin-left: -5px;
+				margin-right: -10px;
+			}
+		}
 		.carousel_container {
 			.carousel {
 				.list_item {
@@ -134,9 +133,19 @@
 		color: $color-light-text-white;
 		.header_wrapper {
 			color: $color-light-text-white;
-			.progress {
-				.bg {
-					fill: $color-light-secondary;
+			#progress {
+				.indicator {
+					stroke: $color-light-text-white;
+				}
+				ellipse {
+					fill: $color-light-primary;
+				}
+				.bg_inner {
+					fill: rgba($color-light-primary, 0.75);
+					stroke: rgba($color-light-primary, 0.75);
+				}
+				.bg_outer {
+					fill: $color-light-text-white;
 				}
 			}
 		}
@@ -155,9 +164,19 @@
 		color: $color-dark-text-primary;
 		.header_wrapper {
 			color: $color-dark-text-primary;
-			.progress {
-				.bg {
-					fill: $color-dark-text-secondary;
+			#progress {
+				.indicator {
+					stroke: $color-dark-text-primary;
+				}
+				ellipse {
+					fill: $color-dark-background;
+				}
+				.bg_inner {
+					fill: $color-dark-background;
+					stroke: $color-dark-background;
+				}
+				.bg_outer {
+					fill: $color-dark-text-primary;
 				}
 			}
 		}
