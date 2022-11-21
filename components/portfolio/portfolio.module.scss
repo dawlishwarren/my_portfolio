@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .portfolio_section {
 	display: flex;
@@ -12,23 +12,36 @@
 		justify-content: center;
 		min-height: fit-content;
 		padding-bottom: 1rem;
-		.progress {
+		// SVG
+		#progress {
+			filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
+			transform: rotate(-90deg);
+			fill: none;
 			align-self: center;
+			margin-left: -5px;
+			margin-right: -10px;
 			margin-top: min(1.5vh, 0.3rem);
-			margin-left: 2px;
-			margin-right: -1px;
-
-			.bg {
-				opacity: 0.3;
-			}
 
 			.indicator {
-				stroke: red;
+				stroke-width: 20%;
+				stroke: $color-dark-text-primary;
+				z-index: -1;
+				fill: none;
 			}
-			.indictator path {
+			ellipse {
 				stroke-dashoffset: 0;
 				stroke-width: 15%;
-				fill: none;
+				fill: $color-dark-background;
+			}
+			.bg_inner {
+				fill: $color-dark-background;
+				opacity: 1;
+				stroke: $color-dark-background;
+				z-index: 2;
+			}
+			.bg_outer {
+				fill: $color-dark-text-primary;
+				opacity: 0.3;
 			}
 		}
 	}
@@ -52,7 +65,7 @@
 				position: relative;
 				cursor: pointer;
 				&::after {
-					content: '';
+					content: "";
 					border: 2px solid #5c777e;
 					left: 0;
 					right: 0;
@@ -115,7 +128,7 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.portfolio_section {
 		background-color: rgba($color-light-primary, 0.75);
 		color: $color-light-text-white;
@@ -136,12 +149,12 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.portfolio_section {
 		background-color: $color-dark-background;
 		color: $color-dark-text-primary;
 		.header_wrapper {
-			color: $color-dark-text-secondary;
+			color: $color-dark-text-primary;
 			.progress {
 				.bg {
 					fill: $color-dark-text-secondary;

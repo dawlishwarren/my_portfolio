@@ -1,50 +1,66 @@
 import { NextPage } from "next";
-import { useEffect, useRef } from "react";
 import Layout from "../components/layout/Layout";
 import styles from "../styles/Home.module.scss";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
+import AnimatedTitle from "../components/animatedTitle/AnimatedTitle";
+
+// Scroll X Progress on a container
 
 const TestingPage: NextPage = () => {
-	const ref = useRef<HTMLLIElement>(null);
-	useEffect(() => {
-		ref.current!.focus();
-	}, []);
-	const handleMouseMove = (e: React.MouseEvent<HTMLUListElement>) => {
-		e.preventDefault();
-
-		for (const item of document.getElementsByClassName(
-			`${styles.menu_item}`
-		) as HTMLCollectionOf<HTMLLIElement>) {
-			const rect = item.getBoundingClientRect(),
-				x = e.clientX - rect.left,
-				y = e.clientY - rect.top;
-			item.style.setProperty("--mouse-x", `${x}px`);
-			item.style.setProperty("--mouse-y", `${y}px`);
-		}
-	};
+	const ref = useRef(null);
+	const { scrollXProgress } = useScroll({ container: ref });
 	return (
 		<Layout title="Alex Warren | Frontend Developer">
 			<div className={styles.container}>
-				<ul className={styles.sidebar} onMouseMove={handleMouseMove}>
-					<li className={styles.menu_item} ref={ref}>
-						<div className={styles.menu_item_border} />
-						<div className={styles.menu_item_content}>Home</div>
-					</li>
-					<li className={styles.menu_item} ref={ref}>
-						<div className={styles.menu_item_border} />
-						<div className={styles.menu_item_content}>About</div>
-					</li>
-					<li className={styles.menu_item} ref={ref}>
-						<div className={styles.menu_item_border} />
-						<div className={styles.menu_item_content}>Skills</div>
-					</li>
-					<li className={styles.menu_item} ref={ref}>
-						<div className={styles.menu_item_border} />
-						<div className={styles.menu_item_content}>Portfolio</div>
-					</li>
-					<li className={styles.menu_item} ref={ref}>
-						<div className={styles.menu_item_border} />
-						<div className={styles.menu_item_content}>Blog</div>
-					</li>
+				<div className={styles.header_wrapper}>
+					<AnimatedTitle str="My P" />
+					<svg
+						id={styles.progress}
+						className={styles.progress}
+						width="4rem"
+						height="4rem"
+						viewBox="0 0 100 100">
+						<motion.ellipse
+							cx="40"
+							cy="50"
+							rx="25"
+							ry="25"
+							pathLength="1"
+							className={styles.indicator}
+							style={{ pathLength: scrollXProgress }}
+						/>
+						<ellipse
+							cx="40"
+							cy="50"
+							rx="35"
+							ry="36"
+							pathLength="1"
+							className={styles.bg_outer}
+						/>
+						<ellipse
+							cx="40"
+							cy="50"
+							rx="12"
+							ry="6"
+							pathLength="1"
+							className={styles.bg_inner}
+						/>
+					</svg>
+					<AnimatedTitle str="rtfolio" />
+				</div>
+
+				<ul className={styles.ul} ref={ref}>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
+					<li className={styles.li}></li>
 				</ul>
 			</div>
 		</Layout>
