@@ -3,10 +3,10 @@
 .menu_item {
 	border-radius: 10px;
 	cursor: pointer;
-	height: 5rem;
 	flex-direction: column;
 	position: relative;
 	width: 300px;
+	height: 3rem;
 	&_content {
 		display: flex;
 		align-items: center;
@@ -33,24 +33,25 @@
 		position: relative;
 		text-align: right;
 		width: 100%;
-		padding-right: 1rem;
+		padding-right: 2rem;
 		font-weight: 600;
 		font-size: 1.5rem;
-		// &_after {
-		// 	transform: scaleX(0);
-		// 	transform-origin: "bottom right";
-		// 	transition: transform 0.25s ease-in;
-		// 	content: "";
-		// 	position: "absolute";
-		// 	bottom: "-2px";
-		// 	left: "0";
-		// 	width: "100%";
-		// 	height: "2px";
-		// }
-		// &:hover > &_after {
-		// 	transform: scaleX(1);
-		// 	transform-origin: "bottom left";
-		// }
+	}
+}
+
+@media (min-width: 900px) {
+	.menu_item {
+		height: 5rem !important;
+	}
+	[data-theme="dark"] {
+		.menu_item {
+			.link {
+				color: $color-dark-text-secondary !important;
+			}
+			&:hover .link {
+				color: $color-dark-text-primary !important;
+			}
+		}
 	}
 }
 
@@ -68,7 +69,10 @@
 [data-theme="dark"] {
 	.menu_item {
 		.icon {
-			color: $color-lightest;
+			color: $color-dark-text-secondary;
+		}
+		.link {
+			color: $color-dark-text-primary;
 		}
 	}
 }
