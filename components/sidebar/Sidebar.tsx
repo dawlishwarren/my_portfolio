@@ -85,9 +85,11 @@ const Sidebar = ({ toggle }: Props) => {
 	const linksVariants = {
 		open: {
 			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+			opacity: 1,
 		},
 		closed: {
 			transition: { staggerChildren: 0.07, staggerDirection: -1 },
+			opacity: 0,
 		},
 	};
 
