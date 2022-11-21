@@ -1,9 +1,9 @@
-@import 'styles/settings/_settings';
-.background {
+@import "styles/settings/_settings";
+// Backgrounds
+.background,
+.socials_background {
 	position: absolute;
 	top: 0;
-	left: 0;
-	bottom: 0;
 	width: 100vw;
 	height: 100vh;
 	opacity: 1;
@@ -11,60 +11,96 @@
 	pointer-events: none;
 	filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.5));
 }
-.ul {
-	position: absolute;
-	top: 0;
-	height: 100vh;
-	z-index: 2;
+.background {
+	left: 0;
+}
+.socials_background {
+	right: 0;
+}
+
+// List wrappers
+.sidebar_ul,
+.socials_ul {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	padding-top: 15vh;
+	z-index: 2;
+	width: 100vw;
+	gap: 8px;
+}
+.sidebar_ul {
 	.nav_ul {
-		justify-content: center;
+		gap: 8px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
 	}
 	.theme_ul {
 		position: relative;
+		// Overriding the menu_item component styling
+		> * > * > * {
+			font-size: 1rem !important;
+		}
 	}
-}
-
-.socials_background {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 100vw;
-	filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.5));
-}
-.socials_ul {
-	padding: 25px;
-	position: absolute;
-	top: 100px;
-	width: 230px;
-	z-index: 2;
 }
 
 @media (min-width: 900px) {
 	.background,
 	.socials_background {
-		width: 300px;
+		width: 350px;
+	}
+	.sidebar_ul,
+	.socials_ul {
+		width: 350px;
 	}
 }
 
-[data-theme='light'] {
+// Colours
+[data-theme="light"] {
 	.socials_background,
 	.background {
 		background: #f6f6f6;
-		.ul {
-			color: green;
+	}
+	.theme_ul {
+		background-color: rgba(0, 0, 0, 0.5);
+		border-radius: 10px;
+		> * > * > * {
+			color: $color-light-text-white !important;
 		}
 	}
 }
-[data-theme='dark'] {
-	.background,
-	.socials_background {
-		background: $color-dark-background;
+[data-theme="dark"] {
+	.background {
+		background: #232526; /* fallback for old browsers */
+		background: -webkit-linear-gradient(
+			$color-dark-background,
+			$color-dark-elevated-secondary,
+			$color-dark-elevated-primary
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			$color-dark-background,
+			$color-dark-elevated-secondary,
+			$color-dark-elevated-primary
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 		.ul {
 			color: $color-green;
 		}
+	}
+
+	.socials_background {
+		background: #232526; /* fallback for old browsers */
+		background: -webkit-linear-gradient(
+			$color-dark-background,
+			$color-dark-elevated-secondary,
+			$color-dark-elevated-primary
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			$color-dark-background,
+			$color-dark-elevated-secondary,
+			$color-dark-elevated-primary
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	}
 }

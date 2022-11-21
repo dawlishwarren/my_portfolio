@@ -28,7 +28,6 @@
 	color: white;
 	border-radius: 10px;
 	cursor: pointer;
-
 	height: calc(100vh / 5);
 	flex-direction: column;
 	position: relative;
@@ -41,13 +40,14 @@
 		opacity: 0;
 		transition: opacity 500ms;
 		border-radius: inherit;
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 	}
+	// Hover
 	&::before {
 		background: radial-gradient(
 			400px circle at var(--mouse-x) var(--mouse-y),
@@ -56,6 +56,7 @@
 		);
 		z-index: 3;
 	}
+	// Hover
 	&_border {
 		background: radial-gradient(
 			800px circle at var(--mouse-x) var(--mouse-y),

@@ -1,41 +1,42 @@
 // React/Next/NPM
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 // Components
-import MenuItem from '../menuItem/MenuItem';
-import ThemeChanger from '../themeChanger/ThemeChanger';
+import MenuItem from "../menuItem/MenuItem";
+import ThemeChanger from "../themeChanger/ThemeChanger";
 
 // Styles/Assets
-import styles from './sidebar.module.scss';
-import { VscColorMode } from 'react-icons/vsc';
-import { AiOutlineToTop } from 'react-icons/ai';
-import { GiSkills } from 'react-icons/gi';
-import { SiAboutdotme } from 'react-icons/si';
-import { MdViewCarousel } from 'react-icons/md';
-import { RiContactsLine } from 'react-icons/ri';
-import { BsCodeSlash } from 'react-icons/bs';
+import styles from "./sidebar.module.scss";
+import hoverStyles from "../../styles/hover.module.scss";
+import { VscColorMode } from "react-icons/vsc";
+import { AiOutlineToTop } from "react-icons/ai";
+import { GiSkills } from "react-icons/gi";
+import { SiAboutdotme } from "react-icons/si";
+import { MdViewCarousel } from "react-icons/md";
+import { RiContactsLine } from "react-icons/ri";
+import { BsCodeSlash } from "react-icons/bs";
 const links = [
-	{ index: 0, name: 'Top', href: 'main', icon: <AiOutlineToTop size={18} /> },
+	{ index: 0, name: "Top", href: "main", icon: <AiOutlineToTop size={18} /> },
 	{
 		index: 1,
-		name: 'About Me',
-		href: 'about',
+		name: "About Me",
+		href: "about",
 		icon: <SiAboutdotme size={18} />,
 	},
-	{ index: 2, name: 'Skills', href: 'skills', icon: <GiSkills size={18} /> },
+	{ index: 2, name: "Skills", href: "skills", icon: <GiSkills size={18} /> },
 	{
 		index: 3,
-		name: 'Portfolio',
-		href: 'portfolio',
+		name: "Portfolio",
+		href: "portfolio",
 		icon: <MdViewCarousel size={18} />,
 	},
 	{
 		index: 4,
-		name: 'Contact Me',
-		href: 'contact',
+		name: "Contact Me",
+		href: "contact",
 		icon: <RiContactsLine size={18} />,
 	},
-	{ index: 5, name: 'Blog', href: 'blog', icon: <BsCodeSlash size={18} /> },
+	{ index: 5, name: "Blog", href: "blog", icon: <BsCodeSlash size={18} /> },
 ];
 
 // Prop Types
@@ -48,21 +49,34 @@ const Sidebar = ({ toggle }: Props) => {
 	const toggleMouseMenu = () => {
 		toggleMouse(!isMouse);
 	};
+	const handleMouseMove = (e: React.MouseEvent<HTMLUListElement>) => {
+		e.preventDefault();
+
+		for (const item of document.getElementsByClassName(
+			`${hoverStyles.menu_item}`
+		) as HTMLCollectionOf<HTMLLIElement>) {
+			const rect = item.getBoundingClientRect(),
+				x = e.clientX - rect.left,
+				y = e.clientY - rect.top;
+			item.style.setProperty("--mouse-x", `${x}px`);
+			item.style.setProperty("--mouse-y", `${y}px`);
+		}
+	};
 	// Framer Motion variants
 	const backgroundVariants = {
 		open: (height = 1000) => ({
 			clipPath: `circle(${height * 2 + 200}px at 10vw 10vh)`,
 			transition: {
-				type: 'spring',
+				type: "spring",
 				stiffness: 20,
 				restDelta: 2,
 			},
 		}),
 		closed: {
-			clipPath: 'circle(30px at 10vw 10vh)',
+			clipPath: "circle(30px at 10vw 10vh)",
 			transition: {
 				delay: 0.5,
-				type: 'spring',
+				type: "spring",
 				stiffness: 400,
 				damping: 40,
 			},
@@ -75,8 +89,8 @@ const Sidebar = ({ toggle }: Props) => {
 			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
 		},
 		closed: {
-			x: '-100vw',
-			z: '-10px',
+			x: "-100vw",
+			z: "-10px",
 			transition: { staggerChildren: 0.07, staggerDirection: -1 },
 		},
 	};
@@ -86,7 +100,11 @@ const Sidebar = ({ toggle }: Props) => {
 			{/* Background */}
 			<motion.div className={styles.background} variants={backgroundVariants} />
 			{/* Content */}
-			<motion.ul className={styles.ul} variants={linksVariants}>
+			<motion.ul
+				className={`${styles.sidebar_ul} ${hoverStyles.sidebar_ul}`}
+				variants={linksVariants}
+				onMouseMove={handleMouseMove}>
+				{/* Navigation */}
 				<motion.ul className={styles.nav_ul} onClick={toggle}>
 					{links.map((link) => (
 						<MenuItem
@@ -98,20 +116,18 @@ const Sidebar = ({ toggle }: Props) => {
 						/>
 					))}
 				</motion.ul>
-				{/* WRAPPER */}
+				{/* Theme Changer */}
 				<motion.ul
 					className={styles.theme_ul}
 					variants={linksVariants}
 					onMouseEnter={toggleMouseMenu}
 					onMouseLeave={toggleMouseMenu}>
-					{/* MENU ITEM LINK*/}
 					<MenuItem
 						i={links.length}
-						name={'Light/Dark Mode Toggle'}
-						icon={<VscColorMode size={40} transform='rotate(45)' />}
-						href='/'
+						name={"Light/Dark Mode Toggle"}
+						icon={<VscColorMode size={40} transform="rotate(45)" />}
+						href="/"
 					/>
-					{/* SUB-MENU */}
 					{isMouse && <ThemeChanger isMouse />}
 				</motion.ul>
 			</motion.ul>

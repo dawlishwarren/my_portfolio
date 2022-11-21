@@ -1,7 +1,7 @@
-import { NextPage } from 'next';
-import { useEffect, useRef } from 'react';
-import Layout from '../components/layout/Layout';
-import styles from '../styles/Home.module.scss';
+import { NextPage } from "next";
+import { useEffect, useRef } from "react";
+import Layout from "../components/layout/Layout";
+import styles from "../styles/Home.module.scss";
 
 const TestingPage: NextPage = () => {
 	const ref = useRef<HTMLLIElement>(null);
@@ -11,16 +11,18 @@ const TestingPage: NextPage = () => {
 	const handleMouseMove = (e: React.MouseEvent<HTMLUListElement>) => {
 		e.preventDefault();
 
-		for (const item of document.getElementsByClassName(`${styles.menu_item}`)) {
+		for (const item of document.getElementsByClassName(
+			`${styles.menu_item}`
+		) as HTMLCollectionOf<HTMLLIElement>) {
 			const rect = item.getBoundingClientRect(),
 				x = e.clientX - rect.left,
 				y = e.clientY - rect.top;
-			item.style.setProperty('--mouse-x', `${x}px`);
-			item.style.setProperty('--mouse-y', `${y}px`);
+			item.style.setProperty("--mouse-x", `${x}px`);
+			item.style.setProperty("--mouse-y", `${y}px`);
 		}
 	};
 	return (
-		<Layout title='Alex Warren | Frontend Developer'>
+		<Layout title="Alex Warren | Frontend Developer">
 			<div className={styles.container}>
 				<ul className={styles.sidebar} onMouseMove={handleMouseMove}>
 					<li className={styles.menu_item} ref={ref}>

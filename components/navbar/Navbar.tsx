@@ -6,7 +6,7 @@ import MenuToggle from '../menuToggle/MenuToggle';
 import Sidebar from '../sidebar/Sidebar';
 // Utils and Styles
 import { useDimensions } from '../../utils/use-dimensions';
-import styles from './navigation.module.scss';
+import styles from './navbar.module.scss';
 
 const Navbar = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);

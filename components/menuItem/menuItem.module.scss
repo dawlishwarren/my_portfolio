@@ -1,21 +1,22 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
-.li {
-	list-style: none;
-	margin-bottom: 20px;
-	width: 100vw;
-	min-height: 6vh;
-	display: flex;
-	align-content: center;
-	align-items: center;
-	padding-top: 1rem;
-	border-top: 1px solid black;
+.menu_item {
+	border-radius: 10px;
 	cursor: pointer;
-	&:first-child {
-		border-top: none;
-	}
-	&:last-child {
-		border-bottom: 1px solid black;
+	flex-direction: column;
+	position: relative;
+	width: 300px;
+	height: 3rem;
+	&_content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: inherit;
+		margin: 1px;
+		height: calc(100% - 2px);
+		width: calc(100% - 2px);
+		z-index: 2;
+		position: relative;
 	}
 	.icon {
 		width: 40px;
@@ -23,34 +24,55 @@
 		border-radius: 50%;
 		flex: 40px 0;
 		margin-left: 2rem;
+		margin-right: calc(-2rem - 40px);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		align-self: flex-start;
 	}
 	.link {
 		position: relative;
-		margin-inline: auto;
-		&_after {
-			transform: scaleX(0);
-			transform-origin: 'bottom right';
-			transition: transform 0.25s ease-in;
-			content: '';
-			position: 'absolute';
-			bottom: '-2px';
-			left: '0';
-			width: '100%';
-			height: '2px';
-		}
-		&:hover > .link_after {
-			transform: scaleX(1);
-			transform-origin: 'bottom left';
-		}
+		text-align: right;
+		width: 100%;
+		padding-right: 2rem;
+		font-weight: 600;
+		font-size: 1.5rem;
 	}
 }
 
 @media (min-width: 900px) {
-	.li {
-		width: 300px;
+	.menu_item {
+		height: 5rem !important;
+	}
+	[data-theme="dark"] {
+		.menu_item {
+			.link {
+				color: $color-dark-text-secondary !important;
+			}
+			&:hover .link {
+				color: $color-dark-text-primary !important;
+			}
+		}
+	}
+}
+
+[data-theme="light"] {
+	.menu_item {
+		.icon {
+			border: 2px solid $color-lightest !important;
+			color: $color-lightest;
+		}
+		.link {
+			color: $color-lightest;
+		}
+	}
+}
+[data-theme="dark"] {
+	.menu_item {
+		.icon {
+			color: $color-dark-text-secondary;
+		}
+		.link {
+			color: $color-dark-text-primary;
+		}
 	}
 }

@@ -1,8 +1,9 @@
 // React/Next/NPM
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import Link from "next/link";
 // Styles/Assets
-import styles from './menuItem.module.scss';
+import styles from "./menuItem.module.scss";
+import hoverStyles from "../../styles/hover.module.scss";
 // import { color1 } from '../../../styles/settings/_colors.module.scss';
 
 const variants = {
@@ -15,7 +16,7 @@ const variants = {
 		},
 	},
 	closed: {
-		x: '-100%',
+		x: "-100%",
 		y: 50,
 		opacity: 0,
 		transition: {
@@ -25,37 +26,50 @@ const variants = {
 };
 
 const colors = [
-	'#eb4511',
-	'#00a85f',
-	'#f1db4b',
-	'#278ea5',
-	'#0586ff',
-	'#0000a8',
+	"#0586ff",
+	"#278ea5",
+	"#00a85f",
+	"#cab111",
+	"#c3423f",
+	"#eb4511",
 ];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
-	const style = { border: `2px solid ${colors[i]}` };
 	return (
-		<motion.li
-			className={styles.li}
-			variants={variants}
-			whileHover={{ scale: 1.1 }}
-			whileTap={{ scale: 0.95 }}>
-			<div className={styles.icon} style={style}>
-				{icon}
-			</div>
-			<Link href={`#${href}`}>
-				<a className={styles.link} style={{ color: colors[i] }}>
-					{name}
-					<motion.div
-						className={styles.link_after}
-						style={{
-							backgroundColor: colors[i],
-						}}
-					/>
-				</a>
-			</Link>
-		</motion.li>
+		// Link for Navigation
+		<Link href={`#${href}`}>
+			<motion.li
+				className={`${styles.menu_item} ${hoverStyles.menu_item}`}
+				style={{ backgroundColor: colors[i] }}
+				variants={variants}
+				whileHover={{ scale: 1.02 }}
+				whileTap={{ scale: 0.95 }}>
+				{/* Border */}
+				<div className={hoverStyles.menu_item_border} />
+				{/* Content */}
+				<div className={styles.menu_item_content}>
+					{/* Icon */}
+					{icon && (
+						<div
+							className={styles.icon}
+							style={{ border: `2px solid ${colors[i]}` }}>
+							{icon}
+						</div>
+					)}
+					{/* Link */}
+					<a className={styles.link}>
+						{name}
+						<motion.div
+							className={styles.link_after}
+							style={{
+								backgroundColor: "white",
+								color: "white",
+							}}
+						/>
+					</a>
+				</div>
+			</motion.li>
+		</Link>
 	);
 };
 

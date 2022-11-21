@@ -1,41 +1,42 @@
 // React/Next/NPM
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 // Components
-import MenuItem from '../menuItem/MenuItem';
+import MenuItem from "../menuItem/MenuItem";
 // Styles/Assets
-import styles from './sidebar.module.scss';
+import styles from "./sidebar.module.scss";
+import hoverStyles from "../../styles/hover.module.scss";
 import {
 	TiSocialFacebook,
 	TiSocialGithub,
 	TiSocialInstagram,
 	TiSocialLinkedin,
 	TiSocialTwitter,
-} from 'react-icons/ti';
+} from "react-icons/ti";
 
 // Motion variants
-const background = {
+const backgroundVariants = {
 	open: (height = 1000) => ({
 		clipPath: `circle(${height * 2 + 200}px at calc(100% - 10vw) 10vh)`,
 		transition: {
-			type: 'spring',
+			type: "spring",
 			stiffness: 20,
 			restDelta: 2,
 		},
 		z: 100,
 	}),
 	closed: {
-		clipPath: 'circle(30px at calc(100% - 10vw) 10vh)',
+		clipPath: "circle(30px at calc(100% - 10vw) 10vh)",
 		transition: {
 			delay: 0.5,
-			type: 'spring',
+			type: "spring",
 			stiffness: 400,
 			damping: 40,
 		},
 		z: -100,
 	},
 };
-const variants = {
+const linksVariants = {
 	open: {
 		transition: { staggerChildren: 0.07, delayChildren: 0.2 },
 		x: 0,
@@ -44,24 +45,43 @@ const variants = {
 	closed: {
 		transition: { staggerChildren: 0.05, staggerDirection: -1 },
 		z: -10,
-		x: '100%',
+		x: "100%",
 	},
 };
 
 // Names, icons and links to be mapped
 const socials = [
-	{ index: 0, name: 'Facebook', icon: <TiSocialFacebook size={24} /> },
-	{ index: 1, name: 'Github', icon: <TiSocialGithub size={32} /> },
-	{ index: 2, name: 'Instagram', icon: <TiSocialInstagram size={24} /> },
-	{ index: 3, name: 'Twitter', icon: <TiSocialTwitter size={24} /> },
-	{ index: 4, name: 'LinkedIn', icon: <TiSocialLinkedin size={24} /> },
+	{ index: 0, name: "Facebook", icon: <TiSocialFacebook size={24} /> },
+	{ index: 1, name: "Github", icon: <TiSocialGithub size={32} /> },
+	{ index: 2, name: "Instagram", icon: <TiSocialInstagram size={24} /> },
+	{ index: 3, name: "Twitter", icon: <TiSocialTwitter size={24} /> },
+	{ index: 4, name: "LinkedIn", icon: <TiSocialLinkedin size={24} /> },
 ];
 
 const SocialsSidebar = () => {
+	const handleMouseMove = (e: React.MouseEvent<HTMLUListElement>) => {
+		e.preventDefault();
+
+		for (const item of document.getElementsByClassName(
+			`${hoverStyles.menu_item}`
+		) as HTMLCollectionOf<HTMLLIElement>) {
+			const rect = item.getBoundingClientRect(),
+				x = e.clientX - rect.left,
+				y = e.clientY - rect.top;
+			item.style.setProperty("--mouse-x", `${x}px`);
+			item.style.setProperty("--mouse-y", `${y}px`);
+		}
+	};
 	return (
 		<>
-			<motion.div className={styles.socials_background} variants={background} />
-			<motion.ul className={styles.socials_ul} variants={variants}>
+			<motion.div
+				className={styles.socials_background}
+				variants={backgroundVariants}
+			/>
+			<motion.ul
+				className={styles.socials_ul}
+				variants={linksVariants}
+				onMouseMove={handleMouseMove}>
 				{socials.map((social) => (
 					<MenuItem
 						i={social.index}
