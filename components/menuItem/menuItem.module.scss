@@ -54,6 +54,9 @@
 			&:hover .link {
 				color: $color-dark-text-primary !important;
 			}
+			&:hover .icon {
+				color: $color-dark-text-primary !important;
+			}
 		}
 	}
 }
@@ -73,6 +76,7 @@
 	.menu_item {
 		.icon {
 			color: $color-dark-text-secondary;
+			border: 2px solid $color-dark-text-secondary;
 		}
 		.link {
 			color: $color-dark-text-primary;

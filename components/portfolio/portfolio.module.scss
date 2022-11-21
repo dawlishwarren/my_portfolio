@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 
 .portfolio_section {
 	display: flex;
@@ -8,27 +8,33 @@
 	min-height: 100vh;
 	.header_wrapper {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
 		justify-content: center;
 		min-height: fit-content;
 		padding-bottom: 1rem;
-		.progress {
-			align-self: center;
-			margin-top: min(1.5vh, 0.3rem);
-			margin-left: 2px;
-			margin-right: -1px;
-
-			.bg {
-				opacity: 0.3;
-			}
-
+		// SVG
+		#progress {
+			filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
+			transform: rotate(-90deg);
+			fill: none;
+			margin: 0;
+			margin-right: -4px;
 			.indicator {
-				stroke: red;
+				stroke-width: 20%;
+				z-index: -1;
+				fill: none;
 			}
-			.indictator path {
+			ellipse {
 				stroke-dashoffset: 0;
 				stroke-width: 15%;
-				fill: none;
+			}
+			.bg_inner {
+				opacity: 1;
+
+				z-index: 2;
+			}
+			.bg_outer {
+				opacity: 0.3;
 			}
 		}
 	}
@@ -52,7 +58,7 @@
 				position: relative;
 				cursor: pointer;
 				&::after {
-					content: '';
+					content: "";
 					border: 2px solid #5c777e;
 					left: 0;
 					right: 0;
@@ -92,6 +98,12 @@
 
 @media (min-width: 600px) {
 	.portfolio_section {
+		.header_wrapper {
+			#progress {
+				margin-left: -5px;
+				margin-right: -10px;
+			}
+		}
 		.carousel_container {
 			.carousel {
 				.list_item {
@@ -115,15 +127,25 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.portfolio_section {
 		background-color: rgba($color-light-primary, 0.75);
 		color: $color-light-text-white;
 		.header_wrapper {
 			color: $color-light-text-white;
-			.progress {
-				.bg {
-					fill: $color-light-secondary;
+			#progress {
+				.indicator {
+					stroke: $color-light-text-white;
+				}
+				ellipse {
+					fill: $color-light-primary;
+				}
+				.bg_inner {
+					fill: rgba($color-light-primary, 0.75);
+					stroke: rgba($color-light-primary, 0.75);
+				}
+				.bg_outer {
+					fill: $color-light-text-white;
 				}
 			}
 		}
@@ -136,15 +158,25 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.portfolio_section {
 		background-color: $color-dark-background;
 		color: $color-dark-text-primary;
 		.header_wrapper {
-			color: $color-dark-text-secondary;
-			.progress {
-				.bg {
-					fill: $color-dark-text-secondary;
+			color: $color-dark-text-primary;
+			#progress {
+				.indicator {
+					stroke: $color-dark-text-primary;
+				}
+				ellipse {
+					fill: $color-dark-background;
+				}
+				.bg_inner {
+					fill: $color-dark-background;
+					stroke: $color-dark-background;
+				}
+				.bg_outer {
+					fill: $color-dark-text-primary;
 				}
 			}
 		}
