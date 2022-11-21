@@ -8,16 +8,16 @@ import hoverStyles from "../../styles/hover.module.scss";
 
 const variants = {
 	open: {
-		x: 0,
 		y: 0,
+		x: 0,
 		opacity: 1,
 		transition: {
 			y: { stiffness: 1000, velocity: -100 },
 		},
 	},
 	closed: {
-		x: "-100%",
 		y: 50,
+		x: -50,
 		opacity: 0,
 		transition: {
 			y: { stiffness: 1000 },

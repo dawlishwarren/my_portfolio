@@ -16,17 +16,15 @@ const ThemeChanger = ({ isMouse }: Props) => {
 	const subMenuAnimate = {
 		enter: {
 			opacity: 1,
-			rotateX: 0,
 			transition: {
-				duration: 0.5,
+				duration: 1,
 			},
 			display: "block",
 		},
 		exit: {
 			opacity: 0,
-			rotateX: -15,
 			transition: {
-				duration: 0.5,
+				duration: 1,
 				delay: 0.3,
 			},
 			transitionEnd: {
@@ -58,8 +56,9 @@ const ThemeChanger = ({ isMouse }: Props) => {
 					whileHover={{ scale: 1.02 }}
 					className={styles.sub_menu_item}
 					onClick={handleClick}
+					onMouseDown={handleClick}
 					value="system">
-					<RiUserSettingsLine size={30} />
+					<RiUserSettingsLine style={{ pointerEvents: "none" }} size={30} />
 					System
 				</motion.button>
 				<motion.button
@@ -67,7 +66,7 @@ const ThemeChanger = ({ isMouse }: Props) => {
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value="light">
-					<RiSunFill size={30} />
+					<RiSunFill style={{ pointerEvents: "none" }} size={30} />
 					Light
 				</motion.button>
 				<motion.button
@@ -75,7 +74,7 @@ const ThemeChanger = ({ isMouse }: Props) => {
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					value="dark">
-					<RiMoonClearFill size={30} />
+					<RiMoonClearFill style={{ pointerEvents: "none" }} size={30} />
 					Dark
 				</motion.button>
 			</div>

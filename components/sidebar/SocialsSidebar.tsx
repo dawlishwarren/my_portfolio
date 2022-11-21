@@ -39,13 +39,9 @@ const backgroundVariants = {
 const linksVariants = {
 	open: {
 		transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-		x: 0,
-		z: 100,
 	},
 	closed: {
-		transition: { staggerChildren: 0.05, staggerDirection: -1 },
-		z: -10,
-		x: "100%",
+		transition: { staggerChildren: 0.09, staggerDirection: -1 },
 	},
 };
 

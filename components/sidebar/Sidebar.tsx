@@ -84,13 +84,9 @@ const Sidebar = ({ toggle }: Props) => {
 	};
 	const linksVariants = {
 		open: {
-			x: 0,
-			z: 0,
 			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
 		},
 		closed: {
-			x: "-100vw",
-			z: "-10px",
 			transition: { staggerChildren: 0.07, staggerDirection: -1 },
 		},
 	};
@@ -125,7 +121,13 @@ const Sidebar = ({ toggle }: Props) => {
 					<MenuItem
 						i={links.length}
 						name={"Light/Dark Mode Toggle"}
-						icon={<VscColorMode size={40} transform="rotate(45)" />}
+						className={styles.theme_icon}
+						icon={
+							<VscColorMode
+								size={40}
+								transform={isMouse ? "rotate(0)" : "rotate(45)"}
+							/>
+						}
 						href="/"
 					/>
 					{isMouse && <ThemeChanger isMouse />}
