@@ -5,6 +5,12 @@
 	top: 0;
 	right: 0;
 	bottom: 0;
-	width: 230px;
-	z-index: -3;
+	width: 100vw;
+	z-index: 0;
+}
+
+@media (min-width: 900px) {
+	.nav {
+		width: 350px;
+	}
 }

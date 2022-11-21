@@ -1,3 +1,5 @@
+@import "styles/settings/_settings";
+
 .theme {
 	z-index: 2;
 	display: flex;
@@ -19,17 +21,22 @@
 		bottom: 0;
 		left: 0;
 		transform-origin: 0 0;
-		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-			0 10px 10px -5px rgba(0, 0, 0, 0.04);
 	}
 	&_container {
 		display: flex;
+		margin-top: 1rem;
+		gap: 1rem;
 	}
 	&_item {
 		margin-bottom: 5px;
-		padding-inline: 1rem;
+		padding: 1rem;
+		border-radius: 10px;
 		cursor: pointer;
 		z-index: 2;
+		flex: 0 0 30%;
+		background: none;
+		border: none;
+		outline: inherit;
 	}
 }
 
@@ -37,5 +44,33 @@
 	.sub_menu {
 		left: 0;
 		width: 100%;
+	}
+}
+
+[data-theme="light"] {
+	.sub_menu {
+		&_item {
+			color: $color-light-text-white !important;
+			border: none;
+			background-color: rgba(0, 0, 0, 0.5);
+			.icon {
+				color: $color-light-text-white !important;
+				stroke: $color-light-text-white !important;
+			}
+		}
+	}
+}
+
+[data-theme="dark"] {
+	.sub_menu {
+		&_background {
+			background-color: $color-dark-background;
+		}
+		&_container {
+			background-color: rgba(255, 255, 255, 0.1) !important;
+		}
+		&_item {
+			background-color: rgba(255, 255, 255, 0.1) !important;
+		}
 	}
 }
