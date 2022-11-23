@@ -1,11 +1,13 @@
 @import "styles/settings/_settings";
 
+// Section
 .portfolio_section {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	width: 100vw;
 	min-height: 100vh;
+	// Header with SVG
 	.header_wrapper {
 		display: flex;
 		align-items: center;
@@ -14,30 +16,22 @@
 		padding-bottom: 1rem;
 		// SVG
 		#progress {
-			filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
 			transform: rotate(-90deg);
 			fill: none;
 			margin: 0;
 			margin-right: -4px;
 			.indicator {
 				stroke-width: 20%;
-				z-index: -1;
 				fill: none;
 			}
 			ellipse {
 				stroke-dashoffset: 0;
 				stroke-width: 15%;
 			}
-			.bg_inner {
-				opacity: 1;
-
-				z-index: 2;
-			}
-			.bg_outer {
-				opacity: 0.3;
-			}
 		}
 	}
+
+	// Content
 	.carousel_container {
 		position: relative;
 		.carousel {
@@ -46,17 +40,19 @@
 			overflow-x: scroll;
 			overflow-y: hidden;
 			flex: 0 0 600px;
-			margin: 0 auto;
+			padding-bottom: 1rem;
 			.list_item {
+				margin: 0.5rem 1rem 0.5rem 0.5rem;
+				&:last-child {
+					margin: 0.5rem 3px 0.5rem 1rem;
+				}
 				flex: 0 0 200px;
-				border: 1px solid black;
-				border-radius: 12.5px;
-				margin: 0 20px 0 0;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				position: relative;
 				cursor: pointer;
+
 				&::after {
 					content: "";
 					border: 2px solid #5c777e;
@@ -93,6 +89,17 @@
 				}
 			}
 		}
+		::-webkit-scrollbar {
+			height: 5px;
+			width: 5px;
+			border-radius: 1ex;
+			-webkit-border-radius: 1ex;
+		}
+
+		::-webkit-scrollbar-thumb {
+			border-radius: 1ex;
+			-webkit-border-radius: 1ex;
+		}
 	}
 }
 
@@ -100,8 +107,8 @@
 	.portfolio_section {
 		.header_wrapper {
 			#progress {
-				margin-left: -5px;
-				margin-right: -10px;
+				margin-left: -8px;
+				margin-right: -11px;
 			}
 		}
 		.carousel_container {
@@ -121,43 +128,65 @@
 		}
 		.carousel {
 			.list_item {
-				flex: 0 0 350px !important;
+				flex: 0 0 600px !important;
 			}
 		}
 	}
 }
 
+// LIGHT MODE
 [data-theme="light"] {
 	.portfolio_section {
-		background-color: rgba($color-light-primary, 0.75);
+		background-color: $color-light-secondary;
 		color: $color-light-text-white;
 		.header_wrapper {
 			color: $color-light-text-white;
 			#progress {
+				filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
+				opacity: 1;
+
 				.indicator {
 					stroke: $color-light-text-white;
+					filter: drop-shadow(1px 0px 3px rgba(0, 0, 0, 0.3));
 				}
 				ellipse {
-					fill: $color-light-primary;
+					fill: none;
 				}
 				.bg_inner {
-					fill: rgba($color-light-primary, 0.75);
-					stroke: rgba($color-light-primary, 0.75);
+					fill: $color-light-secondary;
+					fill-opacity: 1;
+					stroke: $color-light-secondary;
+					stroke-width: 15%;
 				}
 				.bg_outer {
 					fill: $color-light-text-white;
+					stroke: none;
+					opacity: 0.5;
 				}
 			}
 		}
 		.carousel_container {
 			.carousel {
 				.list_item {
-					background-color: $color-light-primary;
+					background-color: $color-light-text-white;
+					border: 1px solid $color-backdrop;
+					filter: drop-shadow(3.5px 3.5px 3.5px rgba(0, 0, 0, 0.3));
 				}
+			}
+			::-webkit-scrollbar {
+				background: $color-grey;
+			}
+			::-webkit-scrollbar-thumb {
+				background: $color-light-text-white;
+			}
+			::-webkit-scrollbar-corner {
+				background: $color-grey;
 			}
 		}
 	}
 }
+
+// DARK MODE
 [data-theme="dark"] {
 	.portfolio_section {
 		background-color: $color-dark-background;
@@ -174,20 +203,34 @@
 				.bg_inner {
 					fill: $color-dark-background;
 					stroke: $color-dark-background;
+					opacity: 1;
 				}
 				.bg_outer {
 					fill: $color-dark-text-primary;
+					opacity: 0.3;
 				}
 			}
 		}
 		.carousel_container {
 			.carousel {
 				.list_item {
+					border-radius: 12.5px;
 					background-color: $color-dark-elevated-secondary;
+					filter: drop-shadow(1px 1px 3px rgba(255, 255, 255, 0.3));
+					box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.3);
 					&:hover {
 						background-color: $color-backdrop;
 					}
 				}
+			}
+			::-webkit-scrollbar {
+				background: $color-dark-elevated-secondary;
+			}
+			::-webkit-scrollbar-thumb {
+				background: $color-dark-text-primary;
+			}
+			::-webkit-scrollbar-corner {
+				background: $color-dark-elevated-secondary;
 			}
 		}
 	}

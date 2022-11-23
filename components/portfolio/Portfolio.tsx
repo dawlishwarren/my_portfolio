@@ -102,7 +102,7 @@ const Portfolio = () => {
 						cx="40"
 						cy="50"
 						rx="12"
-						ry="6"
+						ry="8"
 						pathLength="1"
 						className={styles.bg_inner}
 					/>

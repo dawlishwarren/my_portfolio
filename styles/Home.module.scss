@@ -87,11 +87,14 @@
 			height: 5px;
 			width: 5px;
 			background: #fff3;
+			border-radius: 1ex;
 			-webkit-border-radius: 1ex;
 		}
 
 		::-webkit-scrollbar-thumb {
 			background: var(--accent);
+			border-radius: 1ex;
+
 			-webkit-border-radius: 1ex;
 		}
 
