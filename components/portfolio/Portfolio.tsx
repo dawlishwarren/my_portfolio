@@ -18,7 +18,7 @@ import directory from "../../public/directory.png";
 import logo from "../../public/logo.png";
 import portfolio from "../../public/portfolio.png";
 import consultation from "../../public/consultation.png";
-
+import Background from "../../assets/blurry-gradient-haikei.svg";
 // Prop Types
 interface Carousel {
 	title: string;
