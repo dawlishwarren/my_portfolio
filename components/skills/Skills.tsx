@@ -10,7 +10,6 @@ import {
 	frameworks,
 } from '../../data/skills';
 import SkillCategory from '../skillCategory/SkillCategory';
-import ScrollDown from '../scrollDown/ScrollDown';
 
 const Skills = () => {
 	return (

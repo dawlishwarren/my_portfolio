@@ -12,8 +12,10 @@
     "@googlemaps/react-wrapper": "^1.1.35",
     "framer-motion": "^7.6.1",
     "hamburger-react": "^2.5.0",
+    "logrocket": "^3.0.1",
     "next": "^12.3.1",
     "next-themes": "^0.2.1",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.3.1",
     "@types/node": "18.7.18",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
     "eslint": "8.23.1",

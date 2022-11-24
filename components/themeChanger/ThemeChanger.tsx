@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
-import styles from "./themeChanger.module.scss";
-import { GrMoon, GrSun, GrSystem } from "react-icons/gr";
-import { RiMoonClearFill, RiSunFill, RiUserSettingsLine } from "react-icons/ri";
+import React, { useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
+import { m } from 'framer-motion';
+import styles from './themeChanger.module.scss';
+import { GrMoon, GrSun, GrSystem } from 'react-icons/gr';
+import { RiMoonClearFill, RiSunFill, RiUserSettingsLine } from 'react-icons/ri';
 
 interface Props {
 	isMouse: boolean;
@@ -19,7 +19,7 @@ const ThemeChanger = ({ isMouse }: Props) => {
 			transition: {
 				duration: 1,
 			},
-			display: "block",
+			display: 'block',
 		},
 		exit: {
 			opacity: 0,
@@ -28,7 +28,7 @@ const ThemeChanger = ({ isMouse }: Props) => {
 				delay: 0.3,
 			},
 			transitionEnd: {
-				display: "none",
+				display: 'none',
 			},
 		},
 	};
@@ -45,40 +45,40 @@ const ThemeChanger = ({ isMouse }: Props) => {
 	}
 
 	return (
-		<motion.div
-			initial="exit"
-			animate={isMouse ? "enter" : "exit"}
+		<m.div
+			initial='exit'
+			animate={isMouse ? 'enter' : 'exit'}
 			variants={subMenuAnimate}
 			className={styles.sub_menu}>
 			<div className={styles.sub_menu_background} />
 			<div className={styles.sub_menu_container}>
-				<motion.button
+				<m.button
 					whileHover={{ scale: 1.02 }}
 					className={styles.sub_menu_item}
 					onClick={handleClick}
 					onMouseDown={handleClick}
-					value="system">
-					<RiUserSettingsLine style={{ pointerEvents: "none" }} size={30} />
+					value='system'>
+					<RiUserSettingsLine style={{ pointerEvents: 'none' }} size={30} />
 					System
-				</motion.button>
-				<motion.button
+				</m.button>
+				<m.button
 					whileHover={{ scale: 1.02 }}
 					className={styles.sub_menu_item}
 					onClick={handleClick}
-					value="light">
-					<RiSunFill style={{ pointerEvents: "none" }} size={30} />
+					value='light'>
+					<RiSunFill style={{ pointerEvents: 'none' }} size={30} />
 					Light
-				</motion.button>
-				<motion.button
+				</m.button>
+				<m.button
 					whileHover={{ scale: 1.02 }}
 					className={styles.sub_menu_item}
 					onClick={handleClick}
-					value="dark">
-					<RiMoonClearFill style={{ pointerEvents: "none" }} size={30} />
+					value='dark'>
+					<RiMoonClearFill style={{ pointerEvents: 'none' }} size={30} />
 					Dark
-				</motion.button>
+				</m.button>
 			</div>
-		</motion.div>
+		</m.div>
 	);
 };
 

@@ -1,5 +1,5 @@
 // React/Next/NPM
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import ModalBackground from '../modalBackground/ModalBackground';
 // Components
 // Styles/Assets
@@ -36,7 +36,7 @@ const dropIn = {
 const Modal = ({ modalOpen, handleClose, children }: Props) => {
 	return (
 		<ModalBackground onClick={handleClose}>
-			<motion.div
+			<m.div
 				onClick={(e) => e.stopPropagation()}
 				className={styles.modal}
 				variants={dropIn}
@@ -50,7 +50,7 @@ const Modal = ({ modalOpen, handleClose, children }: Props) => {
 						Close
 					</button>
 				</div>
-			</motion.div>
+			</m.div>
 		</ModalBackground>
 	);
 };

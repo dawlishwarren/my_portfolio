@@ -8,9 +8,10 @@ import Footer from '../footer/Footer';
 type Props = {
 	children?: ReactNode;
 	title: string;
+	inner: boolean;
 };
 
-const Layout = ({ children, title }: Props) => {
+const Layout = ({ children, title, inner }: Props) => {
 	return (
 		<>
 			<Head>
@@ -19,7 +20,7 @@ const Layout = ({ children, title }: Props) => {
 				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
 			</Head>
 			<div className='container'>
-				<Header />
+				{!inner && <Header />}
 				{children}
 			</div>
 		</>

@@ -1,6 +1,6 @@
 // React and Module imports
 import React, { useRef } from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { m, useCycle } from 'framer-motion';
 // Components
 import MenuToggle from '../menuToggle/MenuToggle';
 import Sidebar from '../sidebar/Sidebar';
@@ -13,7 +13,7 @@ const Navbar = () => {
 	const containerRef = useRef(null);
 	const { height } = useDimensions(containerRef);
 	return (
-		<motion.nav
+		<m.nav
 			style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
 			initial={false}
 			animate={isOpen ? 'open' : 'closed'}
@@ -23,7 +23,7 @@ const Navbar = () => {
 			aria-label='Navigation-bar'>
 			<Sidebar toggle={() => toggleOpen()} />
 			<MenuToggle type='navigation' toggle={() => toggleOpen()} />
-		</motion.nav>
+		</m.nav>
 	);
 };
 

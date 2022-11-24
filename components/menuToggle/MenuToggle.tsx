@@ -1,5 +1,5 @@
 // React/Next/NPM
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 // Styles/Assets
 import { IoPersonAddSharp } from 'react-icons/io5';
 import styles from './menuToggle.module.scss';
@@ -11,12 +11,7 @@ interface Props {
 }
 
 const Path = (props: any) => (
-	<motion.path
-		fill='transparent'
-		strokeWidth='3'
-		strokeLinecap='round'
-		{...props}
-	/>
+	<m.path fill='transparent' strokeWidth='3' strokeLinecap='round' {...props} />
 );
 
 const MenuToggle = ({ toggle, type, size }: Props) => (

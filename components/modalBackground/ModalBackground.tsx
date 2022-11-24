@@ -1,6 +1,6 @@
 // React/Next/NPM
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 // Styles/Assets
 import styles from './modalBackground.module.scss';
 // Prop types
@@ -12,14 +12,14 @@ interface Props {
 // Backdrop for a modal component
 const ModalBackground = ({ onClick, children }: Props) => {
 	return (
-		<motion.div
+		<m.div
 			className={styles.backdrop}
 			onClick={onClick}
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}>
 			{children}
-		</motion.div>
+		</m.div>
 	);
 };
 

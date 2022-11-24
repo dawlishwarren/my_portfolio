@@ -1,9 +1,9 @@
 // React/Next/NPM
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { m } from 'framer-motion';
+import Link from 'next/link';
 // Styles/Assets
-import styles from "./menuItem.module.scss";
-import hoverStyles from "../../styles/hover.module.scss";
+import styles from './menuItem.module.scss';
+import hoverStyles from '../../styles/hover.module.scss';
 // import { color1 } from '../../../styles/settings/_colors.module.scss';
 
 const variants = {
@@ -26,19 +26,19 @@ const variants = {
 };
 
 const colors = [
-	"#0586ff",
-	"#278ea5",
-	"#00a85f",
-	"#cab111",
-	"#c3423f",
-	"#eb4511",
+	'#0586ff',
+	'#278ea5',
+	'#00a85f',
+	'#cab111',
+	'#c3423f',
+	'#eb4511',
 ];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
 	return (
 		// Link for Navigation
-		<Link href={`#${href}`}>
-			<motion.li
+		<Link href={`/#${href}`} scroll={false} shallow>
+			<m.li
 				className={`${styles.menu_item} ${hoverStyles.menu_item}`}
 				style={{ backgroundColor: colors[i] }}
 				variants={variants}
@@ -59,16 +59,16 @@ const MenuItem = ({ i, name, href, icon }: any) => {
 					{/* Link */}
 					<a className={styles.link}>
 						{name}
-						<motion.div
+						<m.div
 							className={styles.link_after}
 							style={{
-								backgroundColor: "white",
-								color: "white",
+								backgroundColor: 'white',
+								color: 'white',
 							}}
 						/>
 					</a>
 				</div>
-			</motion.li>
+			</m.li>
 		</Link>
 	);
 };

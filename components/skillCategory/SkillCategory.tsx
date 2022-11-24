@@ -1,12 +1,12 @@
 // Components
-import Modal from "../modal/Modal";
-import { motion, AnimatePresence } from "framer-motion";
-import { DiHtml5 } from "react-icons/di";
+import Modal from '../modal/Modal';
+import { m, AnimatePresence } from 'framer-motion';
+import { DiHtml5 } from 'react-icons/di';
 // React and TS imports
-import { useState } from "react";
-import { IconType } from "react-icons";
+import { useState } from 'react';
+import { IconType } from 'react-icons';
 // Styles
-import styles from "./skillCategory.module.scss";
+import styles from './skillCategory.module.scss';
 // Prop Types
 interface Props {
 	skills: any;
@@ -24,22 +24,22 @@ const SkillCategory = ({ skills, category }: Props) => {
 	// Modal State
 	const [modalOpen, setModalOpen] = useState(false);
 	const [activeSkill, setActiveSkill] = useState<Skill>({
-		name: "HTML",
+		name: 'HTML',
 		icon: DiHtml5,
-		text: "",
+		text: '',
 		when: 0,
-		where: "",
+		where: '',
 	});
 	const { name, text, when, where } = activeSkill;
 	const close = () => setModalOpen(false);
 
 	const getCategoryColor = (category: string) => {
 		switch (category) {
-			case "plan":
+			case 'plan':
 				return styles.plan;
-			case "design":
+			case 'design':
 				return styles.design;
-			case "build":
+			case 'build':
 				return styles.build;
 			default:
 				break;
@@ -53,7 +53,7 @@ const SkillCategory = ({ skills, category }: Props) => {
 					{skills
 						.sort((a: Skill, b: Skill) => a.name.localeCompare(b.name))
 						.map((skill: Skill, index: number) => (
-							<motion.li
+							<m.li
 								className={`${getCategoryColor(category)} ${styles.skill}`}
 								key={index}
 								onClick={() => {
@@ -63,12 +63,12 @@ const SkillCategory = ({ skills, category }: Props) => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}>
 								<skill.icon className={styles.icon} />
-								<motion.p className={styles.name}>{skill.name}</motion.p>
-							</motion.li>
+								<m.p className={styles.name}>{skill.name}</m.p>
+							</m.li>
 						))}
 				</ul>
 
-				<AnimatePresence initial={false} mode="wait">
+				<AnimatePresence initial={false} mode='wait'>
 					{modalOpen && (
 						<Modal modalOpen={modalOpen} handleClose={close}>
 							<div className={styles.modal_content}>

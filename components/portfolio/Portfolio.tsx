@@ -1,24 +1,18 @@
 // React/Next/NPM
-import React, { useEffect, useRef, useState } from "react";
-import Image, { StaticImageData } from "next/image";
-import {
-	AnimatePresence,
-	motion,
-	useScroll,
-	useSpring,
-	useTransform,
-} from "framer-motion";
+import React, { useRef, useState } from 'react';
+import Image, { StaticImageData } from 'next/image';
+import { AnimatePresence, m, useScroll } from 'framer-motion';
 // Components
-import AnimatedTitle from "../animatedTitle/AnimatedTitle";
-import Modal from "../modal/Modal";
+import AnimatedTitle from '../animatedTitle/AnimatedTitle';
+import Modal from '../modal/Modal';
 // Styles/Assets
-import styles from "./portfolio.module.scss";
-import tourism from "../../public/tourism.png";
-import directory from "../../public/directory.png";
-import logo from "../../public/logo.png";
-import portfolio from "../../public/portfolio.png";
-import consultation from "../../public/consultation.png";
-import Background from "../../assets/blurry-gradient-haikei.svg";
+import styles from './portfolio.module.scss';
+import tourism from '../../public/tourism.png';
+import directory from '../../public/directory.png';
+import logo from '../../public/logo.png';
+import portfolio from '../../public/portfolio.png';
+import consultation from '../../public/consultation.png';
+import Background from '../../assets/blurry-gradient-haikei.svg';
 // Prop Types
 interface Carousel {
 	title: string;
@@ -30,28 +24,28 @@ interface Carousel {
 const carouselData = [
 	{
 		index: 0,
-		title: "Vanilla HTML",
+		title: 'Vanilla HTML',
 		url: tourism,
-		alt: "HTML Tourism website homepage screenshot",
+		alt: 'HTML Tourism website homepage screenshot',
 	},
 	{
 		index: 1,
-		title: "Custom UI",
+		title: 'Custom UI',
 		url: directory,
-		alt: "Business directory UI",
+		alt: 'Business directory UI',
 	},
-	{ index: 2, title: "SVG Design", url: logo, alt: "Website logo" },
+	{ index: 2, title: 'SVG Design', url: logo, alt: 'Website logo' },
 	{
 		index: 3,
-		title: "Responsive Layout",
+		title: 'Responsive Layout',
 		url: portfolio,
-		alt: "Landing page with responsive layout",
+		alt: 'Landing page with responsive layout',
 	},
 	{
 		index: 4,
-		title: "Consultation",
+		title: 'Consultation',
 		url: consultation,
-		alt: "Screenshot of tourism website",
+		alt: 'Screenshot of tourism website',
 	},
 ];
 
@@ -59,10 +53,10 @@ const Portfolio = () => {
 	// Modal State
 	const [modalOpen, setModalOpen] = useState(false);
 	const [activePanel, setActivePanel] = useState<Carousel>({
-		title: "",
-		url: { src: "", height: 0, width: 0 },
+		title: '',
+		url: { src: '', height: 0, width: 0 },
 		index: 0,
-		alt: "",
+		alt: '',
 	});
 	const close = () => setModalOpen(false);
 
@@ -71,48 +65,48 @@ const Portfolio = () => {
 
 	return (
 		<section
-			id="portfolio"
+			id='portfolio'
 			className={`scroll-area ${[styles.portfolio_section]}`}>
 			<div className={styles.header_wrapper}>
-				<AnimatedTitle str="My P" />
+				<AnimatedTitle str='My P' />
 				<svg
 					id={styles.progress}
 					className={styles.progress}
-					width="min(8vw, 4rem)"
-					height="min(10vh, 4rem)"
-					viewBox="0 0 100 100">
-					<motion.ellipse
-						cx="40"
-						cy="50"
-						rx="24"
-						ry="25"
-						pathLength="1"
+					width='min(8vw, 4rem)'
+					height='min(10vh, 4rem)'
+					viewBox='0 0 100 100'>
+					<m.ellipse
+						cx='40'
+						cy='50'
+						rx='24'
+						ry='25'
+						pathLength='1'
 						className={styles.indicator}
 						style={{ pathLength: scrollXProgress }}
 					/>
 					<ellipse
-						cx="40"
-						cy="50"
-						rx="35"
-						ry="36"
-						pathLength="1"
+						cx='40'
+						cy='50'
+						rx='35'
+						ry='36'
+						pathLength='1'
 						className={styles.bg_outer}
 					/>
 					<ellipse
-						cx="40"
-						cy="50"
-						rx="12"
-						ry="8"
-						pathLength="1"
+						cx='40'
+						cy='50'
+						rx='12'
+						ry='8'
+						pathLength='1'
 						className={styles.bg_inner}
 					/>
 				</svg>
-				<AnimatedTitle str="rtfolio" />
+				<AnimatedTitle str='rtfolio' />
 			</div>
 			<div className={styles.carousel_container}>
 				<ul className={styles.carousel} ref={ref}>
 					{carouselData.map((slide, index) => (
-						<motion.li
+						<m.li
 							key={index}
 							className={styles.list_item}
 							onClick={() => {
@@ -125,14 +119,14 @@ const Portfolio = () => {
 								src={slide.url}
 								width={300}
 								height={500}
-								objectFit={"scale-down"}
+								objectFit={'scale-down'}
 								alt={slide.alt}
 								priority
 							/>
-						</motion.li>
+						</m.li>
 					))}
 				</ul>
-				<AnimatePresence initial={false} mode="wait">
+				<AnimatePresence initial={false} mode='wait'>
 					{modalOpen && (
 						<Modal modalOpen={modalOpen} handleClose={close}>
 							<div>{activePanel.title}</div>
@@ -141,7 +135,7 @@ const Portfolio = () => {
 								src={activePanel.url}
 								width={300}
 								height={500}
-								objectFit={"scale-down"}
+								objectFit={'scale-down'}
 								alt={activePanel.alt}
 							/>
 						</Modal>

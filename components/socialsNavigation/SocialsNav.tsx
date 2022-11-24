@@ -1,6 +1,6 @@
 // React/Next/NPM
 import React, { useRef } from 'react';
-import { motion, useCycle } from 'framer-motion';
+import { m, useCycle } from 'framer-motion';
 import { useDimensions } from '../../utils/use-dimensions';
 // Components
 import SocialsSidebar from '../sidebar/SocialsSidebar';
@@ -13,7 +13,7 @@ const Socials = () => {
 	const containerRef = useRef(null);
 	const { height } = useDimensions(containerRef);
 	return (
-		<motion.nav
+		<m.nav
 			style={{ pointerEvents: isOpen ? 'auto' : 'none' }}
 			initial={false}
 			animate={isOpen ? 'open' : 'closed'}
@@ -22,7 +22,7 @@ const Socials = () => {
 			ref={containerRef}>
 			<SocialsSidebar />
 			<MenuToggle type='social' size={30} toggle={() => toggleOpen()} />
-		</motion.nav>
+		</m.nav>
 	);
 };
 

@@ -1,35 +1,35 @@
 // React/Next/NPM
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
+import { m } from 'framer-motion';
 // Components
-import MenuItem from "../menuItem/MenuItem";
+import MenuItem from '../menuItem/MenuItem';
 // Styles/Assets
-import styles from "./sidebar.module.scss";
-import hoverStyles from "../../styles/hover.module.scss";
+import styles from './sidebar.module.scss';
+import hoverStyles from '../../styles/hover.module.scss';
 import {
 	TiSocialFacebook,
 	TiSocialGithub,
 	TiSocialInstagram,
 	TiSocialLinkedin,
 	TiSocialTwitter,
-} from "react-icons/ti";
+} from 'react-icons/ti';
 
 // Motion variants
 const backgroundVariants = {
 	open: (height = 1000) => ({
 		clipPath: `circle(${height * 2 + 200}px at calc(100% - 10vw) 10vh)`,
 		transition: {
-			type: "spring",
+			type: 'spring',
 			stiffness: 20,
 			restDelta: 2,
 		},
 		z: 100,
 	}),
 	closed: {
-		clipPath: "circle(30px at calc(100% - 10vw) 10vh)",
+		clipPath: 'circle(30px at calc(100% - 10vw) 10vh)',
 		transition: {
 			delay: 0.5,
-			type: "spring",
+			type: 'spring',
 			stiffness: 400,
 			damping: 40,
 		},
@@ -47,11 +47,11 @@ const linksVariants = {
 
 // Names, icons and links to be mapped
 const socials = [
-	{ index: 0, name: "Facebook", icon: <TiSocialFacebook size={24} /> },
-	{ index: 1, name: "Github", icon: <TiSocialGithub size={32} /> },
-	{ index: 2, name: "Instagram", icon: <TiSocialInstagram size={24} /> },
-	{ index: 3, name: "Twitter", icon: <TiSocialTwitter size={24} /> },
-	{ index: 4, name: "LinkedIn", icon: <TiSocialLinkedin size={24} /> },
+	{ index: 0, name: 'Facebook', icon: <TiSocialFacebook size={24} /> },
+	{ index: 1, name: 'Github', icon: <TiSocialGithub size={32} /> },
+	{ index: 2, name: 'Instagram', icon: <TiSocialInstagram size={24} /> },
+	{ index: 3, name: 'Twitter', icon: <TiSocialTwitter size={24} /> },
+	{ index: 4, name: 'LinkedIn', icon: <TiSocialLinkedin size={24} /> },
 ];
 
 const SocialsSidebar = () => {
@@ -64,17 +64,17 @@ const SocialsSidebar = () => {
 			const rect = item.getBoundingClientRect(),
 				x = e.clientX - rect.left,
 				y = e.clientY - rect.top;
-			item.style.setProperty("--mouse-x", `${x}px`);
-			item.style.setProperty("--mouse-y", `${y}px`);
+			item.style.setProperty('--mouse-x', `${x}px`);
+			item.style.setProperty('--mouse-y', `${y}px`);
 		}
 	};
 	return (
 		<>
-			<motion.div
+			<m.div
 				className={styles.socials_background}
 				variants={backgroundVariants}
 			/>
-			<motion.ul
+			<m.ul
 				className={styles.socials_ul}
 				variants={linksVariants}
 				onMouseMove={handleMouseMove}>
@@ -86,7 +86,7 @@ const SocialsSidebar = () => {
 						icon={social.icon}
 					/>
 				))}
-			</motion.ul>
+			</m.ul>
 		</>
 	);
 };

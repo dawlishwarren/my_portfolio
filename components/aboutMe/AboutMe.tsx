@@ -1,15 +1,14 @@
 // React/Next/NPM
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { m } from 'framer-motion';
 // Components
-import AnimatedTitle from "../animatedTitle/AnimatedTitle";
+import AnimatedTitle from '../animatedTitle/AnimatedTitle';
 // Styles/Assets
-import styles from "./aboutMe.module.scss";
-import Tilt from "../../assets/tilt.svg";
-import Arrow from "../../assets/arrow.svg";
-import MobileArrow from "../../assets/mobileArrow.svg";
-import biopic from "../../public/bio.jpeg";
-import { useEffect, useState } from "react";
+import styles from './aboutMe.module.scss';
+import Tilt from '../../assets/tilt.svg';
+import MobileArrow from '../../assets/mobileArrow.svg';
+import biopic from '../../public/bio.jpeg';
+import { useEffect, useState } from 'react';
 
 const bioSentences = [
 	`Hello world, lorem ipsum dolor sit amet… just kidding! I'm a Leeds
@@ -42,36 +41,36 @@ const AboutMe = () => {
 				setDesktop(false);
 			}
 		};
-		window.addEventListener("resize", updateMedia);
-		return () => window.removeEventListener("resize", updateMedia);
+		window.addEventListener('resize', updateMedia);
+		return () => window.removeEventListener('resize', updateMedia);
 	}, []);
 	return (
-		<section id="about" className={`scroll-area ${[styles.about_section]}`}>
+		<section id='about' className={`scroll-area ${[styles.about_section]}`}>
 			{/* SVG background element */}
 			<Tilt className={styles.tilt} />
 			{/* Title */}
 			<header className={styles.header_wrapper}>
-				<AnimatedTitle str="About Me" />
+				<AnimatedTitle str='About Me' />
 				{!isDesktop && <MobileArrow className={styles.arrow} />}
 			</header>
 			{/* Content */}
 			<div className={styles.content_container}>
 				<div className={styles.image_container}>
-					<Image src={biopic} objectFit="fill" alt="Picture of author" />
+					<Image src={biopic} objectFit='fill' alt='Picture of author' />
 				</div>
 				{/* Sentences mapped to animated divs */}
-				<motion.div className={styles.bio_container}>
+				<m.div className={styles.bio_container}>
 					{bioSentences.map((sentence, i) => (
-						<motion.div
+						<m.div
 							key={i}
 							className={styles.animation_wrapper}
 							initial={{ opacity: 0, translateX: -50 }}
 							whileInView={{ opacity: 1, translateX: 0 }}
 							transition={{ duration: 1, delay: i * 0.5 }}>
-							<motion.p className={styles.bio_paragraph}>{sentence}</motion.p>
-						</motion.div>
+							<m.p className={styles.bio_paragraph}>{sentence}</m.p>
+						</m.div>
 					))}
-				</motion.div>
+				</m.div>
 			</div>
 		</section>
 	);

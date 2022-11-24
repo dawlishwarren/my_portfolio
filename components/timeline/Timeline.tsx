@@ -1,5 +1,5 @@
 // React/Next/NPM
-import { motion, Variants } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 
 // Styles/Assets
 import styles from './timeline.module.scss';
@@ -101,12 +101,12 @@ const Timeline = () => {
 	return (
 		<div className={styles.timeline}>
 			{content.map((topic, index) => (
-				<motion.li
+				<m.li
 					key={index}
 					initial={index % 2 == 0 ? 'offscreenLeft' : 'offscreenRight'}
 					viewport={{ once: true }}
 					whileInView='onscreen'>
-					<motion.div
+					<m.div
 						className={styles.content_container}
 						variants={timelineVariants}
 						style={{ color: colors[index] }}>
@@ -118,8 +118,8 @@ const Timeline = () => {
 						<p className={styles.first_line}>{topic.firstLine}.</p>
 						{topic.rest && <p className={styles.rest}>{topic.rest}.</p>}
 						<p className={styles.icon}>{topic.icon}</p>
-					</motion.div>
-				</motion.li>
+					</m.div>
+				</m.li>
 			))}
 		</div>
 	);
