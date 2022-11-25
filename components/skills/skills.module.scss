@@ -4,13 +4,69 @@
 	width: 100vw;
 	height: fit-content;
 	isolation: isolate;
+	margin-top: -10rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 .container {
 	flex-grow: 1;
 	margin: 0 auto;
 	position: relative;
 	max-width: 1200px;
+	width: 80vw;
 	padding-top: 1.5rem;
+	.blob {
+		&_1,
+		&_2 {
+			position: absolute;
+			width: 800px;
+			height: 500px;
+			z-index: -1;
+		}
+		&_1 {
+			animation: myBlob 120s infinite alternate-reverse ease-in;
+		}
+		&_2 {
+			animation: myBlob 100s infinite alternate ease-in;
+		}
+		@keyframes myBlob {
+			0% {
+				top: 0;
+				left: 0;
+			}
+			15% {
+				top: 30%;
+				left: 15%;
+			}
+			33% {
+				left: 20%;
+			}
+			50% {
+				top: 15%;
+				left: 35%;
+			}
+			60% {
+				top: 50%;
+				left: 60%;
+			}
+			80% {
+				top: 60%;
+				left: 20%;
+			}
+			100% {
+				top: 75%;
+				left: 75%;
+			}
+		}
+	}
+	.header_wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
 
 	.box {
 		padding: 0;
@@ -64,8 +120,13 @@
 	.skills_section {
 		height: fit-content;
 		margin-top: -15vh;
-
+		.header_wrapper {
+			padding-top: 3rem;
+		}
 		.container {
+			padding-top: 0;
+			margin-top: 3rem;
+			margin-bottom: 3rem;
 			.box {
 				.content {
 					.columns {
@@ -74,11 +135,13 @@
 						align-content: normal;
 						justify-content: center;
 						align-items: normal;
-						padding-block: 2rem;
+						padding: 1rem 0 0 0;
+						margin: 0;
 						.column {
 							border-right: 1px solid;
 							&:last-child {
 								border-right: none;
+								margin-bottom: none !important;
 							}
 						}
 					}
@@ -88,15 +151,34 @@
 	}
 }
 @media (min-width: 900px) {
+	.skills_section {
+		.header_wrapper {
+			display: none;
+		}
+		.container {
+			max-width: 75vw;
+		}
+	}
 }
 
 [data-theme='light'] {
 	.skills_section {
 		background: none;
-		.box {
-			background-color: #f6f6f6;
-			color: #141c3a;
-			box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+		.header_wrapper {
+			color: $color-light-text-white;
+		}
+		.container {
+			.blob {
+				&_1,
+				&_2 {
+					display: none;
+				}
+			}
+			.box {
+				background-color: #f6f6f6;
+				color: #141c3a;
+				box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+			}
 		}
 	}
 }
@@ -104,7 +186,7 @@
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {
-			background-color: $color-dark-elevated-primary;
+			background-color: rgba($color: $color-dark-elevated-primary, $alpha: 0.9);
 			color: $color-dark-text-secondary;
 			box-shadow: 0 1px 5px 0 $color-dark-text-disabled,
 				0 0 0 2px $color-dark-text-secondary;

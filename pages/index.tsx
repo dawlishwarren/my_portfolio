@@ -6,8 +6,6 @@ import dynamic from 'next/dynamic';
 import Main from '../components/main/Main';
 import Layout from '../components/layout/Layout';
 import Blog from '../components/blog/Blog';
-import Contact from '../components/contact/Contact';
-
 const AboutMe = dynamic(() => import('../components/aboutMe/AboutMe'), {
 	suspense: false,
 });
@@ -15,6 +13,9 @@ const Skills = dynamic(() => import('../components/skills/Skills'), {
 	suspense: false,
 });
 const Portfolio = dynamic(() => import('../components/portfolio/Portfolio'), {
+	suspense: false,
+});
+const Contact = dynamic(() => import('../components/contact/Contact'), {
 	suspense: false,
 });
 
