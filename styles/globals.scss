@@ -1,5 +1,33 @@
 @import "styles/settings/settings";
 // Global settings
+//-------------- Style resets -------------- //
+html,
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+body {
+	min-height: 100vh;
+}
+img,
+picture,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+}
+input,
+textarea,
+button,
+select {
+	font: inherit;
+}
 html,
 body {
 	padding: 0;
@@ -9,34 +37,10 @@ body {
 	overflow: hidden;
 	scroll-behavior: smooth;
 }
-:root {
-	/* Your default theme */
-	$color-background: white;
-	$color-text: black;
-}
-// [data-theme='dark'] {
-// 	$color-background: $color-lightest;
-// 	$color-text: $color-darkest;
-// }
-
-// Colours
-@media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-}
-
-// Style resets
 html {
-	font-size: 16px;
+	font-size: 1em;
 }
-// Box sizing
-html,
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
+
 body,
 h1,
 h2,
@@ -68,7 +72,14 @@ a {
 	text-decoration: none;
 }
 
-// Scroll container classes
+//-------------- Colors -------------- //
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+// Scroll section container class
 .container {
 	padding: 0;
 	margin: 0 auto;
