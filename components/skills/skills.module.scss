@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@import "styles/settings/_settings";
 .skills_section {
 	vertical-align: baseline;
 	width: 100vw;
@@ -150,7 +150,7 @@
 		}
 	}
 }
-@media (min-width: 900px) {
+@media (min-width: 600px) {
 	.skills_section {
 		.header_wrapper {
 			display: none;
@@ -161,7 +161,7 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.skills_section {
 		background: none;
 		.header_wrapper {
@@ -182,7 +182,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {

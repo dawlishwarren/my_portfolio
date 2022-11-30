@@ -1,9 +1,111 @@
+@import "styles/settings/_settings";
 .contact_section {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
+	flex-direction: column;
 	width: 100vw;
-	height: 100vh;
-	background-color: purple;
-	color: #fff;
+	height: fit-content;
+
+	.box {
+		margin-top: -10vh;
+		margin-bottom: 10vh;
+		padding-block: 10vh;
+		width: 80vw;
+		border-radius: 12px;
+		display: block;
+		.header_wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: fit-content;
+			padding-top: 2rem;
+			padding-bottom: 1rem;
+		}
+		.content {
+			padding-top: 2rem;
+			.columns {
+				margin-inline: 0;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				text-align: center;
+				.column {
+					padding: 1rem;
+					border-bottom: 2px solid $color-light-secondary;
+					display: block;
+					flex-basis: 0;
+					flex-grow: 1;
+					flex-shrink: 1;
+					margin: 0 auto;
+					&:last-child {
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 600px) {
+	.contact_section {
+		height: fit-content;
+
+		.box {
+			padding-block: 15vh;
+			margin-top: -10vh;
+			margin-bottom: 3rem;
+			.header_wrapper {
+				padding-top: 3rem;
+			}
+			.content {
+				.columns {
+					display: flex;
+					flex-direction: row;
+					align-content: normal;
+					justify-content: center;
+					align-items: normal;
+					padding: 1rem 0 0 0;
+					margin: 0;
+					.column {
+						border-right: 1px solid;
+						border-bottom: none;
+						&:last-child {
+							border-right: 0;
+							margin-bottom: 0 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	.contact_section {
+		.box {
+			max-width: 75vw;
+		}
+	}
+}
+
+[data-theme="light"] {
+	.contact_section {
+		background-color: $color-light-text-white;
+		color: darken($color: $color-light-secondary, $amount: 15);
+
+		.box {
+			background-color: $color-light-text-white;
+			box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+			.content {
+				color: $color-light-secondary;
+			}
+		}
+	}
+}
+
+[data-theme="dark"] {
+	.contact_section {
+		background-color: $color-dark-background;
+		color: $color-light-secondary;
+	}
 }

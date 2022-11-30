@@ -1,13 +1,16 @@
-import { CgArrowLongDown } from "react-icons/cg";
+import { BsArrowDownCircle } from "react-icons/bs";
 import styles from "./scrollDown.module.scss";
 
-const ScrollDown = () => {
+interface Props {
+	href: string;
+}
+
+const ScrollDown = ({ href }: Props) => {
 	return (
 		<div className={styles.scroll_down}>
-			{/* <FiCornerLeftDown /> */}
-			<CgArrowLongDown />
-			<p>(Scroll down to find out more)</p>
-			<CgArrowLongDown />
+			<a href={href}>
+				<span></span>
+			</a>
 		</div>
 	);
 };
