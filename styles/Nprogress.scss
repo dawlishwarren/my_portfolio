@@ -1,4 +1,4 @@
-@import "./settings/colors";
+@use './settings/colors' as *;
 #nprogress {
 	--primary-color: rgb(195, 66, 63);
 	pointer-events: none;
