@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@use '../../styles/settings' as *;
 
 .about_section {
 	display: flex;
@@ -14,7 +14,6 @@
 		position: absolute;
 		top: -1px;
 		left: 0;
-		height: 350px;
 		width: 300%;
 		pointer-events: none;
 	}
@@ -42,7 +41,7 @@
 			width: 50vw;
 			align-self: center;
 			> * {
-				border-radius: 12.5px;
+				border-radius: $border-radius;
 			}
 		}
 		.bio_container {
@@ -104,7 +103,7 @@
 
 				.bio_paragraph {
 					border: 1px solid;
-					border-radius: 12.5px;
+					border-radius: $border-radius;
 					margin-bottom: 1rem;
 					padding: 1rem;
 				}
@@ -118,7 +117,7 @@
 		color: $color-light-text-white;
 		.tilt {
 			filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
-			fill: $color-light-text-white;
+			fill: #f6f6f6;
 		}
 		.content_container {
 			.bio_container {

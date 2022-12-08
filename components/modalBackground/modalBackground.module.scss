@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@use '../../styles/settings' as *;
 
 .backdrop {
 	position: fixed;
@@ -17,7 +17,7 @@
 	.backdrop {
 		position: absolute;
 		top: -2.5px;
-		left: -2.5px;
+		left: -2.6px;
 		bottom: 0;
 		width: calc(100% + 5px);
 		height: calc(100% + 5px);

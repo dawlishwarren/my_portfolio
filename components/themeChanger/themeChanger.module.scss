@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@use '../../styles/settings' as *;
 
 .theme {
 	z-index: 2;
@@ -40,7 +40,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.sub_menu {
 		&_item {
 			color: $color-light-text-white !important;
@@ -54,7 +54,7 @@
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.sub_menu {
 		&_background {
 			background-color: none;

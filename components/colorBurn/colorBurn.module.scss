@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@use '../../styles/settings' as *;
 
 .color_burn_wrapper {
 	--max-width: 50rem;

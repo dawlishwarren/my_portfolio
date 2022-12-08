@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@use '../../styles/settings' as *;
 @keyframes bounce {
 	0% {
 		bottom: 1;
@@ -28,7 +28,7 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			content: "";
+			content: '';
 			width: 16px;
 			height: 16px;
 			margin: -12px 0 0 -8px;
@@ -44,7 +44,7 @@
 			top: 0;
 			left: 0;
 			z-index: 0;
-			content: "";
+			content: '';
 			width: 44px;
 			height: 44px;
 			border-radius: 100%;
@@ -87,7 +87,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.scroll_down {
 		a span {
 			border-color: $color-light-text-black;
@@ -100,7 +100,7 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.scroll_down {
 		a span {
 			border-color: $color-dark-text-primary;

@@ -1,4 +1,4 @@
-@import 'styles/settings/_settings';
+@use '../../styles/settings' as *;
 
 .timeline {
 	padding-top: 2rem;

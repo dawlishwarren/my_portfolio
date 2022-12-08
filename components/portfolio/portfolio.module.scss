@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@use '../../styles/settings' as *;
 
 // Section
 .portfolio_section {
@@ -7,7 +7,7 @@
 	justify-content: center;
 	width: 100vw;
 	min-height: 100vh;
-	background-image: url("../../assets/blurry-gradient-haikei.svg");
+	background-image: url('../../assets/blurry-gradient-haikei.svg');
 	aspect-ratio: 960/540;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -66,7 +66,7 @@
 				position: relative;
 				cursor: pointer;
 				&::after {
-					content: "";
+					content: '';
 					border: 2px solid;
 					left: 0;
 					right: 0;
@@ -148,7 +148,7 @@
 }
 
 // LIGHT MODE
-[data-theme="light"] {
+[data-theme='light'] {
 	.portfolio_section {
 		background-color: none;
 		color: $color-light-text-white;
@@ -208,7 +208,7 @@
 }
 
 // DARK MODE
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.portfolio_section {
 		background-image: none;
 		background-color: $color-dark-background;

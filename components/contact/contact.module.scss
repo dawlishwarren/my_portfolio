@@ -1,4 +1,4 @@
-@import "styles/settings/_settings";
+@use '../../styles/settings' as *;
 .contact_section {
 	display: flex;
 	justify-content: flex-start;
@@ -88,7 +88,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.contact_section {
 		background-color: $color-light-text-white;
 		color: darken($color: $color-light-secondary, $amount: 15);
@@ -103,7 +103,7 @@
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.contact_section {
 		background-color: $color-dark-background;
 		color: $color-light-secondary;

@@ -1,3 +1,5 @@
+@use './colors' as *;
+// ------------- GRADIENTS ------------- //
 @mixin gradient($property, $opts: none) {
 	#{$property}: linear-gradient(
 			-45deg,
@@ -30,6 +32,10 @@
 	);
 }
 
+// ------------- HOVERS ------------- //
+@mixin hoverScale {
+	transform: scale3d(1.01, 1.01, 1.01);
+}
 @mixin skillHover($color) {
 	&:hover {
 		.icon {
@@ -41,12 +47,14 @@
 	}
 }
 
+// ------------- POSITIONING ------------- //
 @mixin flex-center {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+// ------------- ANIMATION ------------- //
 @mixin gradient-animation {
 	background-size: 500% 500%;
 	animation: gradient 12s ease infinite;
@@ -64,7 +72,7 @@
 }
 
 @mixin underline_after {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 100%;
 	transform: scaleX(0);
