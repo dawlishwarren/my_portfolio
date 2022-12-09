@@ -22,7 +22,7 @@
 		width: calc(100% + 5px);
 		height: calc(100% + 5px);
 		border: 1px solid rgba($color: $color-backdrop, $alpha: 0.8);
-		border-radius: inherit;
+		border-radius: $border-radius;
 	}
 	[data-theme='light'] {
 		.backdrop {
@@ -38,6 +38,6 @@
 }
 [data-theme='dark'] {
 	.backdrop {
-		background: $color-charcoal;
+		background: $color-dark-background;
 	}
 }

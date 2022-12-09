@@ -104,10 +104,12 @@ const Skills = () => {
 						<div className={styles.columns}>
 							<div className={styles.column}>
 								<h1 className={`${styles.title} ${styles.plan}`}>Planner</h1>
-								<p>
-									A career accidentally built on red, green, refactor. I now
-									understand the importance of planning.
-								</p>
+								<div className={styles.column_text}>
+									<p>
+										A career accidentally built on red, green, refactor. I now
+										understand the importance of planning.
+									</p>
+								</div>
 								<p className={`${styles.primary} ${styles.plan}`}>
 									Failing to prepare:
 								</p>
@@ -119,10 +121,12 @@ const Skills = () => {
 							</div>
 							<div className={styles.column}>
 								<h1 className={`${styles.title} ${styles.design}`}>Designer</h1>
-								<p>
-									Whether it&apos;s front or back end, I work with the goal of
-									design so nice it goes unnoticed.
-								</p>
+								<div className={styles.column_text}>
+									<p>
+										Whether it&apos;s front or back end, I work with the goal of
+										design so nice it goes unnoticed.
+									</p>
+								</div>
 								<p className={`${styles.primary} ${styles.design}`}>
 									Business in the front:
 								</p>
@@ -134,10 +138,12 @@ const Skills = () => {
 							</div>
 							<div className={styles.column}>
 								<h1 className={`${styles.title} ${styles.build}`}>Builder</h1>
-								<p>
-									Beguiled by the magic of code, I love building things from
-									scratch.
-								</p>
+								<div className={styles.column_text}>
+									<p>
+										Beguiled by the magic of code, I love building things from
+										scratch.
+									</p>
+								</div>
 								<p className={`${styles.primary} ${styles.build}`}>I speak:</p>
 								<SkillCategory category={'build'} skills={languages} />
 								<p className={`${styles.primary} ${styles.build}`}>

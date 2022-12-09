@@ -40,11 +40,11 @@
 
 [data-theme='light'] {
 	.modal {
-		background-color: $color-lavender;
+		background-color: #f6f6f6;
 		.close_wrapper {
 			.close_button {
-				background: $color-charcoal;
-				color: $color-lavender;
+				background: $color-build;
+				color: $color-light-text-white;
 			}
 		}
 	}
@@ -52,5 +52,15 @@
 [data-theme='dark'] {
 	.modal {
 		background-color: $color-dark-background;
+		.close_wrapper {
+			.close_button {
+				background: $color-charcoal;
+				color: $color-dark-text-disabled;
+				&:hover {
+					background: $color-dark;
+					color: $color-dark-text-primary;
+				}
+			}
+		}
 	}
 }

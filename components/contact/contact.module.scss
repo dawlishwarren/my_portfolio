@@ -5,7 +5,7 @@
 	align-items: center;
 	flex-direction: column;
 	width: 100vw;
-	height: fit-content;
+	height: 100vh;
 
 	.box {
 		margin-top: -10vh;
@@ -48,11 +48,9 @@
 }
 @media (min-width: 600px) {
 	.contact_section {
-		height: fit-content;
-
 		.box {
 			padding-block: 15vh;
-			margin-top: -10vh;
+			margin-top: -1vh;
 			margin-bottom: 3rem;
 			.header_wrapper {
 				padding-top: 3rem;

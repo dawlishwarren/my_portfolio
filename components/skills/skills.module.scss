@@ -92,13 +92,18 @@
 					margin: 0 auto;
 					.title {
 						margin-bottom: 1em;
+						font-size: 3rem;
 					}
-					> p {
-						margin-bottom: 50px;
+					.column_text {
+						min-height: max(10vh, 7rem);
+						display: flex;
+						align-content: flex-start;
+						> p {
+							padding-inline: 1rem;
+						}
 					}
 
 					.primary {
-						margin-top: 50px;
 						margin-bottom: 1rem;
 					}
 					.plan {
@@ -125,8 +130,8 @@
 		}
 		.container {
 			padding-top: 0;
-			margin-top: 3rem;
-			margin-bottom: 3rem;
+			margin-top: 5rem;
+			margin-bottom: 5rem;
 			.box {
 				.content {
 					.columns {
@@ -135,10 +140,10 @@
 						align-content: normal;
 						justify-content: center;
 						align-items: normal;
-						padding: 1rem 0 0 0;
+						padding-block: 3rem;
 						margin: 0;
 						.column {
-							border-right: 1px solid;
+							border-right: 1px solid rgba($color: $color-grey, $alpha: 0.5);
 							&:last-child {
 								border-right: none;
 								margin-bottom: none !important;
@@ -163,7 +168,8 @@
 
 [data-theme='light'] {
 	.skills_section {
-		background: none;
+		background-color: none;
+
 		.header_wrapper {
 			color: $color-light-text-white;
 		}
@@ -175,9 +181,14 @@
 				}
 			}
 			.box {
-				background-color: #f6f6f6;
 				color: #141c3a;
-				box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+				background-color: #fff;
+				// box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+				box-shadow: 2px 4px 12px rgb(0, 0, 0, 8%);
+				transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+				&:hover {
+					box-shadow: 2px 4px 16px rgb(0 0 0 / 16%);
+				}
 			}
 		}
 	}

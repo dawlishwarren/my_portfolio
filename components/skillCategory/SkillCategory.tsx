@@ -16,8 +16,8 @@ interface Skill {
 	name: string;
 	icon: IconType;
 	text?: string;
-	when: number;
-	where: string;
+	when?: number;
+	where?: string;
 }
 
 const SkillCategory = ({ skills, category }: Props) => {
@@ -63,7 +63,7 @@ const SkillCategory = ({ skills, category }: Props) => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}>
 								<skill.icon className={styles.icon} />
-								<m.p className={styles.name}>{skill.name}</m.p>
+								{/* <m.p className={styles.name}>{skill.name}</m.p> */}
 							</m.li>
 						))}
 				</ul>
@@ -73,13 +73,13 @@ const SkillCategory = ({ skills, category }: Props) => {
 						<Modal modalOpen={modalOpen} handleClose={close}>
 							<div className={styles.modal_content}>
 								<div className={styles.header}>
-									<h2 className={styles.title}>{name}</h2>
 									<activeSkill.icon className={styles.icon} />
+									<h2 className={styles.title}>{name}</h2>
 								</div>
 								<div className={styles.text_container}>
-									<p className={styles.when}>Since: {when}</p>
-									<p className={styles.where}>Where: {where}</p>
-									<p className={styles.paragraph}>{text}</p>
+									{when && <p className={styles.when}>Since: {when}</p>}
+									{where && <p className={styles.where}>Where: {where}</p>}
+									{text && <p className={styles.paragraph}>{text}</p>}
 								</div>
 							</div>
 						</Modal>
