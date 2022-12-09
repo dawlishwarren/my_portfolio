@@ -7,11 +7,7 @@
 	justify-content: center;
 	width: 100vw;
 	min-height: 100vh;
-	background-image: url('../../assets/blurry-gradient-haikei.svg');
 	aspect-ratio: 960/540;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
 
 	// Header with SVG
 	.header_wrapper {
@@ -41,6 +37,12 @@
 	.carousel_container {
 		position: relative;
 		padding-inline: 0.5rem;
+		.arrow {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateX(100%);
+		}
 		.carousel {
 			display: flex;
 			list-style: none;
@@ -49,12 +51,13 @@
 			flex: 0 0 600px;
 			padding-bottom: 1rem;
 			.list_item {
+				border-radius: $border-radius;
 				padding-inline: 1em;
 				margin-block: 0.5rem;
 				margin-left: 0.5rem;
 				margin-right: 1rem;
 				&:first-child {
-					margin-left: 0;
+					margin-left: 0.5rem;
 				}
 				&:last-child {
 					margin: 0.5rem 3px 0.5rem 1rem;
@@ -65,16 +68,19 @@
 				align-items: center;
 				position: relative;
 				cursor: pointer;
+				transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+
 				&::after {
 					content: '';
-					border: 2px solid;
+					border: 0.5px solid;
+					border-radius: $border-radius;
 					left: 0;
 					right: 0;
 					bottom: 0;
 					top: 0;
 					position: absolute;
 					opacity: 0;
-					transition: all 0.3s ease-in;
+					transition: all 0.6s cubic-bezier(0, 0, 0.5, 1);
 				}
 				.slide_title {
 					flex-wrap: wrap;
@@ -85,8 +91,8 @@
 					font-weight: 500;
 				}
 				.slide_image {
-					transform: scale(1);
-					transition: all 0.3s ease-in;
+					transform: scale(0.9);
+					transition: transform 0.6s cubic-bezier(0, 0, 0.5, 1);
 				}
 				&:hover {
 					&::after {
@@ -97,7 +103,7 @@
 						opacity: 1;
 					}
 					.slide_image {
-						transform: scale(1.1);
+						transform: scale(1);
 					}
 				}
 			}
@@ -114,6 +120,20 @@
 			-webkit-border-radius: 1ex;
 		}
 	}
+
+	// Modal
+	.modal_content {
+		width: 100%;
+		.header {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			.title {
+				font-size: 4rem;
+				font-family: inherit;
+			}
+		}
+	}
 }
 
 @media (min-width: 600px) {
@@ -128,6 +148,10 @@
 			.carousel {
 				.list_item {
 					flex: 0 0 300px;
+					.slide_title {
+						padding-top: 2rem;
+						font-size: 3rem;
+					}
 				}
 			}
 		}
@@ -135,6 +159,10 @@
 }
 @media (min-width: 900px) {
 	.portfolio_section {
+		background-image: url('../../assets/blurry-gradient-haikei.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 		.carousel_container {
 			max-width: 60rem;
 			margin: 0 auto;
@@ -150,7 +178,7 @@
 // LIGHT MODE
 [data-theme='light'] {
 	.portfolio_section {
-		background-color: none;
+		background-color: #1c4b95;
 		color: $color-light-text-white;
 		.header_wrapper {
 			color: $color-light-text-white;
@@ -182,10 +210,11 @@
 			.carousel {
 				.list_item {
 					background-color: $color-light-text-white;
-					border: none;
-					box-shadow: 3px 3px 5px rgba(59, 135, 202, 0.4),
-						5px 5px 15px rgba(105, 25, 255, 0.3);
-					// filter: drop-shadow(3.5px 3.5px 3.5px rgba(0, 0, 0, 0.3));
+					box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+					&:hover {
+						box-shadow: 2px 4px 16px rgb(0 0 0 / 16%);
+						transform: scale3d(1.01, 1.01, 1.01);
+					}
 					.slide_title {
 						color: $color-light-secondary;
 					}
@@ -202,6 +231,13 @@
 			}
 			::-webkit-scrollbar-corner {
 				background: $color-grey;
+			}
+		}
+		.modal_content {
+			.header {
+				.title {
+					color: $color-light-text-black;
+				}
 			}
 		}
 	}
@@ -236,29 +272,23 @@
 		.carousel_container {
 			.carousel {
 				.list_item {
-					border-radius: 10px;
 					background-color: $color-dark-elevated-secondary;
 					.slide_title {
-						color: $color-dark-text-secondary;
+						color: $color-dark-text-primary;
 					}
 					&::after {
-						border-color: rgba(195, 66, 63, 0.4);
+						border-color: rgba(255, 255, 255, 0.4);
 					}
-					box-shadow: 5px 5px 15px rgba(195, 66, 63, 0.4),
-						3px 3px 5px rgba(241, 219, 75, 0.3);
-					transition: box-shadow 0.1s ease-in;
+					box-shadow: 2px 4px 12px rgb(255 255 255 / 16%);
 					&:hover {
+						box-shadow: 2px 4px 16px rgb(255 255 255 / 25%);
+						transform: scale3d(1.01, 1.01, 1.01);
 						background-color: rgba(
 							$color: $color-dark-elevated-primary,
 							$alpha: 0.4
 						);
-						box-shadow: 3px 3px 5px rgba(195, 66, 63, 0.4),
-							1px 1px 2.5px rgba(241, 219, 75, 0.3);
-						.slide_title {
-							color: $color-dark-text-primary;
-						}
 						&::after {
-							border-radius: 10px;
+							border-radius: $border-radius;
 						}
 					}
 				}
