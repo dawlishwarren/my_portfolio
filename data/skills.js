@@ -1,4 +1,4 @@
-import { BsJournalBookmarkFill } from 'react-icons/bs';
+import { AiOutlineBook } from 'react-icons/ai';
 import {
 	DiGithubFull,
 	DiCss3,
@@ -44,7 +44,7 @@ export const plan = [
 	},
 	{
 		name: 'Planner',
-		icon: BsJournalBookmarkFill,
+		icon: AiOutlineBook,
 		when: 2020,
 		text: `I've greatly benefited from using planners and reflecting on a regular basis. https://passionplanner.com/`,
 	},

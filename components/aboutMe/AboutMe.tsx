@@ -11,17 +11,28 @@ import biopic from '../../public/bio.jpeg';
 import { useEffect, useState } from 'react';
 
 const bioSentences = [
-	`Hello world, lorem ipsum dolor sit amet… just kidding! I'm a Leeds
-	(UK) based web developer, with a passion for front-end and interactivity.`,
-	`Coming from a background in professional music and restaurant
-	management I am entirely self taught in the field of development;
-	but my skills with time-management, collaboration and creative
-	problem-solving are well honed.`,
-	`I am an advocate, and have recently been vocal about (but not
-	limited to): accessibility, workplace energy sustainability and
-	men's mental health awareness. In my free hours catch me making
-	cocktails, with a saxophone, or on a road bike, just never at the
-	same time.`,
+	<m.p className={styles.bio_paragraph}>
+		Hello world, lorem ipsum dolor sit amet… just kidding! I'm a
+		<span className={styles.strong}> Leeds based web developer</span>, with a
+		passion for front-end and interactivity.
+	</m.p>,
+	<m.p className={styles.bio_paragraph}>
+		Coming from a background in{' '}
+		<span className={styles.strong}>professional music</span> and restaurant
+		management I am entirely <span className={styles.strong}>self taught</span>{' '}
+		in the field of development; but my skills with time-management,
+		collaboration and creative problem-solving are well honed.
+	</m.p>,
+	<m.p className={styles.bio_paragraph}>
+		I am an <span className={styles.strong}>advocate</span>, and have recently
+		been vocal about (but not limited to):{' '}
+		<span className={styles.gradient}>
+			accessibility, workplace energy sustainability and men's mental health
+			awareness.
+		</span>{' '}
+		In my free hours catch me making cocktails, with a saxophone, or on a road
+		bike, just never at the same time.
+	</m.p>,
 ];
 
 // Component Render
@@ -56,7 +67,12 @@ const AboutMe = () => {
 			{/* Content */}
 			<div className={styles.content_container}>
 				<div className={styles.image_container}>
-					<Image src={biopic} objectFit='fill' alt='Picture of author' />
+					<Image
+						src={biopic}
+						objectFit='fill'
+						alt='Picture of author'
+						placeholder='blur'
+					/>
 				</div>
 				{/* Sentences mapped to animated divs */}
 				<m.div className={styles.bio_container}>
@@ -67,7 +83,7 @@ const AboutMe = () => {
 							initial={{ opacity: 0, translateX: -50 }}
 							whileInView={{ opacity: 1, translateX: 0 }}
 							transition={{ duration: 1, delay: i * 0.5 }}>
-							<m.p className={styles.bio_paragraph}>{sentence}</m.p>
+							{sentence}
 						</m.div>
 					))}
 				</m.div>

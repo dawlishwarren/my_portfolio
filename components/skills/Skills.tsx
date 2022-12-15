@@ -15,9 +15,6 @@ import AnimatedTitle from '../animatedTitle/AnimatedTitle';
 const Skills = () => {
 	return (
 		<section id='skills' className={`scroll-area ${[styles.skills_section]}`}>
-			<div className={styles.header_wrapper}>
-				<AnimatedTitle str='Skills' />
-			</div>
 			<div className={styles.container}>
 				<div className={styles.blob_1}>
 					<svg
@@ -106,8 +103,12 @@ const Skills = () => {
 								<h1 className={`${styles.title} ${styles.plan}`}>Planner</h1>
 								<div className={styles.column_text}>
 									<p>
-										A career accidentally built on red, green, refactor. I now
-										understand the importance of planning.
+										A career accidentally built on{' '}
+										<span className={styles.plan}>red,</span>{' '}
+										<span className={styles.design}>green,</span>{' '}
+										<span className={styles.build}>refactor. </span> I now
+										understand the importance of{' '}
+										<span className={styles.strong}>planning.</span>
 									</p>
 								</div>
 								<p className={`${styles.primary} ${styles.plan}`}>
@@ -123,8 +124,9 @@ const Skills = () => {
 								<h1 className={`${styles.title} ${styles.design}`}>Designer</h1>
 								<div className={styles.column_text}>
 									<p>
-										Whether it&apos;s front or back end, I work with the goal of
-										design so nice it goes unnoticed.
+										Whether it&apos;s front or back end, I work with the goal of{' '}
+										<span className={styles.design}>design so nice</span> it
+										goes <span className={styles.strong}>unnoticed.</span>
 									</p>
 								</div>
 								<p className={`${styles.primary} ${styles.design}`}>
@@ -140,8 +142,13 @@ const Skills = () => {
 								<h1 className={`${styles.title} ${styles.build}`}>Builder</h1>
 								<div className={styles.column_text}>
 									<p>
-										Beguiled by the magic of code, I love building things from
-										scratch.
+										Beguiled by the
+										<span className={`${styles.build} ${styles.gradient}`}>
+											{' '}
+											magic of code,
+										</span>{' '}
+										I love <span className={styles.strong}>building</span>{' '}
+										things from scratch.
 									</p>
 								</div>
 								<p className={`${styles.primary} ${styles.build}`}>I speak:</p>

@@ -4,7 +4,6 @@
 	width: 100vw;
 	height: fit-content;
 	isolation: isolate;
-	margin-top: -10rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -16,7 +15,9 @@
 	position: relative;
 	max-width: 1200px;
 	width: 80vw;
-	padding-top: 1.5rem;
+	margin-top: -3rem;
+	margin-bottom: 2rem;
+
 	.blob {
 		&_1,
 		&_2 {
@@ -69,9 +70,10 @@
 	}
 
 	.box {
-		padding: 0;
+		padding-top: 3rem;
 		border-radius: 12px;
 		display: block;
+		transition: all 0.6s cubic-bezier(0, 0, 0.5, 1);
 		.content {
 			.columns {
 				margin-inline: 0;
@@ -100,11 +102,17 @@
 						align-content: flex-start;
 						> p {
 							padding-inline: 1rem;
+							font-weight: 500;
+							font-size: 1rem;
+							.strong {
+								font-style: oblique;
+							}
 						}
 					}
 
 					.primary {
 						margin-bottom: 1rem;
+						font-size: 1.25rem;
 					}
 					.plan {
 						color: $color-plan;
@@ -123,15 +131,10 @@
 
 @media (min-width: 600px) {
 	.skills_section {
-		height: fit-content;
-		margin-top: -15vh;
 		.header_wrapper {
 			padding-top: 3rem;
 		}
 		.container {
-			padding-top: 0;
-			margin-top: 5rem;
-			margin-bottom: 5rem;
 			.box {
 				.content {
 					.columns {
@@ -168,7 +171,7 @@
 
 [data-theme='light'] {
 	.skills_section {
-		background-color: none;
+		background-color: #f1f1f2;
 
 		.header_wrapper {
 			color: $color-light-text-white;
@@ -181,13 +184,39 @@
 				}
 			}
 			.box {
-				color: #141c3a;
-				background-color: #fff;
-				// box-shadow: 0 1px 5px 0 $color-backdrop, 0 0 0 1px #e6ecf8;
+				background-color: #f5f5f6;
 				box-shadow: 2px 4px 12px rgb(0, 0, 0, 8%);
-				transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
 				&:hover {
 					box-shadow: 2px 4px 16px rgb(0 0 0 / 16%);
+					background-color: #fff;
+				}
+				.content {
+					.columns {
+						.column {
+							.column_text {
+								color: #6e6e73;
+								.gradient {
+									background: none;
+								}
+								&:hover {
+									.gradient {
+										background-image: linear-gradient(
+											to left,
+											#f8ab5e 0,
+											#f36961 20%,
+											#a176c8 40%,
+											#759beb 60%,
+											#65beb3 80%,
+											#70db96 100%
+										);
+										-webkit-background-clip: text;
+										background-clip: text;
+										-webkit-text-fill-color: transparent;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -210,6 +239,24 @@
 						}
 						> p {
 							color: $color-dark-text-primary;
+						}
+						.column_text {
+							&:hover {
+								.gradient {
+									background-image: linear-gradient(
+										to left,
+										#f8ab5e 0,
+										#f36961 20%,
+										#a176c8 40%,
+										#759beb 60%,
+										#65beb3 80%,
+										#70db96 100%
+									);
+									-webkit-background-clip: text;
+									background-clip: text;
+									-webkit-text-fill-color: transparent;
+								}
+							}
 						}
 					}
 				}

@@ -15,7 +15,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: fit-content;
-		padding-bottom: 1rem;
+		padding-block: 3rem;
 		// SVG
 		#progress {
 			transform: rotate(-90deg);
@@ -36,7 +36,7 @@
 	// Content
 	.carousel_container {
 		position: relative;
-		padding-inline: 0.5rem;
+		// padding-inline: 0.5rem;
 		.arrow {
 			position: absolute;
 			right: 0;
@@ -56,6 +56,7 @@
 				margin-block: 0.5rem;
 				margin-left: 0.5rem;
 				margin-right: 1rem;
+
 				&:first-child {
 					margin-left: 0.5rem;
 				}
@@ -84,15 +85,16 @@
 				}
 				.slide_title {
 					flex-wrap: wrap;
-					text-align: center;
+					text-align: left;
 					padding-top: 15px;
 					padding-inline: 0.5rem;
 					font-size: 2rem;
 					font-weight: 500;
+					margin-bottom: 2rem;
 				}
 				.slide_image {
-					transform: scale(0.9);
-					transition: transform 0.6s cubic-bezier(0, 0, 0.5, 1);
+					max-width: 100%;
+					max-height: 100%;
 				}
 				&:hover {
 					&::after {
@@ -101,9 +103,6 @@
 						bottom: 15px;
 						top: 15px;
 						opacity: 1;
-					}
-					.slide_image {
-						transform: scale(1);
 					}
 				}
 			}
@@ -150,7 +149,7 @@
 					flex: 0 0 300px;
 					.slide_title {
 						padding-top: 2rem;
-						font-size: 3rem;
+						font-size: 2rem;
 					}
 				}
 			}
@@ -164,12 +163,14 @@
 		background-position: center;
 		background-size: cover;
 		.carousel_container {
-			max-width: 60rem;
-			margin: 0 auto;
+			max-width: 90vw;
+			margin-block: 0;
+			margin-left: 10vw;
 		}
 		.carousel {
 			.list_item {
-				flex: 0 0 600px !important;
+				flex: 0 0 700px !important;
+				min-height: 30rem;
 			}
 		}
 	}
@@ -209,7 +210,7 @@
 		.carousel_container {
 			.carousel {
 				.list_item {
-					background-color: $color-light-text-white;
+					background-color: #fff;
 					box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
 					&:hover {
 						box-shadow: 2px 4px 16px rgb(0 0 0 / 16%);

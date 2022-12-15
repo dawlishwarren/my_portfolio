@@ -121,7 +121,7 @@ const Portfolio = () => {
 								height={500}
 								objectFit={'scale-down'}
 								alt={slide.alt}
-								priority
+								placeholder='empty'
 							/>
 						</m.li>
 					))}
@@ -140,6 +140,7 @@ const Portfolio = () => {
 									height={500}
 									objectFit={'scale-down'}
 									alt={activePanel.alt}
+									placeholder='empty'
 								/>
 							</div>
 						</Modal>

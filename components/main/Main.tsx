@@ -1,16 +1,16 @@
 // React/Next/NPM
-import Image from "next/image";
+import Image from 'next/image';
 // Components
-import MainHero from "../mainHero/mainHero";
-import ScrollDown from "../scrollDown/ScrollDown";
-import ColorBurn from "../colorBurn/ColorBurn";
+import MainHero from '../mainHero/mainHero';
+import ScrollDown from '../scrollDown/ScrollDown';
+import ColorBurn from '../colorBurn/ColorBurn';
 // Styles/Assets
-import styles from "./main.module.scss";
-import heroImg from "../../public/hero_image.png";
+import styles from './main.module.scss';
+import heroImg from '../../public/hero_image.png';
 
 const Main = () => {
 	return (
-		<section id="main" className="scroll-area">
+		<section id='main' className='scroll-area'>
 			<main className={styles.main_section}>
 				{/* Content Container */}
 				<div className={styles.content_container}>
@@ -22,11 +22,12 @@ const Main = () => {
 					<div className={styles.image_container}>
 						<Image
 							src={heroImg}
-							alt="Picture of the author"
-							placeholder="blur"
-							layout="fill"
-							objectFit="contain"
+							alt='Picture of the author'
+							placeholder='blur'
+							layout='fill'
+							objectFit='contain'
 							className={styles.main_image}
+							priority
 						/>
 					</div>
 				</div>
@@ -35,7 +36,7 @@ const Main = () => {
 					<MainHero />
 				</div>
 				{/* Scroll */}
-				<ScrollDown href="#about" />
+				<ScrollDown href='#about' />
 			</main>
 		</section>
 	);

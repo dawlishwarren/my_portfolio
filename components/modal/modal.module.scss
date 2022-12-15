@@ -10,6 +10,7 @@
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
+	border-radius: $border-radius;
 
 	.close_wrapper {
 		width: 100%;
@@ -24,6 +25,10 @@
 			padding: 0.5rem;
 			margin: 0.5rem;
 			cursor: pointer;
+			transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+			&:hover {
+				transform: scale3d(1.05, 1.05, 1.05);
+			}
 		}
 	}
 }
@@ -33,8 +38,8 @@
 		overflow: hidden;
 		margin-top: 0;
 		padding: 3rem;
-		width: 100%;
-		height: 100%;
+		width: 60rem;
+		height: fit-content;
 		max-height: 100vh;
 		.close_wrapper {
 			.close_button {
@@ -57,13 +62,14 @@
 }
 [data-theme='dark'] {
 	.modal {
-		background-color: $color-dark-background;
+		background-color: lighten($color: $color-dark-background, $amount: 10);
+		border: solid $color-dark-text-disabled 1px;
 		.close_wrapper {
 			.close_button {
-				background: $color-charcoal;
+				background: $color-dark-background;
 				color: $color-dark-text-disabled;
 				&:hover {
-					background: $color-dark;
+					background: $color-dark-text-disabled;
 					color: $color-dark-text-primary;
 				}
 			}

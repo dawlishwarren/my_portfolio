@@ -50,7 +50,9 @@ $color-light-secondary: $color-blue-light;
 $color-light-background: $color-light;
 $color-light-accent: $color-yellow-dark;
 $color-light-text-black: $color-darkest;
+$color-light-text-black-secondary: rgba($color-darkest, 0.87);
 $color-light-text-white: $color-lightest;
+$color-light-text-white-secondary: rgba($color-light, 0.87);
 
 // Dark Mode Shades:
 $color-dark-text-primary: rgba(#f9ffe5, 0.87);
