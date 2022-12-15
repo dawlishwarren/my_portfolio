@@ -12,12 +12,15 @@ import directory from '../../public/directory.png';
 import logo from '../../public/logo.png';
 import portfolio from '../../public/portfolio.png';
 import consultation from '../../public/consultation.png';
+import { AiFillGithub } from 'react-icons/ai';
 // Prop Types
 interface Carousel {
 	title: string;
 	url: StaticImageData;
 	index: number;
 	alt: string;
+	text?: JSX.Element;
+	repo?: string;
 }
 // Data to map
 const carouselData = [
@@ -26,14 +29,44 @@ const carouselData = [
 		title: 'Vanilla HTML',
 		url: tourism,
 		alt: 'HTML Tourism website homepage screenshot',
+		text: (
+			<p className={styles.text}>
+				A tourism website built for my hometown created using{' '}
+				<span className={styles.strong}>vanilla HTML, CSS and JavaScript</span>.{' '}
+				This was my first project after completing Udemy courses.
+			</p>
+		),
+		repo: 'https://github.com/dawlishwarren/visit_budleigh',
 	},
 	{
 		index: 1,
 		title: 'Custom UI',
 		url: directory,
 		alt: 'Business directory UI',
+		text: (
+			<p className={styles.text}>
+				This is a full-stack Next.js business directory app. Built with MongoDB,
+				AWS S3 and Next.js, it showcases a{' '}
+				<span className={styles.strong}>fully custom UI.</span>
+			</p>
+		),
+		repo: 'https://github.com/dawlishwarren/BSCC',
 	},
-	{ index: 2, title: 'SVG Design', url: logo, alt: 'Website logo' },
+	{
+		index: 2,
+		title: 'SVG Design',
+		url: logo,
+		alt: 'Website logo',
+		text: (
+			<p className={styles.text}>
+				Perhaps you've already spotted the Favicon in your browser tab. Inspired
+				by the unofficial JavaScript logo designed by Chris Williams, the logo
+				for my site was created in Figma and one of the{' '}
+				<span className={styles.strong}>many uses of SVGs</span> dotted
+				throughout my site.
+			</p>
+		),
+	},
 	{
 		index: 3,
 		title: 'Responsive Layout',
@@ -56,6 +89,8 @@ const Portfolio = () => {
 		url: { src: '', height: 0, width: 0 },
 		index: 0,
 		alt: '',
+		text: <></>,
+		repo: '',
 	});
 	const close = () => setModalOpen(false);
 
@@ -114,34 +149,51 @@ const Portfolio = () => {
 								setActivePanel(slide);
 							}}>
 							<h2 className={styles.slide_title}>{slide.title}</h2>
-							<Image
-								className={styles.slide_image}
-								src={slide.url}
-								width={300}
-								height={500}
-								objectFit={'scale-down'}
-								alt={slide.alt}
-								placeholder='empty'
-							/>
+							<div className={styles.slide_image}>
+								<Image
+									src={slide.url}
+									width={650}
+									height={300}
+									objectFit='scale-down'
+									alt={slide.alt}
+									placeholder='empty'
+								/>
+							</div>
 						</m.li>
 					))}
 				</ul>
 				<AnimatePresence initial={false} mode='wait'>
 					{modalOpen && (
 						<Modal modalOpen={modalOpen} handleClose={close}>
-							<div className={styles.modal_content}>
+							<div className={styles.modal_wrapper}>
 								<div className={styles.header}>
 									<h1 className={styles.title}>{activePanel.title}</h1>
 								</div>
-								<Image
-									className={styles.slide_image}
-									src={activePanel.url}
-									width={600}
-									height={500}
-									objectFit={'scale-down'}
-									alt={activePanel.alt}
-									placeholder='empty'
-								/>
+								<div className={styles.modal_content}>
+									<div className={styles.slide_image}>
+										<Image
+											src={activePanel.url}
+											width={600}
+											height={500}
+											objectFit={'scale-down'}
+											alt={activePanel.alt}
+											placeholder='empty'
+										/>
+									</div>
+									<div className={styles.text_wrapper}>
+										<div className={styles.modal_text}>
+											<p>{activePanel.text}</p>
+										</div>
+										{activePanel.repo && (
+											<a href={activePanel.repo} target='_blank'>
+												<button className={styles.modal_button}>
+													Check out the repo
+													<AiFillGithub size={20} />
+												</button>
+											</a>
+										)}
+									</div>
+								</div>
 							</div>
 						</Modal>
 					)}

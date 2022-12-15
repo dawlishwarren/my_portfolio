@@ -11,6 +11,7 @@
 	justify-content: space-between;
 	position: relative;
 	border-radius: $border-radius;
+	z-index: 10;
 
 	.close_wrapper {
 		width: 100%;
@@ -63,6 +64,10 @@
 [data-theme='dark'] {
 	.modal {
 		background-color: lighten($color: $color-dark-background, $amount: 10);
+		transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+		&:hover {
+			background-color: lighten($color: $color-dark-background, $amount: 12);
+		}
 		border: solid $color-dark-text-disabled 1px;
 		.close_wrapper {
 			.close_button {
