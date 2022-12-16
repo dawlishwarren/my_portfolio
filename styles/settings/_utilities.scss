@@ -1,0 +1,15 @@
+// Border radius
+$border-radius: 12.5px;
+
+// Box shadows
+$box-shadow-light: 2px 4px 12px rgb(0 0 0 / 8%);
+$box-shadow-light-hover: 2px 4px 16px rgb(0 0 0 / 16%);
+
+// Transitions
+$cubic_6: all 0.6s cubic-bezier(0, 0, 0.5, 1);
+$cubic_9: all 0.9s cubic-bezier(0, 0, 0.5, 1);
+
+// Transforms
+$scale_1: scale3d(1.01, 1.01, 1.01);
+$scale_2: scale3d(1.02, 1.02, 1.02);
+$scale_5: scale3d(1.05, 1.05, 1.05);

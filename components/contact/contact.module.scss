@@ -2,44 +2,45 @@
 .contact_section {
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
 	flex-direction: column;
+	align-items: center;
 	width: 100vw;
-	height: 100vh;
-
-	.box {
-		margin-top: -10vh;
-		margin-bottom: 10vh;
-		padding-block: 10vh;
-		width: 80vw;
-		border-radius: 12px;
-		display: block;
-		.header_wrapper {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			min-height: fit-content;
-			padding-top: 2rem;
-			padding-bottom: 1rem;
-		}
-		.content {
-			padding-top: 2rem;
-			.columns {
-				margin-inline: 0;
+	height: fit-content;
+	.container {
+		margin-top: -2rem;
+		.box {
+			margin-bottom: 10vh;
+			padding-block: 10vh;
+			width: 80vw;
+			border-radius: 12px;
+			display: block;
+			.header_wrapper {
 				display: flex;
+				align-items: center;
 				justify-content: center;
-				flex-direction: column;
-				text-align: center;
-				.column {
-					padding: 1rem;
-					border-bottom: 2px solid $color-light-secondary;
-					display: block;
-					flex-basis: 0;
-					flex-grow: 1;
-					flex-shrink: 1;
-					margin: 0 auto;
-					&:last-child {
-						border-bottom: none;
+				min-height: fit-content;
+				padding-top: 2rem;
+				padding-bottom: 1rem;
+			}
+			.content {
+				padding-top: 2rem;
+				.columns {
+					margin-inline: 0;
+					display: flex;
+					justify-content: center;
+					flex-direction: column;
+					text-align: center;
+					.column {
+						padding: 1rem;
+						border-bottom: 2px solid $color-light-secondary;
+						display: block;
+						flex-basis: 0;
+						flex-grow: 1;
+						flex-shrink: 1;
+						margin: 0 auto;
+						&:last-child {
+							border-bottom: none;
+						}
 					}
 				}
 			}

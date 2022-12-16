@@ -1,60 +1,49 @@
-@use './settings/' as *;
-.container {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	.blob {
-		width: 800px;
-		height: 500px;
-		position: absolute;
-		animation: myBlob 120s infinite alternate-reverse ease-in;
-		@keyframes myBlob {
-			0% {
-				top: 0;
-				left: 0;
-			}
-			15% {
-				top: 30%;
-				left: 15%;
-			}
-			33% {
-				left: 20%;
-			}
-			50% {
-				top: 15%;
-				left: 35%;
-			}
-			60% {
-				top: 50%;
-				left: 60%;
-			}
-			80% {
-				top: 60%;
-				left: 20%;
-			}
-			100% {
-				top: 75%;
-				left: 75%;
-			}
-		}
-	}
-	.content {
-		z-index: 1;
+@use '../styles/settings/colors' as *;
+.content {
+	z-index: 1;
+}
+.button {
+	border: none;
+	border-radius: 25px;
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+	margin: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+	&:hover {
+		transform: scale3d(1.05, 1.05, 1.05);
 	}
 }
 
 [data-theme='light'] {
-	.container {
-		background-color: $color-light-background;
+	.button {
+		background-image: rgba($color: $color-light-text-white, $alpha: 0.4);
+		border: solid 1px;
+		border-color: $color-dark-background;
+		&:hover {
+			border-color: $color-light-background;
+			background-image: linear-gradient(
+				to left,
+				rgb(241, 219, 75) 0%,
+				rgb(195, 66, 63) 100%
+			);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	}
 }
 
 [data-theme='dark'] {
-	.container {
-		background-color: $color-dark-background;
+	.content {
+		color: $color-dark-text-primary;
+	}
+	.button {
+		background-color: $color-dark-text-secondary;
+		color: $color-dark-background;
+		&:hover {
+			background-color: rgba($color: $color-dark-text-secondary, $alpha: 0.45);
+			color: $color-darkest;
+		}
 	}
 }

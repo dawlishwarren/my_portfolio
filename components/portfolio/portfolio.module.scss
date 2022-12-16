@@ -4,7 +4,7 @@
 .portfolio_section {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	width: 100vw;
 	min-height: 100vh;
 
@@ -14,7 +14,7 @@
 		align-items: center;
 		justify-content: center;
 		min-height: fit-content;
-		padding-block: 3rem;
+		padding-block: 2rem;
 		// SVG
 		#progress {
 			transform: rotate(-90deg);
