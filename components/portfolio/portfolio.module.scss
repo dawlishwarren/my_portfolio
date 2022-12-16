@@ -360,5 +360,32 @@
 				background: $color-dark-elevated-secondary;
 			}
 		}
+		.modal_wrapper {
+			.header {
+				.title {
+					color: $color-dark-text-secondary;
+				}
+			}
+			.modal_content {
+				.text_wrapper {
+					.modal_text {
+						color: $color-dark-text-secondary;
+						.text {
+							.strong {
+								color: $color-teal;
+							}
+						}
+					}
+					.modal_button {
+						background-color: $color-teal;
+						color: $color-dark-text-secondary;
+						&:hover {
+							color: $color-dark-text-primary;
+							background: $color-green-light;
+						}
+					}
+				}
+			}
+		}
 	}
 }

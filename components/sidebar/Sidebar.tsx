@@ -36,7 +36,7 @@ const links = [
 		href: 'contact',
 		icon: <RiContactsLine size={18} />,
 	},
-	{ index: 5, name: 'Blog', href: 'blog', icon: <BsCodeSlash size={18} /> },
+	// { index: 5, name: 'Blog', href: 'blog', icon: <BsCodeSlash size={18} /> },
 ];
 
 // Prop Types

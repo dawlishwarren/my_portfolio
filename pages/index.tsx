@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 // Components
 import Main from '../components/main/Main';
 import Layout from '../components/layout/Layout';
-import Blog from '../components/blog/Blog';
+// import Blog from '../components/blog/Blog';
 import AboutMe from '../components/aboutMe/AboutMe';
 const Skills = dynamic(() => import('../components/skills/Skills'), {
 	suspense: false,
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 				<Skills />
 				<Portfolio />
 				<Contact />
-				<Blog />
+				{/* <Blog /> */}
 			</Layout>
 		</>
 	);

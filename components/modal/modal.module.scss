@@ -65,16 +65,17 @@
 	.modal {
 		background-color: lighten($color: $color-dark-background, $amount: 10);
 		transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+
 		&:hover {
 			background-color: lighten($color: $color-dark-background, $amount: 12);
 		}
 		border: solid $color-dark-text-disabled 1px;
 		.close_wrapper {
 			.close_button {
-				background: $color-dark-background;
-				color: $color-dark-text-disabled;
+				background: $color-dark-text-disabled;
+				color: $color-dark-text-secondary;
 				&:hover {
-					background: $color-dark-text-disabled;
+					background: $color-teal;
 					color: $color-dark-text-primary;
 				}
 			}
