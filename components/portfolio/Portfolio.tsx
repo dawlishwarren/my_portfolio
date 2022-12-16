@@ -185,7 +185,10 @@ const Portfolio = () => {
 											<p>{activePanel.text}</p>
 										</div>
 										{activePanel.repo && (
-											<a href={activePanel.repo} target="_blank" rel="noopener">
+											<a
+												href={activePanel.repo}
+												target="_blank"
+												rel="noreferrer">
 												<button className={styles.modal_button}>
 													Check out the repo
 													<AiFillGithub size={20} />
