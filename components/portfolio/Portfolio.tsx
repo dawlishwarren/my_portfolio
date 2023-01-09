@@ -13,6 +13,7 @@ import logo from '../../public/logo.png';
 import portfolio from '../../public/portfolio.png';
 import consultation from '../../public/consultation.png';
 import { AiFillGithub } from 'react-icons/ai';
+import ProgressEllipse from '../progressEllipse/ProgressEllipse';
 // Prop Types
 interface Carousel {
 	title: string;
@@ -127,38 +128,7 @@ const Portfolio = () => {
 			{/* HEADER WITH PROGRESS SVG */}
 			<div className={styles.header_wrapper}>
 				<AnimatedTitle str='My P' />
-				<svg
-					id={styles.progress}
-					className={styles.progress}
-					width='min(8vw, 4rem)'
-					height='min(10vh, 4rem)'
-					viewBox='0 0 100 100'>
-					<m.ellipse
-						cx='40'
-						cy='50'
-						rx='24'
-						ry='25'
-						pathLength='1'
-						className={styles.indicator}
-						style={{ pathLength: scrollXProgress }}
-					/>
-					<ellipse
-						cx='40'
-						cy='50'
-						rx='35'
-						ry='36'
-						pathLength='1'
-						className={styles.bg_outer}
-					/>
-					<ellipse
-						cx='40'
-						cy='50'
-						rx='12'
-						ry='8'
-						pathLength='1'
-						className={styles.bg_inner}
-					/>
-				</svg>
+				<ProgressEllipse progress={scrollXProgress} />
 				<AnimatedTitle str='rtfolio' />
 			</div>
 			<div className={styles.carousel_container}>

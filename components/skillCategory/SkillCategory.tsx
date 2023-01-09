@@ -47,6 +47,7 @@ const SkillCategory = ({ skills, category }: Props) => {
 	};
 	return (
 		<>
+			{/* Skills Map */}
 			<div className={styles.icons_container}>
 				<ul className={styles.skills_list}>
 					{/* Sort the skills prop alphabetically, and then map it to a series of icons */}
@@ -67,7 +68,7 @@ const SkillCategory = ({ skills, category }: Props) => {
 							</m.li>
 						))}
 				</ul>
-
+				{/* Modal */}
 				<AnimatePresence initial={false} mode='wait'>
 					{modalOpen && (
 						<Modal modalOpen={modalOpen} handleClose={close}>

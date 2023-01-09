@@ -1,0 +1,107 @@
+@use '../../styles/settings/' as *;
+.container {
+	position: relative;
+	display: block;
+	margin-block: auto;
+	margin-left: -0.2rem;
+	margin-right: -0.4rem;
+	width: 2.5em;
+	height: 2.5em;
+	&::after {
+		transition: $cubic_6;
+		content: '';
+		position: absolute;
+		height: 5px;
+		bottom: -3px;
+		left: 0;
+		width: 0;
+		transform: skewX(-12.5deg);
+		background-color: white;
+		font-style: oblique;
+		z-index: 10;
+		width: 0;
+	}
+	&.active {
+		&::after {
+			width: 100%;
+		}
+	}
+}
+#progress {
+	transform: rotate(-90deg);
+	fill: none;
+	align-self: center;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	.indicator {
+		stroke-width: 20%;
+		fill: none;
+	}
+	ellipse {
+		stroke-dashoffset: 0;
+		stroke-width: 15%;
+	}
+}
+
+@media (min-width: 600px) {
+	.container {
+		width: 3.25em;
+		height: 3.25em;
+		margin-left: -0.3rem;
+		margin-right: -0.5rem;
+	}
+}
+@media (min-width: 900px) {
+	.container {
+		width: 4em;
+		height: 4em;
+		margin-left: -0.4rem;
+		margin-right: -0.6rem;
+	}
+}
+
+[data-theme='light'] {
+	#progress {
+		filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
+		opacity: 1;
+		.indicator {
+			stroke: $color-light-text-white;
+			filter: drop-shadow(1px 0px 3px rgba(0, 0, 0, 0.3));
+		}
+		ellipse {
+			fill: none;
+		}
+		.bg_inner {
+			fill: #1c4b95;
+			fill-opacity: 1;
+			stroke: #1c4b95;
+			stroke-width: 15%;
+		}
+		.bg_outer {
+			fill: $color-light-text-white;
+			stroke: none;
+			opacity: 0.5;
+		}
+	}
+}
+
+[data-theme='dark'] {
+	#progress {
+		.indicator {
+			stroke: $color-dark-text-primary;
+		}
+		ellipse {
+			fill: $color-dark-background;
+		}
+		.bg_inner {
+			fill: $color-dark-background;
+			stroke: $color-dark-background;
+			opacity: 1;
+		}
+		.bg_outer {
+			fill: $color-dark-text-primary;
+			opacity: 0.3;
+		}
+	}
+}
