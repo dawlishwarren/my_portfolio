@@ -1,7 +1,7 @@
 @use '../../styles/settings' as *;
 .modal {
-	width: min($max-width, 60vw);
-	height: clamp(50%, 55vh + 10rem, 75%);
+	width: min($max-width, 80vw);
+	height: clamp(60%, 55vh + 10rem, 75%);
 	margin-inline: auto;
 	margin-top: 10vh;
 	padding: 2rem;
@@ -41,9 +41,9 @@
 		margin-top: 0;
 		padding: 3rem;
 		height: fit-content;
-		max-height: 100vh;
 		.close_wrapper {
 			.close_button {
+				font-size: 1.25rem;
 				padding: 1rem;
 			}
 		}

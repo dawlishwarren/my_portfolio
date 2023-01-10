@@ -7,45 +7,43 @@
 	justify-content: flex-start;
 	width: 100vw;
 	min-height: 100vh;
-	// Header with SVG
 	.header_wrapper {
-		@include flex-center();
-		min-height: fit-content;
-		padding-block: 4rem;
+		display: none;
 	}
 
 	// Content
 	.carousel_container {
 		position: relative;
+		.carousel_header {
+			padding-block: 1rem;
+			max-width: 60vw;
+			margin: 0 auto;
+			&_main,
+			&_secondary {
+				font-weight: 500;
+				font-size: 1.5rem;
+			}
+		}
 		.carousel {
 			display: flex;
+			flex-direction: column;
 			list-style: none;
 			overflow-x: scroll;
 			overflow-y: hidden;
-			flex: 0 0 600px;
 			padding-bottom: 1rem;
 			.list_item {
 				border-radius: $border-radius;
 				padding-inline: 1em;
+				padding-block: 0.5rem;
+				max-width: 70vw;
 				margin-block: 0.5rem;
-				margin-left: 0.5rem;
-				margin-right: 1rem;
-				min-height: 30rem;
-
-				&:first-child {
-					margin-left: 0.5rem;
-				}
-				&:last-child {
-					margin: 0.5rem 3px 0.5rem 1rem;
-				}
-				// transform: translateX(calc(max(1024px, 100vw) / 2 - 490px));
-				flex: 0 0 200px;
+				margin-inline: auto;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
 				position: relative;
 				cursor: pointer;
-				transition: all 0.6s cubic-bezier(0, 0, 0.5, 1);
+				transition: $cubic_6;
 				&::after {
 					content: '';
 					border: 0.5px solid;
@@ -56,11 +54,11 @@
 					top: 0;
 					position: absolute;
 					opacity: 0;
-					transition: all 0.9s cubic-bezier(0, 0, 0.5, 1);
+					transition: $cubic_9;
 				}
 				.slide_title {
 					flex-wrap: wrap;
-					text-align: left;
+					text-align: center;
 					padding-top: 15px;
 					padding-inline: 0.5rem;
 					font-size: 2rem;
@@ -74,16 +72,6 @@
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-				}
-
-				&:hover {
-					&::after {
-						left: 15px;
-						right: 15px;
-						bottom: 15px;
-						top: 15px;
-						opacity: 1;
-					}
 				}
 			}
 		}
@@ -113,10 +101,131 @@
 			color: black;
 			padding-bottom: 1rem;
 			.title {
-				font-size: 4rem;
+				font-size: 2rem;
 				font-family: inherit;
 			}
 		}
+		.modal_content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.slide_image {
+				width: 67%;
+				padding-block: 1rem;
+			}
+			.text_wrapper {
+				width: 100%;
+				height: 100%;
+			}
+			.modal_button {
+				display: flex;
+				justify-content: center;
+				border: none;
+				width: 100%;
+				border-radius: 25px;
+				padding: 0.5rem;
+				margin-top: 2rem;
+				cursor: pointer;
+				transition: all 0.6s cubic-bezier(0, 0, 0.5, 1);
+				&:hover {
+					transform: scale3d(1.02, 1.02, 1.02);
+				}
+				& > svg {
+					margin-left: 0.25rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.portfolio_section {
+		.carousel_container {
+			.carousel_header {
+				padding-top: 5rem;
+				padding-bottom: 2rem;
+				max-width: 70vw;
+				&_main,
+				&_secondary {
+					font-size: 2rem;
+				}
+			}
+		}
+		.modal_wrapper {
+			margin-block: 2rem;
+			.header {
+				.title {
+					font-size: 2.5rem;
+				}
+			}
+			.modal_content {
+				min-height: fit-content;
+				padding-block: 5rem;
+				.text_wrapper {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 900px) {
+	.portfolio_section {
+		background-image: url('../../assets/blurry-gradient-haikei.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		.header_wrapper {
+			@include flex-center();
+			min-height: fit-content;
+			padding-top: 3rem;
+			padding-bottom: 1rem;
+			display: flex;
+		}
+		.carousel_container {
+			max-width: 90vw;
+			margin-block: 0;
+			margin-inline: 10vw;
+			.carousel_header {
+				padding-top: 2rem;
+				padding-bottom: 0.5rem;
+				padding-inline: 0.5rem;
+				min-width: 60vw;
+				margin: 0;
+				display: inline-flex;
+				white-space: pre;
+			}
+			.carousel {
+				flex-direction: row;
+				padding-inline: 0.5rem;
+				.list_item {
+					flex: 0 0 700px;
+					max-height: 30rem;
+					max-width: none;
+					margin-left: 2rem;
+					&:first-child {
+						margin-left: 0;
+					}
+					&:last-child {
+						margin: 0.5rem 3px 0.5rem 1rem;
+					}
+					.slide_title {
+						padding-top: 2rem;
+						font-size: 3rem;
+					}
+					&:hover {
+						&::after {
+							left: 15px;
+							right: 15px;
+							bottom: 15px;
+							top: 15px;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+	.modal_wrapper {
 		.modal_content {
 			display: flex;
 			.slide_image {
@@ -130,57 +239,6 @@
 				padding-left: 2rem;
 				.text {
 					font-size: 1.1rem;
-				}
-				.modal_button {
-					display: flex;
-					justify-content: center;
-					border: none;
-					width: 100%;
-					border-radius: 25px;
-					padding-block: 0.5rem;
-					margin-top: 2rem;
-					cursor: pointer;
-					transition: all 0.6s cubic-bezier(0, 0, 0.5, 1);
-					&:hover {
-						transform: scale3d(1.02, 1.02, 1.02);
-					}
-					& > svg {
-						margin-left: 1rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (min-width: 600px) {
-	.carousel_container {
-		.carousel {
-			.list_item {
-				flex: 0 0 300px;
-				.slide_title {
-					padding-top: 2rem;
-					font-size: 3rem;
-				}
-			}
-		}
-	}
-}
-@media (min-width: 900px) {
-	.portfolio_section {
-		background-image: url('../../assets/blurry-gradient-haikei.svg');
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		.carousel_container {
-			max-width: 90vw;
-			margin-block: 0;
-			margin-inline: 10vw;
-
-			.carousel {
-				.list_item {
-					flex: 0 0 700px !important;
-					max-height: 30rem;
 				}
 			}
 		}
@@ -197,12 +255,20 @@
 			color: $color-light-text-white;
 		}
 		.carousel_container {
+			.carousel_header {
+				&_main {
+					color: $color-dark-text-secondary;
+				}
+				&_secondary {
+					color: $color-light-text-white;
+				}
+			}
 			.carousel {
 				.list_item {
 					background-color: #f3f3f4;
-					box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+					box-shadow: 2px 4px 12px rgb(0 0 0 / 10%);
 					&:hover {
-						box-shadow: 2px 4px 16px rgb(0 0 0 / 16%);
+						box-shadow: 2px 4px 16px rgb(0 0 0 / 20%);
 						transform: scale3d(1.01, 1.01, 1.01);
 						background-color: #fff;
 					}

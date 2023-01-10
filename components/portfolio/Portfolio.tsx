@@ -132,6 +132,12 @@ const Portfolio = () => {
 				<AnimatedTitle str='rtfolio' />
 			</div>
 			<div className={styles.carousel_container}>
+				<div className={styles.carousel_header}>
+					<h2 className={styles.carousel_header_main}>Check out my work, </h2>
+					<span className={styles.carousel_header_secondary}>
+						see my progression.
+					</span>
+				</div>
 				<ul className={styles.carousel} ref={ref}>
 					{carouselData.map((slide, index) => (
 						<m.li
