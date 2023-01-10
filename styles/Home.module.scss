@@ -1,105 +1,68 @@
-.container {
-	--black: #000000;
-	--ash-black: #222;
-	--white: #fafafa;
-	--sky: #00ccff;
-	--green: #22dddd;
-	--blue: #1300ff;
-	--dusk: #6600ff;
-	--purple: #9900ff;
-	--pink: #ff0066;
-	--red: #fe0222;
-	--orange: #fd7702;
-	--yellow: #ffbb00;
-
-	--background: var(--blue);
-	--accent: var(--white);
-	background-color: var(--background);
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.portfolio_section {
 	display: flex;
-	align-items: center;
 	flex-direction: column;
 	justify-content: center;
 	width: 100vw;
-	height: 100vh;
-	font-weight: 400;
-	font-style: normal;
-	.header_wrapper {
-		display: flex;
-		align-items: flex-end;
-		justify-content: center;
-		width: 100%;
-		min-height: fit-content;
-		padding-bottom: 1rem;
-		color: white;
-		#progress {
-			filter: drop-shadow(0px 7px 3.5px rgba(0, 0, 0, 0.3));
-			transform: rotate(-90deg);
-			fill: none;
-			align-self: center;
-			margin-left: -5px;
-			margin-right: -10px;
-			margin-top: min(1.5vh, 0.3rem);
-
-			.indicator {
-				stroke-width: 20%;
-				stroke: var(--accent);
-				z-index: -1;
-				fill: none;
+	min-height: 100vh;
+	.cards {
+		&_shelf {
+			display: block;
+			.shelf_header {
+				padding-bottom: 1rem;
 			}
-			ellipse {
-				stroke-dashoffset: 0;
-				stroke-width: 15%;
-				fill: var(--background);
+			&_scroller {
+				position: relative;
+				display: block;
+				.cards_scroller {
+					&_crop {
+						overflow: hidden;
+						padding: 26px;
+						height: 40rem;
+						.cards_scroller_content {
+							overflow-x: scroll;
+							overscroll-behavior-x: contain;
+							position: relative;
+							scroll-snap-type: x mandatory;
+							white-space: nowrap;
+							.cards_scroller_platter {
+								width: 100%;
+								vertical-align: top;
+								display: inline-flex;
+								padding-top: 10px;
+								padding-bottom: 40px;
+								.list_item {
+									display: inline-block;
+									scroll-snap-align: start;
+									.cards_scroller_itemview {
+										margin-left: 0;
+										display: flex;
+										height: 30rem;
+										margin-right: 20px;
+										transform: translateX(calc(max(1024px, 100vw) / 2 - 490px));
+										.card {
+											display: block;
+											position: relative;
+											&_content {
+												display: flex;
+												flex-direction: column;
+												overflow: hidden;
+												background-color: white;
+												color: black;
+												border-radius: 18px;
+												height: 29rem;
+												box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+												transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+
+												width: 40rem;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
-			.bg_inner {
-				fill: var(--background);
-				opacity: 1;
-				stroke: var(--background);
-				z-index: 2;
-			}
-			.bg_outer {
-				fill: white;
-				opacity: 0.3;
-			}
-		}
-	}
-
-	.ul {
-		display: flex;
-		list-style: none;
-		height: 300px;
-		width: 90vw;
-		overflow-x: scroll;
-		padding: 20px 0;
-		flex: 0 0 600px;
-		margin: 0 auto;
-		.li {
-			flex: 0 0 200px;
-			background: var(--accent);
-			margin: 0 20px 0 0;
-		}
-		::-webkit-scrollbar {
-			height: 5px;
-			width: 5px;
-			background: #fff3;
-			border-radius: 1ex;
-			-webkit-border-radius: 1ex;
-		}
-
-		::-webkit-scrollbar-thumb {
-			background: var(--accent);
-			border-radius: 1ex;
-
-			-webkit-border-radius: 1ex;
-		}
-
-		::-webkit-scrollbar-corner {
-			background: #fff3;
 		}
 	}
 }
