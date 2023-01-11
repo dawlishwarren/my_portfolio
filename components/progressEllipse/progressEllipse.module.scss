@@ -1,4 +1,4 @@
-@use '../../styles/settings/' as *;
+@use "../../styles/settings/" as *;
 .container {
 	position: relative;
 	display: block;
@@ -9,7 +9,7 @@
 	height: 2.5em;
 	&::after {
 		transition: $cubic_6;
-		content: '';
+		content: "";
 		position: absolute;
 		height: 5px;
 		bottom: -3px;
@@ -25,6 +25,9 @@
 		&::after {
 			width: 100%;
 		}
+	}
+	&.inactive {
+		display: block;
 	}
 }
 #progress {
@@ -61,7 +64,7 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	#progress {
 		filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
 		opacity: 1;
@@ -86,7 +89,7 @@
 	}
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
 	#progress {
 		.indicator {
 			stroke: $color-dark-text-primary;
