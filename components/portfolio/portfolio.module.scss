@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 
 // Section
 .portfolio_section {
@@ -6,7 +6,7 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	width: 100vw;
-	min-height: 100vh;
+	max-height: fit-content;
 	.header_wrapper {
 		display: none;
 	}
@@ -45,7 +45,7 @@
 				cursor: pointer;
 				transition: $cubic_6;
 				&::after {
-					content: '';
+					content: "";
 					border: 0.5px solid;
 					border-radius: $border-radius;
 					left: 0;
@@ -66,7 +66,6 @@
 					margin-bottom: 2rem;
 				}
 				.slide_image {
-					margin: 32px auto;
 					box-sizing: content-box;
 					display: flex;
 					flex-direction: column;
@@ -170,10 +169,11 @@
 }
 @media (min-width: 900px) {
 	.portfolio_section {
-		background-image: url('../../assets/blurry-gradient-haikei.svg');
+		background-image: url("../../assets/blurry-gradient-haikei.svg");
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
+		min-height: 100vh;
 		.header_wrapper {
 			@include flex-center();
 			min-height: fit-content;
@@ -197,16 +197,17 @@
 			.carousel {
 				flex-direction: row;
 				padding-inline: 0.5rem;
+				padding-block: 1rem;
 				.list_item {
 					flex: 0 0 700px;
 					max-height: 30rem;
 					max-width: none;
 					margin-left: 2rem;
+					padding-top: 0;
+					padding-bottom: 1rem;
+					margin-top: 0;
 					&:first-child {
 						margin-left: 0;
-					}
-					&:last-child {
-						margin: 0.5rem 3px 0.5rem 1rem;
 					}
 					.slide_title {
 						padding-top: 2rem;
@@ -224,21 +225,48 @@
 				}
 			}
 		}
-	}
-	.modal_wrapper {
-		.modal_content {
-			display: flex;
-			.slide_image {
-				width: 67%;
-			}
-			.text_wrapper {
-				width: 33%;
-				flex-grow: 1;
-				align-self: center;
-				justify-self: flex-end;
-				padding-left: 2rem;
-				.text {
-					font-size: 1.1rem;
+		.modal_wrapper {
+			max-height: fit-content;
+			margin-block: 0;
+			.modal_content {
+				padding-block: 0;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				.slide_image {
+					width: 67%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					& > * {
+						max-height: 20rem;
+					}
+				}
+				.text_wrapper {
+					display: flex;
+					flex-direction: column;
+					padding-block: 1rem;
+					padding-left: 0;
+					min-height: 100%;
+					margin: 0 auto;
+					width: 33%;
+					align-items: flex-start;
+					justify-content: center;
+					flex-grow: 1;
+					position: relative;
+					& > a {
+						width: 100%;
+						.modal_button {
+							margin-inline: auto;
+							padding-block: 0.75rem;
+							padding-inline: 1.5rem;
+							display: flex;
+							width: 100%;
+							align-items: center;
+							justify-content: space-evenly;
+						}
+					}
 				}
 			}
 		}
@@ -246,7 +274,7 @@
 }
 
 // LIGHT MODE
-[data-theme='light'] {
+[data-theme="light"] {
 	.portfolio_section {
 		background-color: #1c4b95;
 		color: $color-light-text-white;
@@ -320,7 +348,7 @@
 }
 
 // DARK MODE
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.portfolio_section {
 		background-image: none;
 		background-color: $color-dark-background;

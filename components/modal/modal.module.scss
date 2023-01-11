@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .modal {
 	width: min($max-width, 80vw);
 	height: clamp(60%, 55vh + 10rem, 75%);
@@ -13,7 +13,7 @@
 	border-radius: $border-radius;
 	z-index: 10;
 	.close_wrapper {
-		width: 100%;
+		width: 95%;
 		position: absolute;
 		bottom: 5%;
 		right: 5%;
@@ -40,7 +40,7 @@
 		overflow: hidden;
 		margin-top: 0;
 		padding: 3rem;
-		height: fit-content;
+		max-height: 80vh;
 		.close_wrapper {
 			.close_button {
 				font-size: 1.25rem;
@@ -50,7 +50,7 @@
 	}
 }
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme='light'] {
+[data-theme="light"] {
 	.modal {
 		background-color: #f6f6f6;
 		.close_wrapper {
@@ -61,7 +61,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.modal {
 		background-color: lighten($color: $color-dark-background, $amount: 10);
 		transition: $cubic_3;

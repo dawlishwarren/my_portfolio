@@ -1,12 +1,10 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .skills_section {
 	vertical-align: baseline;
 	width: 100vw;
 	height: fit-content;
 	isolation: isolate;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	@include flex-center();
 	flex-direction: column;
 }
 // Content container
@@ -64,9 +62,9 @@
 	}
 	// Content box (rows within mobile breakpoint)
 	.box {
+		display: block;
 		padding-top: 3rem;
 		border-radius: $border-radius;
-		display: block;
 		transition: $cubic_6;
 		.content {
 			.columns {
@@ -213,7 +211,7 @@
 }
 
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme='light'] {
+[data-theme="light"] {
 	.skills_section {
 		@media (min-width: 900px) {
 			background-image: linear-gradient(
@@ -259,7 +257,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {
