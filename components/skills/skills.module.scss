@@ -1,7 +1,8 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .skills_section {
 	vertical-align: baseline;
 	width: 100vw;
+	min-height: 100vh;
 	height: fit-content;
 	isolation: isolate;
 	@include flex-center();
@@ -172,7 +173,6 @@
 // Content organised into columns rather than rows
 @media (min-width: 900px) {
 	.skills_section {
-		height: 100vh;
 		.container {
 			max-width: $max-width;
 			.box {
@@ -211,7 +211,7 @@
 }
 
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme='light'] {
+[data-theme="light"] {
 	.skills_section {
 		@media (min-width: 900px) {
 			background-image: linear-gradient(
@@ -260,7 +260,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {

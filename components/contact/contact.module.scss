@@ -1,11 +1,11 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .contact_section {
 	@include flex-center();
 	flex-direction: column;
 	width: 100vw;
 	height: fit-content;
 	.container {
-		margin-block: 3rem;
+		margin-block: 1.5rem;
 		width: 70vw;
 		min-height: fit-content;
 		.box {
@@ -35,6 +35,7 @@
 						flex-grow: 1;
 						flex-shrink: 1;
 						margin: 0 auto;
+						transition: $cubic_6;
 						&:last-child {
 							border-bottom: none;
 						}
@@ -48,9 +49,11 @@
 @media (min-width: 900px) {
 	.contact_section {
 		.container {
+			margin-top: -2rem;
 			max-width: $max-width;
 			.box {
 				.content {
+					padding-top: 0;
 					.columns {
 						align-content: normal;
 						align-items: normal;
@@ -59,14 +62,27 @@
 						padding-block: 3rem;
 						margin: 0;
 						.column {
-							border-right: 1px solid;
+							border-right: 0.5px solid;
+							border-left: 0.5px solid;
 							border-bottom: none;
+							padding: 0;
+							margin: 1rem auto;
+							&:first-child {
+								border-left: none;
+							}
 							&:last-child {
 								border-right: none;
 								margin-bottom: none !important;
 							}
 							.title {
 								font-size: 1.25rem;
+								transition: $cubic_3;
+							}
+							&:hover {
+								cursor: pointer;
+								.title {
+									transform: $scale_1;
+								}
 							}
 						}
 					}
@@ -78,15 +94,14 @@
 @media (min-width: 1440px) {
 	.contact_section {
 		.container {
-			margin-top: -1.5rem;
 			.box {
-				max-width: 75vw;
+				max-width: $max-width;
 			}
 		}
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.contact_section {
 		background-color: #f1f1f2;
 		color: darken($color: $color-light-secondary, $amount: 15);
@@ -109,6 +124,13 @@
 				.columns {
 					.column {
 						border-color: $color-teal;
+						&:hover {
+							background-color: #f6f6fa;
+
+							.icon {
+								color: $color-teal;
+							}
+						}
 					}
 				}
 			}
@@ -116,17 +138,26 @@
 	}
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.contact_section {
 		background-color: $color-dark-background;
 		.container {
 			.box {
 				background-color: rgba(
-					$color: $color-dark-elevated-primary,
-					$alpha: 0.9
+					$color: $color-dark-elevated-secondary,
+					$alpha: 0.8
 				);
-				box-shadow: 0 1px 5px 0 $color-dark-text-disabled,
-					0 0 0 2px $color-dark-text-secondary;
+				box-shadow: 0 1px 1px 0 $color-dark-text-disabled,
+					0 0 0 1px $color-dark-text-secondary;
+
+				&:hover {
+					background-color: rgba(
+						$color: $color-dark-elevated-secondary,
+						$alpha: 1
+					);
+					box-shadow: 0 1px 5px 0 $color-dark-text-disabled,
+						0 0 0 2px $color-dark-text-secondary;
+				}
 				color: $color-dark-text-secondary;
 				.header_wrapper {
 					color: $color-dark-text-primary;
@@ -136,6 +167,13 @@
 						.column {
 							color: $color-dark-text-secondary;
 							border-color: $color-dark-text-disabled;
+							&:hover {
+								background-color: $color-dark-elevated-primary;
+								color: $color-dark-text-primary;
+								.icon {
+									color: $color-dark-accent;
+								}
+							}
 						}
 					}
 				}

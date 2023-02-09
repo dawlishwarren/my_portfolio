@@ -74,26 +74,23 @@
 		opacity: 1;
 		.indicator {
 			stroke: $color-light-text-white;
-			fill: rgba($color-light-primary, 0.8);
+			fill: none;
 			stroke-opacity: 1;
 			position: relative;
-			z-index: 3;
 			filter: drop-shadow(1px 0px 3px rgba(0, 0, 0, 0.3));
 		}
 		ellipse {
 			fill: none;
 		}
 		.bg_inner {
-			fill: none;
+			fill: $color-light-primary;
 			fill-opacity: 1;
-			z-index: 2;
-			stroke: rgba($color-light-primary, 0.8);
-			stroke-width: 15.1%;
+			stroke: $color-light-primary;
+			stroke-width: 13%;
 		}
 		.bg_outer {
 			fill: $color-light-text-white;
 			stroke: none;
-			stroke-width: 15%;
 			opacity: 0.5;
 		}
 	}

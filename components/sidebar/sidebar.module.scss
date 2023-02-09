@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 // Backgrounds
 .background,
 .socials_background {
@@ -63,7 +63,7 @@
 }
 
 // Colours
-[data-theme='light'] {
+[data-theme="light"] {
 	.socials_background,
 	.background {
 		background: #f6f6f6;
@@ -76,7 +76,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.background {
 		background: #232526; /* fallback for old browsers */
 		background: -webkit-linear-gradient(

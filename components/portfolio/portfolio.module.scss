@@ -43,7 +43,7 @@
 				align-items: center;
 				position: relative;
 				cursor: pointer;
-				transition: $cubic_6;
+				transition: $cubic_9;
 				&::after {
 					content: "";
 					border: 0.5px solid;
@@ -54,7 +54,7 @@
 					top: 0;
 					position: absolute;
 					opacity: 0;
-					transition: $cubic_9;
+					transition: $cubic_6;
 				}
 				.slide_title {
 					flex-wrap: wrap;
@@ -64,6 +64,7 @@
 					font-size: 2rem;
 					font-weight: 500;
 					margin-bottom: 2rem;
+					transition: $cubic_9;
 				}
 				.slide_image {
 					box-sizing: content-box;
@@ -71,6 +72,7 @@
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
+					transition: $cubic_6;
 				}
 			}
 		}
@@ -171,6 +173,7 @@
 	.portfolio_section {
 		height: 100vh;
 		min-height: 50rem;
+		align-items: center;
 		.header_wrapper {
 			@include flex-center();
 			height: 10rem;
@@ -179,8 +182,7 @@
 			padding-bottom: 1rem;
 		}
 		.carousel_container {
-			width: 80rem;
-			max-width: 90vw;
+			max-width: $max-width;
 			margin-block: 0;
 			margin-inline: 10vw;
 			.carousel_header {
@@ -194,22 +196,34 @@
 			}
 			.carousel {
 				flex-direction: row;
-				padding-inline: 0.5rem;
 				padding-block: 1rem;
 				.list_item {
+					position: relative;
 					flex: 0 0 700px;
-					max-height: 30rem;
-					max-width: none;
+					height: calc(700px / 1.618);
 					margin-left: 2rem;
-					padding-top: 0;
-					padding-bottom: 1rem;
-					margin-top: 0;
+					padding-block: 0;
+					margin-block: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					z-index: 1;
+					opacity: 1;
+
 					&:first-child {
 						margin-left: 0;
 					}
 					.slide_title {
-						padding-top: 2rem;
-						font-size: 2.5rem;
+						display: block;
+						position: absolute;
+						transform: translateY(-50%) translateX(-50%);
+						font-size: 5rem;
+						top: 50%;
+						left: 50%;
+						opacity: 0;
+					}
+					.slide_image {
+						width: 700px;
 					}
 					&:hover {
 						&::after {
@@ -218,6 +232,13 @@
 							bottom: 15px;
 							top: 15px;
 							opacity: 1;
+						}
+						.slide_title {
+							z-index: 3;
+							opacity: 1;
+						}
+						.slide_image {
+							opacity: 0.2;
 						}
 					}
 				}
@@ -271,11 +292,27 @@
 	}
 }
 
+@media (min-width: 1440px) {
+	.portfolio_section {
+		.carousel_container {
+			max-width: 82rem;
+		}
+	}
+}
+
 // LIGHT MODE
 [data-theme="light"] {
 	.portfolio_section {
-		background-color: rgba($color-light-primary, 0.8);
+		background-image: linear-gradient(
+			165deg,
+			rgba($color-green-light, 0.8) 20%,
+			$color-green-light 50%,
+			rgba($color-teal, 0.8) 67%,
+			$color-blue 75%
+		);
+		background-size: 200% 100%;
 		color: $color-light-text-white;
+
 		// ------- HEADER ------- //
 		.header_wrapper {
 			color: $color-light-text-white;
@@ -300,6 +337,9 @@
 					}
 					.slide_title {
 						color: $color-light-text-black-secondary;
+						@media (min-width: 900px) {
+							color: $color-light-text-black;
+						}
 					}
 					&::after {
 						border-color: $color-light-primary;
