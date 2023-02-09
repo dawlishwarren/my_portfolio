@@ -1,7 +1,7 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 
 .menu_item {
-	border-radius: 10px;
+	border-radius: $border-radius;
 	cursor: pointer;
 	flex-direction: column;
 	position: relative;
@@ -46,7 +46,7 @@
 	.menu_item {
 		height: 4rem !important;
 	}
-	[data-theme='dark'] {
+	[data-theme="dark"] {
 		.menu_item {
 			.link {
 				color: $color-dark-text-secondary !important;
@@ -61,7 +61,7 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.menu_item {
 		.icon {
 			border: 2px solid $color-lightest !important;
@@ -72,7 +72,7 @@
 		}
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.menu_item {
 		.icon {
 			color: $color-dark-text-secondary;

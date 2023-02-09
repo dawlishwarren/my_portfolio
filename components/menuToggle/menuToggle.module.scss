@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .nav_button,
 .social_button {
 	outline: none;
@@ -14,7 +14,7 @@
 	height: 50px;
 	border-radius: 50%;
 	background: transparent;
-	z-index: 9;
+	z-index: 10;
 	pointer-events: all;
 }
 
@@ -26,14 +26,14 @@
 	right: calc(10vw - 25px);
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.nav_button,
 	.social_button {
 		color: $color-darkest;
 		stroke: $color-darkest;
 	}
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.nav_button,
 	.social_button {
 		color: $color-dark-text-primary;

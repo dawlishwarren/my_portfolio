@@ -1,9 +1,9 @@
 // React/Next/NPM
-import { m } from 'framer-motion';
-import ModalBackground from '../modalBackground/ModalBackground';
+import { m } from "framer-motion";
+import ModalBackground from "../modalBackground/ModalBackground";
 // Components
 // Styles/Assets
-import styles from './modal.module.scss';
+import styles from "./modal.module.scss";
 // Prop types
 interface Props {
 	children: any;
@@ -14,22 +14,21 @@ interface Props {
 // Motion variants
 const dropIn = {
 	hidden: {
-		y: '-100vh',
+		y: "-100vh",
 		opacity: 0,
 	},
 	visible: {
-		y: '0',
+		y: "0",
 		opacity: 1,
 		transition: {
 			duration: 1,
-			type: 'Spring',
+			type: "Spring",
 			damping: 25,
 			stiffness: 500,
 		},
 	},
 	exit: {
-		y: '100vh',
-		opacity: 0,
+		y: "100vh",
 	},
 };
 
@@ -40,9 +39,9 @@ const Modal = ({ modalOpen, handleClose, children }: Props) => {
 				onClick={(e) => e.stopPropagation()}
 				className={styles.modal}
 				variants={dropIn}
-				initial='hidden'
-				animate='visible'
-				exit='exit'
+				initial="hidden"
+				animate="visible"
+				exit="exit"
 				drag={true}>
 				{children}
 				<div className={styles.close_wrapper}>

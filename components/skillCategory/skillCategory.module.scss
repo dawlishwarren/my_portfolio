@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 
 .icons_container {
 	// ----- Skills Map ----- //
@@ -32,6 +32,7 @@
 		font-family: $font-family-serif;
 		width: 100%;
 		height: 100%;
+		max-height: fit-content;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
