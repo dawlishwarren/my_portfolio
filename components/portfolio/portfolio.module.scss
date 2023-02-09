@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 
 // Section
 .portfolio_section {
@@ -45,7 +45,7 @@
 				cursor: pointer;
 				transition: $cubic_6;
 				&::after {
-					content: '';
+					content: "";
 					border: 0.5px solid;
 					border-radius: $border-radius;
 					left: 0;
@@ -173,10 +173,10 @@
 		min-height: 50rem;
 		.header_wrapper {
 			@include flex-center();
+			height: 10rem;
 			min-height: fit-content;
 			padding-top: 3rem;
 			padding-bottom: 1rem;
-			display: flex;
 		}
 		.carousel_container {
 			width: 80rem;
@@ -272,7 +272,7 @@
 }
 
 // LIGHT MODE
-[data-theme='light'] {
+[data-theme="light"] {
 	.portfolio_section {
 		background-color: rgba($color-light-primary, 0.8);
 		color: $color-light-text-white;
@@ -346,7 +346,7 @@
 }
 
 // DARK MODE
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.portfolio_section {
 		background-image: none;
 		background-color: $color-dark-background;

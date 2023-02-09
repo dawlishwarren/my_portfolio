@@ -1,15 +1,17 @@
-@use '../../styles/settings/' as *;
+@use "../../styles/settings/" as *;
 .container {
 	position: relative;
-	display: block;
-	margin-block: auto;
+	display: flex;
+	align-items: center;
+	// margin-block: auto;
 	margin-left: -0.2rem;
 	margin-right: -0.4rem;
 	width: 2.5em;
 	height: 2.5em;
+	line-height: 1.1;
 	&::after {
 		transition: $cubic_6;
-		content: '';
+		content: "";
 		position: absolute;
 		height: 5px;
 		bottom: -3px;
@@ -27,16 +29,16 @@
 		}
 	}
 	&.inactive {
-		display: block;
+		display: inherit;
 	}
 }
 #progress {
 	transform: rotate(-90deg);
 	fill: none;
-	align-self: center;
 	width: 100%;
 	height: 100%;
-	display: inline-block;
+	display: block;
+	margin: auto;
 	.indicator {
 		stroke-width: 20%;
 		fill: none;
@@ -66,12 +68,13 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	#progress {
 		filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
 		opacity: 1;
 		.indicator {
 			stroke: $color-light-text-white;
+			fill: rgba($color-light-primary, 0.8);
 			stroke-opacity: 1;
 			position: relative;
 			z-index: 3;
@@ -82,7 +85,7 @@
 		}
 		.bg_inner {
 			fill: none;
-			fill-opacity: 0.8;
+			fill-opacity: 1;
 			z-index: 2;
 			stroke: rgba($color-light-primary, 0.8);
 			stroke-width: 15.1%;
@@ -96,7 +99,7 @@
 	}
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
 	#progress {
 		.indicator {
 			stroke: $color-dark-text-primary;
