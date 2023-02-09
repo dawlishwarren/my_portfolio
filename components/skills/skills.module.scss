@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .skills_section {
 	vertical-align: baseline;
 	width: 100vw;
@@ -211,7 +211,7 @@
 }
 
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme="light"] {
+[data-theme='light'] {
 	.skills_section {
 		@media (min-width: 900px) {
 			background-image: linear-gradient(
@@ -219,7 +219,10 @@
 				rgba($color: $color-green-light, $alpha: 0.8) 0%,
 				rgba($color: $color-green-light, $alpha: 0.5) 5%,
 				rgba($color: $color-green-light, $alpha: 0.1) 10%,
-				#f1f1f2 20%
+				#f1f1f2 20%,
+				rgba($color: $color-green-light, $alpha: 0.1) 90%,
+				rgba($color: $color-green-light, $alpha: 0.5) 95%,
+				rgba($color: $color-green-light, $alpha: 0.8) 100%
 			);
 		}
 		background-color: #f1f1f2;
@@ -257,7 +260,7 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {

@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .modal {
 	width: min($max-width, 80vw);
 	height: clamp(60%, 55vh + 10rem, 75%);
@@ -11,7 +11,7 @@
 	justify-content: space-between;
 	position: relative;
 	border-radius: $border-radius;
-	z-index: 10;
+	z-index: 11;
 	.close_wrapper {
 		width: 95%;
 		position: absolute;
@@ -50,7 +50,7 @@
 	}
 }
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme="light"] {
+[data-theme='light'] {
 	.modal {
 		background-color: #f6f6f6;
 		.close_wrapper {
@@ -61,7 +61,7 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.modal {
 		background-color: lighten($color: $color-dark-background, $amount: 10);
 		transition: $cubic_3;

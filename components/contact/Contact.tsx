@@ -7,6 +7,7 @@ import { GoMail } from 'react-icons/go';
 import { SlSocialLinkedin } from 'react-icons/sl';
 // Styles/Assets
 import styles from './contact.module.scss';
+import Link from 'next/link';
 
 const Contact = () => {
 	return (
@@ -24,7 +25,11 @@ const Contact = () => {
 							</div>
 							<div className={styles.column}>
 								<GoMail size={32} />
-								<h1 className={styles.title}>Send me an Email</h1>
+								<h1 className={styles.title}>
+									<Link href='mailto:dawlishwarren@gmail.com'>
+										Send me an Email
+									</Link>
+								</h1>
 							</div>
 							<div className={styles.column}>
 								<SlSocialLinkedin size={32} />

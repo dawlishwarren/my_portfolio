@@ -72,7 +72,7 @@ const SkillCategory = ({ skills, category }: Props) => {
 				<AnimatePresence initial={false} mode='wait'>
 					{modalOpen && (
 						<Modal modalOpen={modalOpen} handleClose={close}>
-							<div className={styles.modal_content}>
+							<div className={styles.modal_wrapper}>
 								<div className={styles.header}>
 									<activeSkill.icon className={styles.icon} />
 									<h2 className={styles.title}>{name}</h2>

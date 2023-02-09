@@ -91,7 +91,8 @@
 // Hover effects added
 @media (min-width: 900px) {
 	.about_section {
-		min-height: 100vh;
+		height: 100vh;
+		min-height: 50rem;
 		justify-content: center;
 		.header_wrapper {
 			width: u.$max-width;
@@ -100,7 +101,7 @@
 			align-self: flex-start;
 			margin-bottom: 1rem;
 			margin-inline: auto;
-			padding: 0;
+			padding: 2rem 0 0 0;
 		}
 		.content_container {
 			flex-direction: row;

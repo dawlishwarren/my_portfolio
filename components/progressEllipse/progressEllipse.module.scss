@@ -1,4 +1,4 @@
-@use "../../styles/settings/" as *;
+@use '../../styles/settings/' as *;
 .container {
 	position: relative;
 	display: block;
@@ -9,7 +9,7 @@
 	height: 2.5em;
 	&::after {
 		transition: $cubic_6;
-		content: "";
+		content: '';
 		position: absolute;
 		height: 5px;
 		bottom: -3px;
@@ -40,10 +40,12 @@
 	.indicator {
 		stroke-width: 20%;
 		fill: none;
+		transform: none;
 	}
 	ellipse {
 		stroke-dashoffset: 0;
 		stroke-width: 15%;
+		transform: none;
 	}
 }
 
@@ -64,32 +66,37 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	#progress {
 		filter: drop-shadow(-7px 0px 3.5px rgba(0, 0, 0, 0.3));
 		opacity: 1;
 		.indicator {
 			stroke: $color-light-text-white;
+			stroke-opacity: 1;
+			position: relative;
+			z-index: 3;
 			filter: drop-shadow(1px 0px 3px rgba(0, 0, 0, 0.3));
 		}
 		ellipse {
 			fill: none;
 		}
 		.bg_inner {
-			fill: #1c4b95;
-			fill-opacity: 1;
-			stroke: #1c4b95;
-			stroke-width: 15%;
+			fill: none;
+			fill-opacity: 0.8;
+			z-index: 2;
+			stroke: rgba($color-light-primary, 0.8);
+			stroke-width: 15.1%;
 		}
 		.bg_outer {
 			fill: $color-light-text-white;
 			stroke: none;
+			stroke-width: 15%;
 			opacity: 0.5;
 		}
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	#progress {
 		.indicator {
 			stroke: $color-dark-text-primary;
