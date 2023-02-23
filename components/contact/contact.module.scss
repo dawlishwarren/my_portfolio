@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .contact_section {
 	@include flex-center();
 	flex-direction: column;
@@ -22,13 +22,14 @@
 			.content {
 				padding-top: 3rem;
 				.columns {
+					position: relative;
 					margin-inline: 0;
 					display: flex;
 					justify-content: center;
 					flex-direction: column;
 					text-align: center;
 					.column {
-						padding: 1rem;
+						// padding: 1rem;
 						border-bottom: 2px solid;
 						display: block;
 						flex-basis: 0;
@@ -59,13 +60,15 @@
 						align-items: normal;
 						justify-content: center;
 						flex-direction: row;
-						padding-block: 3rem;
+						padding-block: 0;
 						margin: 0;
 						.column {
+							position: relative;
 							border-right: 0.5px solid;
 							border-left: 0.5px solid;
 							border-bottom: none;
-							padding: 0;
+							padding-block: 0.5rem;
+
 							margin: 1rem auto;
 							&:first-child {
 								border-left: none;
@@ -101,7 +104,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.contact_section {
 		background-color: #f1f1f2;
 		color: darken($color: $color-light-secondary, $amount: 15);
@@ -138,7 +141,7 @@
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.contact_section {
 		background-color: $color-dark-background;
 		.container {
@@ -167,8 +170,9 @@
 						.column {
 							color: $color-dark-text-secondary;
 							border-color: $color-dark-text-disabled;
+
 							&:hover {
-								background-color: $color-dark-elevated-primary;
+								background-color: $color-dark-elevated-secondary;
 								color: $color-dark-text-primary;
 								.icon {
 									color: $color-dark-accent;
