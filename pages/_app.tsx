@@ -7,12 +7,16 @@ import { ThemeProvider } from 'next-themes';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import Router from 'next/router';
 import NProgress from 'nprogress';
+import { Work_Sans } from 'next/font/google';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
-
 NProgress.configure({ showSpinner: false });
+
+const workSans = Work_Sans({
+	subsets: ['latin'],
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -41,7 +45,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 					<link rel='mask-icon' href='/safari-pinned-tab.svg' color='#5bbad5' />
 					<meta name='msapplication-TileColor' content='#da532c' />
 				</Head>
-				<Component {...pageProps} />
+				<main className={workSans.className}>
+					<Component {...pageProps} />
+				</main>
 			</ThemeProvider>
 		</LazyMotion>
 	);

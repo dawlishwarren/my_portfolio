@@ -1,8 +1,9 @@
+// React/Next/NPM
 import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { m } from 'framer-motion';
+// Styles/Assets
 import styles from './themeChanger.module.scss';
-import { GrMoon, GrSun, GrSystem } from 'react-icons/gr';
 import { RiMoonClearFill, RiSunFill, RiUserSettingsLine } from 'react-icons/ri';
 
 interface Props {

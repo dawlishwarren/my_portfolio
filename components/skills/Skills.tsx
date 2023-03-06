@@ -1,6 +1,9 @@
+// React/Next/NPM
 import React from 'react';
+// Components
+import SkillCategory from '../skillCategory/SkillCategory';
+// Styles/Assets
 import styles from './skills.module.scss';
-
 import {
 	plan,
 	test,
@@ -9,8 +12,6 @@ import {
 	languages,
 	frameworks,
 } from '../../data/skills';
-import SkillCategory from '../skillCategory/SkillCategory';
-import AnimatedTitle from '../animatedTitle/AnimatedTitle';
 
 const Skills = () => {
 	return (

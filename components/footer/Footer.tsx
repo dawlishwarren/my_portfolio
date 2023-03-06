@@ -4,11 +4,6 @@ import Link from 'next/link';
 // Styles/Assets
 import styles from './footer.module.scss';
 
-// 3 Rows, Columns in 900px+
-// Powered by Vercel
-// Designed by Alex Warren Web Development
-// Inspired by: Credits
-
 const Footer = () => {
 	return (
 		<footer className={styles.footer}>

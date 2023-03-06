@@ -1,11 +1,14 @@
-import { MotionValue, m } from 'framer-motion';
+// React/Next/NPM
 import React, { useEffect, useState } from 'react';
+import { MotionValue, m } from 'framer-motion';
+// Styles/Assets
 import styles from './progressEllipse.module.scss';
-
+// Type Declarations
 interface Props {
 	progress: MotionValue<number>;
 }
 
+// Component
 const ProgressEllipse = ({ progress }: Props) => {
 	const [isHovered, setIsHovered] = useState(false);
 	const getClassName = () => {
@@ -13,10 +16,12 @@ const ProgressEllipse = ({ progress }: Props) => {
 	};
 
 	useEffect(() => {
+		// State change sets timeout
 		if (!isHovered) {
 			return;
 		}
 		const timeoutId = window.setTimeout(() => {
+			// Timeout clears State
 			setIsHovered(false);
 		}, 1000);
 
@@ -24,7 +29,9 @@ const ProgressEllipse = ({ progress }: Props) => {
 			window.clearTimeout(timeoutId);
 		};
 	}, [isHovered]);
+	// onMouseEnter = trigger
 	const trigger = () => {
+		// trigger sets State
 		setIsHovered(true);
 	};
 
