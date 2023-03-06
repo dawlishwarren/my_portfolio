@@ -1,9 +1,9 @@
 // React/Next/NPM
-import { m } from "framer-motion";
-import Link from "next/link";
+import { m } from 'framer-motion';
+import Link from 'next/link';
 // Styles/Assets
-import styles from "./menuItem.module.scss";
-import hoverStyles from "../../styles/hover.module.scss";
+import styles from './menuItem.module.scss';
+import hoverStyles from '../../styles/hover.module.scss';
 // import { color1 } from '../../../styles/settings/_colors.module.scss';
 
 const variants = {
@@ -25,7 +25,7 @@ const variants = {
 	},
 };
 
-const colors = ["#0586ff", "#278ea5", "#00a85f", "#cab111", "#c3423f"];
+const colors = ['#0586ff', '#278ea5', '#00a85f', '#cab111', '#c3423f'];
 
 const MenuItem = ({ i, name, href, icon }: any) => {
 	return (
@@ -50,16 +50,16 @@ const MenuItem = ({ i, name, href, icon }: any) => {
 						</div>
 					)}
 					{/* Link */}
-					<a className={styles.link}>
+					<div className={styles.link}>
 						{name}
 						<m.div
 							className={styles.link_after}
 							style={{
-								backgroundColor: "white",
-								color: "white",
+								backgroundColor: 'white',
+								color: 'white',
 							}}
 						/>
-					</a>
+					</div>
 				</div>
 			</m.li>
 		</Link>

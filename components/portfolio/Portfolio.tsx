@@ -1,6 +1,6 @@
 // React/Next/NPM
 import React, { useRef, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import { AnimatePresence, m, useScroll } from "framer-motion";
 // Components
 import AnimatedTitle from "../animatedTitle/AnimatedTitle";

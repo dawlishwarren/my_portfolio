@@ -1,5 +1,7 @@
 // React/Next/NPM
 import React from 'react';
+import { Archivo } from 'next/font/google';
+import { Assistant } from 'next/font/google';
 // Components
 import SkillCategory from '../skillCategory/SkillCategory';
 // Styles/Assets
@@ -13,6 +15,8 @@ import {
 	frameworks,
 } from '../../data/skills';
 
+const title = Assistant({ subsets: ['latin'], weight: '400' });
+const subtitle = Archivo({ subsets: ['latin'], weight: '300' });
 const Skills = () => {
 	return (
 		<section id='skills' className={`scroll-area ${[styles.skills_section]}`}>
@@ -101,7 +105,10 @@ const Skills = () => {
 					<div className={styles.content}>
 						<div className={styles.columns}>
 							<div className={styles.column}>
-								<h1 className={`${styles.title} ${styles.plan}`}>Planner</h1>
+								<h1
+									className={`${styles.title} ${styles.plan} ${title.className}`}>
+									Planner
+								</h1>
 								<div className={styles.column_text}>
 									<p>
 										A career accidentally built on{' '}
@@ -122,7 +129,10 @@ const Skills = () => {
 								<SkillCategory skills={test} category={'plan'} />
 							</div>
 							<div className={styles.column}>
-								<h1 className={`${styles.title} ${styles.design}`}>Designer</h1>
+								<h1
+									className={`${styles.title} ${styles.design} ${title.className}`}>
+									Designer
+								</h1>
 								<div className={styles.column_text}>
 									<p>
 										Whether it&apos;s front or back end, I work with the goal of{' '}
@@ -130,7 +140,8 @@ const Skills = () => {
 										goes <span className={styles.strong}>unnoticed.</span>
 									</p>
 								</div>
-								<p className={`${styles.primary} ${styles.design}`}>
+								<p
+									className={`${styles.primary} ${styles.design} ${subtitle.className}`}>
 									Business in the front:
 								</p>
 								<SkillCategory category={'design'} skills={frontEndDesign} />
@@ -140,7 +151,10 @@ const Skills = () => {
 								<SkillCategory category={'design'} skills={backEndDesign} />
 							</div>
 							<div className={styles.column}>
-								<h1 className={`${styles.title} ${styles.build}`}>Builder</h1>
+								<h1
+									className={`${styles.title} ${styles.build} ${title.className}`}>
+									Builder
+								</h1>
 								<div className={styles.column_text}>
 									<p>
 										Beguiled by the

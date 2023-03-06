@@ -1,5 +1,5 @@
 // React/Next/NPM
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { m } from "framer-motion";
 // Components
 import AnimatedTitle from "../animatedTitle/AnimatedTitle";

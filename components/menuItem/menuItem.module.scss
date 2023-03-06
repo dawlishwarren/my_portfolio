@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 
 .menu_item {
 	border-radius: $border-radius;
@@ -17,28 +17,29 @@
 		width: calc(100% - 2px);
 		z-index: 2;
 		position: relative;
-	}
-	.icon {
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		flex: 40px 0;
-		margin-left: 2rem;
-		margin-right: calc(-2rem - 40px);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		> * {
-			transition: all 0.5s ease;
+
+		.icon {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			flex: 40px 0;
+			margin-left: 2rem;
+			margin-right: calc(-2rem - 40px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			> * {
+				transition: all 0.5s ease;
+			}
 		}
-	}
-	.link {
-		position: relative;
-		text-align: right;
-		width: 100%;
-		padding-right: 2rem;
-		font-weight: 600;
-		font-size: 1.5rem;
+		.link {
+			position: relative;
+			text-align: right;
+			width: 100%;
+			padding-right: 1rem;
+			font-weight: 600;
+			font-size: 1.5rem;
+		}
 	}
 }
 
@@ -46,7 +47,7 @@
 	.menu_item {
 		height: 4rem !important;
 	}
-	[data-theme="dark"] {
+	[data-theme='dark'] {
 		.menu_item {
 			.link {
 				color: $color-dark-text-secondary !important;
@@ -61,7 +62,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.menu_item {
 		.icon {
 			border: 2px solid $color-lightest !important;
@@ -72,7 +73,7 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.menu_item {
 		.icon {
 			color: $color-dark-text-secondary;

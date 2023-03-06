@@ -1,5 +1,5 @@
 // React/Next/NPM
-import Image from 'next/image';
+import Image from "next/legacy/image";
 // Components
 import MainHero from '../mainHero/mainHero';
 import ScrollDown from '../scrollDown/ScrollDown';

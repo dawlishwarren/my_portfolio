@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .skills_section {
 	vertical-align: baseline;
 	width: 100vw;
@@ -15,6 +15,7 @@
 	max-width: 70vw;
 	margin-top: -3rem;
 	margin-bottom: 2rem;
+	z-index: 0;
 	// SVG Background
 	.blob {
 		&_1,
@@ -210,7 +211,7 @@
 }
 
 // ----------- LIGHT/DARK MODE ----------- //
-[data-theme="light"] {
+[data-theme='light'] {
 	.skills_section {
 		@media (min-width: 900px) {
 			background-image: linear-gradient(
@@ -259,7 +260,7 @@
 		}
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.skills_section {
 		background-color: $color-dark-background;
 		.box {

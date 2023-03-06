@@ -1,5 +1,5 @@
 // React/Next/NPM
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from 'next/link';
 // Styles/Assets
 import styles from './footer.module.scss';
