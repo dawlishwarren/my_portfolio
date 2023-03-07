@@ -6,14 +6,14 @@
 // Fullscreen wrapper
 .main_section {
 	width: 100vw;
-	height: 100svh;
+	max-height: 100svh;
 	position: relative;
 	z-index: 1;
 }
 // Content (Title/Image) container
 .content_container {
 	min-width: 100vw;
-	height: 100vh;
+	height: 100svh;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
