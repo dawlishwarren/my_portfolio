@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .nav_button,
 .social_button {
 	outline: none;
@@ -24,16 +24,23 @@
 
 .social_button {
 	right: calc(10vw - 25px);
+	display: none;
 }
 
-[data-theme="light"] {
+@media (min-width: 600px) {
+	.social_button {
+		display: initial;
+	}
+}
+
+[data-theme='light'] {
 	.nav_button,
 	.social_button {
 		color: $color-darkest;
 		stroke: $color-darkest;
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.nav_button,
 	.social_button {
 		color: $color-dark-text-primary;
