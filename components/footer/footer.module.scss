@@ -3,7 +3,7 @@
 	@include flex-center();
 	@include gradient-blue(background);
 	min-height: fit-content;
-	max-height: fit-content;
+	padding-bottom: 0.5rem;
 	width: 100vw;
 	.container {
 		margin-block: 1rem;
@@ -40,6 +40,7 @@
 
 @media (min-width: 900px) {
 	.footer {
+		padding-block: 1rem;
 		.container {
 			max-width: $max-width;
 			min-width: $max-width;

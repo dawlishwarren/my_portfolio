@@ -29,7 +29,7 @@
 					flex-direction: column;
 					text-align: center;
 					.column {
-						// padding: 1rem;
+						padding: 1rem;
 						border-bottom: 2px solid;
 						display: block;
 						flex-basis: 0;
@@ -54,13 +54,13 @@
 			max-width: $max-width;
 			.box {
 				.content {
-					padding-top: 0;
+					padding-top: 2rem;
 					.columns {
 						align-content: normal;
 						align-items: normal;
 						justify-content: center;
 						flex-direction: row;
-						padding-block: 0;
+						padding-block: 2rem;
 						margin: 0;
 						.column {
 							position: relative;

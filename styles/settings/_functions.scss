@@ -38,7 +38,7 @@
 }
 @mixin skillHover($color) {
 	&:hover {
-		.icon {
+		.icon_wrapper {
 			color: $color;
 		}
 		.name {

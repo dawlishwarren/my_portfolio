@@ -1,35 +1,35 @@
 // React/Next/NPM
-import Image from "next/legacy/image";
-import { m } from "framer-motion";
+import Image from 'next/legacy/image';
+import { m } from 'framer-motion';
 // Components
-import AnimatedTitle from "../animatedTitle/AnimatedTitle";
+import AnimatedTitle from '../animatedTitle/AnimatedTitle';
 // Styles/Assets
-import styles from "./aboutMe.module.scss";
-import Tilt from "../../assets/tilt.svg";
-import MobileArrow from "../../assets/mobileArrow.svg";
-import biopic from "../../public/bio.jpeg";
-import { useEffect, useState } from "react";
+import styles from './aboutMe.module.scss';
+import Tilt from '../../assets/tilt.svg';
+import MobileArrow from '../../assets/mobileArrow.svg';
+import biopic from '../../public/bio.jpeg';
+import { useEffect, useState } from 'react';
 
 const bioSentences = [
-	<m.p className={styles.bio_paragraph} key="0">
+	<m.p className={styles.bio_paragraph} key='0'>
 		Hello world, lorem ipsum dolor sit amet… just kidding! I&apos;m a
 		<span className={styles.strong}> Leeds based web developer</span>, with a
 		passion for front-end and interactivity.
 	</m.p>,
-	<m.p className={styles.bio_paragraph} key="1">
-		Coming from a background in{" "}
+	<m.p className={styles.bio_paragraph} key='1'>
+		Coming from a background in{' '}
 		<span className={styles.strong}>professional music</span> and restaurant
-		management I am entirely <span className={styles.strong}>self taught</span>{" "}
+		management I am entirely <span className={styles.strong}>self taught</span>{' '}
 		in the field of development; but my skills with time-management,
 		collaboration and creative problem-solving are well honed.
 	</m.p>,
-	<m.p className={styles.bio_paragraph} key="2">
+	<m.p className={styles.bio_paragraph} key='2'>
 		I am an <span className={styles.strong}>advocate</span>, and have recently
-		been vocal about (but not limited to){" "}
+		been vocal about (but not limited to){' '}
 		<span className={styles.gradient}>
 			accessibility, workplace energy sustainability and men&apos;s mental
 			health awareness.
-		</span>{" "}
+		</span>{' '}
 		In my free hours catch me making cocktails, with a saxophone, or on a road
 		bike, just never at the same time.
 	</m.p>,
@@ -52,16 +52,16 @@ const AboutMe = () => {
 				setDesktop(false);
 			}
 		};
-		window.addEventListener("resize", updateMedia);
-		return () => window.removeEventListener("resize", updateMedia);
+		window.addEventListener('resize', updateMedia);
+		return () => window.removeEventListener('resize', updateMedia);
 	}, []);
 	return (
-		<section id="about" className={`scroll-area ${[styles.about_section]}`}>
+		<section id='about' className={`scroll-area ${[styles.about_section]}`}>
 			{/* SVG background element */}
 			<Tilt className={styles.tilt} />
 			{/* Title */}
 			<header className={styles.header_wrapper}>
-				<AnimatedTitle str="About Me" />
+				<AnimatedTitle str='About Me' />
 				{!isDesktop && <MobileArrow className={styles.arrow} />}
 			</header>
 			{/* Content */}
@@ -69,9 +69,9 @@ const AboutMe = () => {
 				<div className={styles.image_container}>
 					<Image
 						src={biopic}
-						objectFit="fill"
-						alt="Picture of author"
-						placeholder="blur"
+						objectFit='fill'
+						alt='Picture of author'
+						placeholder='blur'
 					/>
 				</div>
 				{/* Sentences mapped to animated divs */}
@@ -82,6 +82,7 @@ const AboutMe = () => {
 							className={styles.animation_wrapper}
 							initial={{ opacity: 0, translateX: -50 }}
 							whileInView={{ opacity: 1, translateX: 0 }}
+							viewport={{ once: true }}
 							transition={{ duration: 1, delay: i * 0.5 }}>
 							{sentence}
 						</m.div>
