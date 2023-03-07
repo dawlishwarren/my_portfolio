@@ -1,6 +1,10 @@
+// React/Next/NPM
 import Link from 'next/link';
+// Components
 import BlobBackground from '../components/blobBackground/BlobBackground';
+import HomeButton from '../components/homeButton/HomeButton';
 import Layout from '../components/layout/Layout';
+// Styles/Assets
 import styles from '../styles/404.module.scss';
 
 export default function Custom404() {
@@ -9,9 +13,7 @@ export default function Custom404() {
 			<BlobBackground>
 				<div className={styles.content}>
 					<h1>404 - Page not found</h1>
-					<Link href='/'>
-						<button className={styles.button}>Take me home</button>
-					</Link>
+					<HomeButton />
 				</div>
 			</BlobBackground>
 		</Layout>

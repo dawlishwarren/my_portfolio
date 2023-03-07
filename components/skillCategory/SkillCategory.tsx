@@ -86,8 +86,16 @@ const SkillCategory = ({ skills, category }: Props) => {
 								<h2 className={styles.title}>{name}</h2>
 							</div>
 							<div className={styles.text_container}>
-								{when && <p className={styles.when}>Since: {when}</p>}
-								{where && <p className={styles.where}>Where: {where}</p>}
+								{when && (
+									<p className={styles.when}>
+										<span className={styles.subtitle}>Since:</span> {when}
+									</p>
+								)}
+								{where && (
+									<p className={styles.where}>
+										<span className={styles.subtitle}>Learnt via:</span> {where}
+									</p>
+								)}
 								{text && <p className={styles.paragraph}>{text}</p>}
 							</div>
 						</div>

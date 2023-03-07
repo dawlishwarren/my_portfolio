@@ -1,0 +1,43 @@
+@use '../../styles/settings/' as *;
+
+.button {
+	border: none;
+	border-radius: 25px;
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+	margin: 0.5rem;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+	&:hover {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+}
+
+[data-theme='light'] {
+	.button {
+		background-image: rgba($color: $color-light-text-white, $alpha: 0.4);
+		border: solid 1px;
+		border-color: $color-dark-background;
+		&:hover {
+			border-color: $color-light-background;
+			background-image: linear-gradient(
+				to left,
+				rgb(241, 219, 75) 0%,
+				rgb(195, 66, 63) 100%
+			);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+}
+[data-theme='dark'] {
+	.button {
+		background-color: $color-dark-text-secondary;
+		color: $color-dark-background;
+		&:hover {
+			background-color: rgba($color: $color-dark-text-secondary, $alpha: 0.45);
+			color: $color-darkest;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+@use './settings/utilities' as u;
+.page_wrapper {
+	display: flex;
+	height: 100svh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10rem;
+	z-index: 1;
+
+	.credits_list {
+		max-width: u.$max-width;
+		font-style: italic;
+		padding-bottom: 10rem;
+		.credit {
+			padding-bottom: 1rem;
+			&_title {
+				font-size: 2rem;
+			}
+			&_description {
+				.link {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
