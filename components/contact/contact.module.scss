@@ -6,7 +6,7 @@
 	height: fit-content;
 	.container {
 		margin-block: 1.5rem;
-		width: 70vw;
+		min-width: 70vw;
 		min-height: fit-content;
 		.box {
 			display: block;

@@ -32,22 +32,24 @@ const Contact = () => {
 					</div>
 					<div className={styles.content}>
 						<ul className={styles.columns} onMouseMove={handleMouseMove}>
-							<Link href='https://docs.google.com/document/d/1Omfi4afRCgX-qENdIJm3RRpqHIJ-yTgIK0bCb7KBPy0/edit?usp=sharing'>
-								<li className={`${styles.column} ${hoverStyles.contact_item}`}>
-									<CgAttachment className={styles.icon} size={32} />
-									<h1 className={styles.title}>Read my Résumé</h1>
-								</li>
+							<Link
+								className={`${styles.column} ${hoverStyles.contact_item}`}
+								href='https://docs.google.com/document/d/1Omfi4afRCgX-qENdIJm3RRpqHIJ-yTgIK0bCb7KBPy0/edit?usp=sharing'>
+								<CgAttachment className={styles.icon} size={32} />
+								<h1 className={styles.title}>Read my Résumé</h1>
 							</Link>
-							<Link href='mailto:alexwarrendev@gmail.com'>
-								<li className={`${styles.column} ${hoverStyles.contact_item}`}>
-									<GoMail className={styles.icon} size={32} />
-									<h1 className={styles.title}>Send me an Email</h1>
-								</li>
+							<Link
+								className={`${styles.column} ${hoverStyles.contact_item}`}
+								href='mailto:alexwarrendev@gmail.com'>
+								<GoMail className={styles.icon} size={32} />
+								<h1 className={styles.title}>Send me an Email</h1>
 							</Link>
-							<li className={`${styles.column} ${hoverStyles.contact_item}`}>
+							<Link
+								className={`${styles.column} ${hoverStyles.contact_item}`}
+								href='https://www.linkedin.com/in/awarrendev/'>
 								<SlSocialLinkedin className={styles.icon} size={32} />
 								<h1 className={styles.title}>Find me on LinkedIn</h1>
-							</li>
+							</Link>
 						</ul>
 					</div>
 				</div>
