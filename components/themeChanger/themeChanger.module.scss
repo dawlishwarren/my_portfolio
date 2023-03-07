@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 
 .theme {
 	z-index: 2;
@@ -24,7 +24,7 @@
 	}
 	&_container {
 		display: flex;
-		margin-top: 8px;
+		margin-top: 1.5rem;
 		gap: 1rem;
 	}
 	&_item {
@@ -40,7 +40,7 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.sub_menu {
 		&_item {
 			color: $color-light-text-white !important;
@@ -54,7 +54,7 @@
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.sub_menu {
 		&_background {
 			background-color: none;

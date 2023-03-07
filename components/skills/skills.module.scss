@@ -1,145 +1,145 @@
 @use '../../styles/settings' as *;
+
+// Section
 .skills_section {
-	vertical-align: baseline;
-	width: 100vw;
-	min-height: 100vh;
-	height: fit-content;
 	@include flex-center();
+	vertical-align: baseline;
 	flex-direction: column;
-}
-// Content container
-.container {
-	flex-grow: 1;
-	margin: 0 auto;
-	position: relative;
-	max-width: 70vw;
-	margin-top: -3rem;
-	margin-bottom: 2rem;
-	z-index: 0;
-	// SVG Background
-	.blob {
-		&_1,
-		&_2 {
-			position: absolute;
-			width: 800px;
-			height: 500px;
-			z-index: -1;
-		}
-		&_1 {
-			animation: myBlob 120s infinite alternate-reverse ease-in;
-		}
-		&_2 {
-			animation: myBlob 100s infinite alternate ease-in;
-		}
-		@keyframes myBlob {
-			0% {
-				top: 0;
-				left: 0;
+	width: 100vw;
+	max-height: fit-content;
+
+	// Content
+	.container {
+		flex-grow: 1;
+		margin: 0 auto;
+		position: relative;
+		max-width: 70vw;
+		margin-top: -3rem;
+		margin-bottom: 2rem;
+		// SVG Background
+		.blob {
+			&_1,
+			&_2 {
+				position: absolute;
+				width: 800px;
+				height: 500px;
+				z-index: -1;
 			}
-			15% {
-				top: 30%;
-				left: 15%;
+			&_1 {
+				animation: myBlob 120s infinite alternate-reverse ease-in;
 			}
-			33% {
-				left: 20%;
+			&_2 {
+				animation: myBlob 100s infinite alternate ease-in;
 			}
-			50% {
-				top: 15%;
-				left: 35%;
-			}
-			60% {
-				top: 50%;
-				left: 60%;
-			}
-			80% {
-				top: 60%;
-				left: 20%;
-			}
-			100% {
-				top: 75%;
-				left: 75%;
-			}
-		}
-	}
-	// Content box (rows within mobile breakpoint)
-	.box {
-		display: block;
-		padding-top: 3rem;
-		border-radius: $border-radius;
-		transition: $cubic_6;
-		.content {
-			.columns {
-				padding-top: 1rem;
-				flex-direction: column;
-				@include flex-center();
-				&:last-child {
-					margin-bottom: -0.75rem;
+			@keyframes myBlob {
+				0% {
+					top: 0;
+					left: 0;
 				}
-				.column {
-					display: block;
-					margin: 0 auto;
-					padding-inline: 1rem;
-					padding-block: 2rem;
-					border-bottom: 2px solid;
-					&:last-of-type {
-						border-bottom: none;
-					}
-					flex-basis: 0;
-					flex-grow: 1;
-					flex-shrink: 1;
-
-					.title {
-						display: flex;
-						width: 100%;
-						justify-content: center;
-						padding-bottom: 2rem;
-						font-size: 2.5rem;
-					}
-					.column_text {
-						padding-bottom: 1rem;
-						> p {
-							.strong {
-								font-style: oblique;
-							}
-						}
-						&:hover {
-							.gradient {
-								background-image: linear-gradient(
-									to left,
-									#f8ab5e 0,
-									#f36961 20%,
-									#a176c8 40%,
-									#759beb 60%,
-									#65beb3 80%,
-									#70db96 100%
-								);
-								-webkit-background-clip: text;
-								background-clip: text;
-								-webkit-text-fill-color: transparent;
-							}
-						}
-					}
-
-					.primary {
-						padding-block: 1rem;
-						text-align: center;
-						font-size: 1.25rem;
-					}
-					.plan {
-						color: $color-plan;
-					}
-					.design {
-						color: $color-design;
-					}
-					.build {
-						color: $color-build;
-					}
+				15% {
+					top: 30%;
+					left: 15%;
+				}
+				33% {
+					left: 20%;
+				}
+				50% {
+					top: 15%;
+					left: 35%;
+				}
+				60% {
+					top: 50%;
+					left: 60%;
+				}
+				80% {
+					top: 60%;
+					left: 20%;
+				}
+				100% {
+					top: 75%;
+					left: 75%;
 				}
 			}
 		}
+		// Content box (rows within mobile breakpoint)
+		.box {
+			display: block;
+			padding-top: 3rem;
+			border-radius: $border-radius;
+			transition: $cubic_6;
+			.content {
+				.columns {
+					padding-top: 1rem;
+					flex-direction: column;
+					@include flex-center();
+					&:last-child {
+						margin-bottom: -0.75rem;
+					}
+					.column {
+						display: block;
+						margin: 0 auto;
+						padding-inline: 1rem;
+						padding-block: 2rem;
+						border-bottom: 2px solid;
+						&:last-of-type {
+							border-bottom: none;
+						}
+						flex-basis: 0;
+						flex-grow: 1;
+						flex-shrink: 1;
+
+						.title {
+							display: flex;
+							width: 100%;
+							justify-content: center;
+							padding-bottom: 2rem;
+							font-size: 2.5rem;
+						}
+						.column_text {
+							padding-bottom: 1rem;
+							> p {
+								.strong {
+									font-style: oblique;
+								}
+							}
+							&:hover {
+								.gradient {
+									background-image: linear-gradient(
+										to left,
+										#f8ab5e 0,
+										#f36961 20%,
+										#a176c8 40%,
+										#759beb 60%,
+										#65beb3 80%,
+										#70db96 100%
+									);
+									-webkit-background-clip: text;
+									background-clip: text;
+									-webkit-text-fill-color: transparent;
+								}
+							}
+						}
+
+						.primary {
+							padding-block: 1rem;
+							text-align: center;
+							font-size: 1.25rem;
+						}
+						.plan {
+							color: $color-plan;
+						}
+						.design {
+							color: $color-design;
+						}
+						.build {
+							color: $color-build;
+						}
+					}
+				}
+			}
+		}
 	}
 }
-
 // ----------- BREAKPOINTS ----------- //
 // ----- Medium (Tablets - Laptops) ----- //
 // Width changed and fonts made more legible

@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 
 .backdrop {
 	position: fixed;
@@ -9,7 +9,7 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: auto;
-	z-index: 11;
+	z-index: 5;
 	border-radius: inherit;
 	@include flex-center();
 }
@@ -19,19 +19,19 @@
 	.backdrop {
 		border: 1px solid rgba($color: $color-backdrop, $alpha: 0.8);
 	}
-	[data-theme="light"] {
+	[data-theme='light'] {
 		.backdrop {
 			background-color: rgba($color: $color-dark, $alpha: 0.6);
 		}
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.backdrop {
 		background-color: rgba($color: $color-dark, $alpha: 0.9);
 	}
 }
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.backdrop {
 		background: rgba($color-dark-background, 0.87);
 	}
