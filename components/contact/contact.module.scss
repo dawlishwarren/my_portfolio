@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 .contact_section {
 	@include flex-center();
 	flex-direction: column;
@@ -53,6 +53,8 @@
 			margin-top: -2rem;
 			max-width: $max-width;
 			.box {
+				max-width: $max-width;
+				margin-inline: auto;
 				.content {
 					padding-top: 2rem;
 					.columns {
@@ -104,7 +106,7 @@
 	}
 }
 
-[data-theme='light'] {
+[data-theme="light"] {
 	.contact_section {
 		background-color: #f1f1f2;
 		color: darken($color: $color-light-secondary, $amount: 15);
@@ -141,7 +143,7 @@
 	}
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
 	.contact_section {
 		background-color: $color-dark-background;
 		.container {

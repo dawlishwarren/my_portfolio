@@ -1,4 +1,4 @@
-@use '../../styles/settings' as *;
+@use "../../styles/settings" as *;
 
 // Each Container has a list of mapped children, displayed as icons
 .icons_container {
@@ -26,14 +26,22 @@
 				justify-content: center;
 				border-radius: 50%;
 				padding: 0.2rem;
-				cursor: pointer;
-				.icon {
-					font-size: 3rem;
-					max-width: 80%;
-					height: 100%;
-				}
 				&:hover {
 					box-shadow: $box-shadow-light-hover;
+				}
+				.aria_button {
+					border: none;
+					height: calc(100% + 0.2rem + 2px);
+					width: calc(100% + 0.2rem + 2px);
+					border-radius: 50%;
+					background-color: transparent;
+					color: inherit;
+					cursor: pointer;
+					.icon {
+						font-size: 3rem;
+						max-width: 80%;
+						height: 100%;
+					}
 				}
 			}
 		}
@@ -140,7 +148,7 @@
 			padding-bottom: 3rem;
 			border-bottom: 1px solid #e6ecf8;
 			.skill {
-				margin-inline: 3rem;
+				margin-inline: 4rem;
 				.icon_wrapper {
 					box-shadow: none;
 					width: 3.5rem;
