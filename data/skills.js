@@ -32,8 +32,8 @@ export const plan = [
 		name: 'Figma',
 		icon: SiFigma,
 		when: 2022,
-		where: 'Tutorials',
-		text: 'Used more recently in the planning and wire-framing stage of any project or idea.',
+		where: 'Tutorial',
+		text: 'Proficient in using Figma for the planning and wire-framing stage of any project or idea.',
 	},
 	{
 		name: 'Notion',
@@ -46,14 +46,14 @@ export const plan = [
 		name: 'Planner',
 		icon: AiOutlineBook,
 		when: 2020,
-		text: `I've greatly benefited from using planners and reflecting on a regular basis. https://passionplanner.com/`,
+		text: `The single biggest aid to my productivity. The weekly overview helps me plan in great detail, and the monthly reflections keep me honest and determined. I would highly recommend: https://passionplanner.com/`,
 	},
 	{
 		name: 'GitHub',
 		icon: DiGithubFull,
 		when: 2021,
-		where: 'Tutorials and googling it.',
-		text: `While all of my projects and sites have been solo and self-taught endeavours, the importance of version control has not been lost on me.`,
+		where: 'Tutorial, googling it',
+		text: `All of my projects have so-far been solo projects. However, I regularly use version control through GitHub branches to ensure adding new functionality doesn't compromise my existing work.`,
 	},
 ];
 
@@ -63,7 +63,7 @@ export const test = [
 		icon: SiJest,
 		when: 2022,
 		where: 'Documentation',
-		text: 'Red, green, refactor. Along with end-to-end testing I have endeavoured to improve my productivity and programming by writing unit tests as I build.',
+		text: `Red, green, refactor. Along with end-to-end testing I have endeavoured to improve my productivity and programming by writing unit tests as I build. My only regret is that I didn't learn it sooner.`,
 	},
 	{
 		name: 'Postman',
@@ -77,14 +77,14 @@ export const test = [
 		icon: SiTypescript,
 		when: 2022,
 		where: 'Documentation, Stack Overflow',
-		text: `Learnt directly from the TypeScript docs in an effort to increase productivity and write more robust code. Now I know why all my old projects don't work!`,
+		text: `Learnt directly from the TypeScript docs in an effort to increase productivity and write more robust code. A game-changer, I wouldn't go back. Now I know why all my old projects don't work!`,
 	},
 	{
 		name: 'Cypress',
 		icon: SiCypress,
 		when: 2022,
 		where: 'Documentation, YouTube',
-		text: 'My first experience with end-to-end testing.',
+		text: 'Wanting my testing suite knowledge included end-to-end testing, I was recommended Cypress and have been using it on projects since.',
 	},
 ];
 export const frontEndDesign = [
@@ -93,7 +93,7 @@ export const frontEndDesign = [
 		icon: DiCss3,
 		when: 2020,
 		where: 'Udemy, YouTube, Documentation',
-		text: 'The biggest source of inspiration and headache. Catch me in the DevTools "borrowing" CSS.',
+		text: 'The biggest source of inspiration and headache. I am always stunned at the possibilities presented by CSS, and I thoroughly enjoy reverse-engineering the designs that inspire me.',
 	},
 	{
 		name: 'Canva',
@@ -124,14 +124,14 @@ export const backEndDesign = [
 		icon: DiWordpress,
 		when: 2021,
 		where: 'YouTube, tutorials, stack overflow',
-		text: 'Used more as a CMS for headless apps rather than directly through the WordPress template system.',
+		text: 'I am comfortable using WordPress directly through the built-in control pannel, but also using WordPress as a Headless CMS project with NextJS and using GraphQL to handle user data.',
 	},
 	{
 		name: 'AWS',
 		icon: SiAmazonaws,
 		when: 2022,
 		where: 'Documentation',
-		text: 'Experienced specfically with AWS S3 buckets, but an area I want to know more about.',
+		text: 'I have used S3 Buckets for image storage on a project. My long-term plan is to complete AWS certifications and learn about a wider array of AWS services.',
 	},
 
 	{
@@ -139,7 +139,7 @@ export const backEndDesign = [
 		icon: DiMongodb,
 		when: 2021,
 		where: 'Tutorials',
-		text: 'Used extensively with MERN-stack projects, and as an endpoint for a Next.js business directory app.',
+		text: 'Very proficient in using MongoDB to handle JSON data and manipulate it with CRUD functionalities. Used extensively with MERN-stack projects, and as an endpoint for a Next.js business directory app.',
 	},
 	{
 		name: 'GraphQL',
@@ -171,14 +171,14 @@ export const languages = [
 		icon: DiPhp,
 		when: 2022,
 		where: 'PHP & MySQL for Dynamic Web Sites (Larry Ullman).',
-		text: 'Learnt to gain a better understanding of server-side scripts and environments.',
+		text: 'Comfortable with the basics. Learnt to gain a better understanding of server-side scripts and environments.',
 	},
 	{
 		name: 'MySQL',
 		icon: DiMysql,
 		when: 2022,
 		where: 'PHP & MySQL for Dynamic Web Sites (Larry Ullman).',
-		text: 'Learnt wanting to become a more well-rounded developer, as an introduction to SQL database structuring.',
+		text: 'Comfortable with the basics. Learnt wanting to become a more well-rounded developer, as an introduction to SQL database structuring.',
 	},
 ];
 export const frameworks = [
@@ -187,7 +187,7 @@ export const frameworks = [
 		icon: DiNodejs,
 		when: 2021,
 		where: 'Udemy, documentation.',
-		text: 'Node.js and NPM have been my go-to runtime and package manager ever since getting into development.',
+		text: 'Proficient using Node.js and NPM, which have been my go-to runtime and package manager ever since getting into development.',
 	},
 
 	{
@@ -202,13 +202,13 @@ export const frameworks = [
 		icon: SiNextdotjs,
 		when: 2022,
 		where: 'Documentation, stack overflow',
-		text: 'My current preferred React.js framework. This site has been built using Next.js, chosen for its SEO optimisations, intuitive styling and routing.',
+		text: 'The React.js framework I am most proficient in. This site has been built using Next.js, chosen for its SEO optimisations, intuitive styling and routing.',
 	},
 	{
 		name: 'React',
 		icon: DiReact,
 		when: 2021,
 		where: 'Udemy, documentation',
-		text: 'My first and preferred JavaScript framework.',
+		text: 'The JS library I am most proficient in. I am very excited to fully explore the possibilities of React 13 and Server Components.',
 	},
 ];

@@ -85,7 +85,6 @@ a {
 	overflow-x: hidden;
 	height: 100vh;
 	scroll-snap-type: y proximity;
-	scroll-behavior: smooth !important;
 }
 .scroll-area {
 	scroll-snap-align: start;

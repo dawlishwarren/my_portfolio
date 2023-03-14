@@ -119,11 +119,13 @@ const Skills = () => {
 										<span className={styles.strong}>planning.</span>
 									</p>
 								</div>
-								<p className={`${styles.primary} ${styles.plan}`}>
+								<p
+									className={`${styles.primary} ${subtitle.className} ${styles.plan}`}>
 									Failing to prepare:
 								</p>
 								<SkillCategory skills={plan} category={'plan'} />
-								<p className={`${styles.primary} ${styles.plan}`}>
+								<p
+									className={`${styles.primary} ${subtitle.className} ${styles.plan}`}>
 									Preparing to fail:
 								</p>
 								<SkillCategory skills={test} category={'plan'} />
@@ -135,17 +137,19 @@ const Skills = () => {
 								</h1>
 								<div className={styles.column_text}>
 									<p>
-										Whether it&apos;s front or back end, I work with the goal of{' '}
-										<span className={styles.design}>design so nice</span> it
-										goes <span className={styles.strong}>unnoticed.</span>
+										Whether it&apos;s front or back end, I love creative problem
+										solving and using{' '}
+										<span className={styles.design}>design tools</span> to make{' '}
+										<span className={styles.strong}>ideas a reality.</span>
 									</p>
 								</div>
 								<p
-									className={`${styles.primary} ${styles.design} ${subtitle.className}`}>
+									className={`${styles.primary} ${subtitle.className} ${styles.design}`}>
 									Business in the front:
 								</p>
 								<SkillCategory category={'design'} skills={frontEndDesign} />
-								<p className={`${styles.primary} ${styles.design}`}>
+								<p
+									className={`${styles.primary} ${subtitle.className} ${styles.design}`}>
 									Party in the back:
 								</p>
 								<SkillCategory category={'design'} skills={backEndDesign} />
@@ -166,9 +170,13 @@ const Skills = () => {
 										things from scratch.
 									</p>
 								</div>
-								<p className={`${styles.primary} ${styles.build}`}>I speak:</p>
+								<p
+									className={`${styles.primary} ${subtitle.className} ${styles.build}`}>
+									I speak:
+								</p>
 								<SkillCategory category={'build'} skills={languages} />
-								<p className={`${styles.primary} ${styles.build}`}>
+								<p
+									className={`${styles.primary} ${subtitle.className} ${styles.build}`}>
 									Library voices please:
 								</p>
 								<SkillCategory category={'build'} skills={frameworks} />
