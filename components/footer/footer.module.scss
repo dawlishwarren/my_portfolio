@@ -2,7 +2,7 @@
 .footer {
 	@include flex-center();
 	@include gradient-blue(background);
-	min-height: 30rem;
+	min-height: 20svh;
 	height: fit-content;
 	padding-bottom: 0.5rem;
 	width: 100vw;
@@ -41,6 +41,7 @@
 
 @media (min-width: 900px) {
 	.footer {
+		min-height: fit-content;
 		padding-block: 1rem;
 		.container {
 			max-width: $max-width;
