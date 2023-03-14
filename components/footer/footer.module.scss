@@ -1,8 +1,9 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 .footer {
 	@include flex-center();
 	@include gradient-blue(background);
-	min-height: fit-content;
+	min-height: 30rem;
+	height: fit-content;
 	padding-bottom: 0.5rem;
 	width: 100vw;
 	.container {
@@ -80,14 +81,14 @@
 	}
 }
 
-[data-theme="light"] {
+[data-theme='light'] {
 	.footer {
 		color: $color-light-text-white;
 		opacity: 0.8;
 	}
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.footer {
 		opacity: 0.7;
 		color: $color-dark-text-secondary;

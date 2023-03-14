@@ -27,8 +27,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
+		width: 0;
+		height: 0;
 	}
 
 	&::before {
@@ -46,6 +46,16 @@
 			transparent 40%
 		);
 		z-index: 3;
+	}
+}
+@media (min-width: 900px) {
+	.contact_item,
+	.menu_item {
+		&::before,
+		&_border {
+			height: 100%;
+			width: 100%;
+		}
 	}
 }
 
