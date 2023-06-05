@@ -28,3 +28,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - react-dom, a package that provides DOM-specific methods to be used in the top level of a React app
 - prettier, a library that helps with formatting
 
+## Features
+- A fully custom UI, styled with CSS modules.
+- A light/dark mode that includes a default 'system' state to work in tandem with user preferences.
+- Animations for a sleek experience, using Framer Motion and Smooth Scrolling CSS properties throughout.
+- A credits page listing inspiration.
