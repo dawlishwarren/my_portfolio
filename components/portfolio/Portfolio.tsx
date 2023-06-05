@@ -39,6 +39,7 @@ const carouselData = [
 			</p>
 		),
 		repo: 'https://github.com/dawlishwarren/visit_budleigh',
+		link: 'http://test-website-stuff-w-alex.s3-website.eu-west-2.amazonaws.com/index.html',
 	},
 	{
 		index: 1,
