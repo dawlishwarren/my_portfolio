@@ -1,4 +1,4 @@
-@use "../../styles/settings" as *;
+@use '../../styles/settings' as *;
 
 // Section
 .portfolio_section {
@@ -45,7 +45,7 @@
 				cursor: pointer;
 				transition: $cubic_9;
 				&::after {
-					content: "";
+					content: '';
 					border: 0.5px solid;
 					border-radius: $border-radius;
 					left: 0;
@@ -275,6 +275,7 @@
 					justify-content: center;
 					flex-grow: 1;
 					position: relative;
+					font-size: 1.2rem;
 					& > a {
 						width: 100%;
 						.modal_button {
@@ -302,7 +303,7 @@
 }
 
 // LIGHT MODE
-[data-theme="light"] {
+[data-theme='light'] {
 	.portfolio_section {
 		background-image: linear-gradient(
 			165deg,
@@ -370,6 +371,7 @@
 						.text {
 							.strong {
 								color: $color-teal;
+								font-weight: bold;
 							}
 						}
 					}
@@ -387,7 +389,7 @@
 }
 
 // DARK MODE
-[data-theme="dark"] {
+[data-theme='dark'] {
 	.portfolio_section {
 		background-image: none;
 		background-color: $color-dark-background;
@@ -443,6 +445,7 @@
 						.text {
 							.strong {
 								color: $color-teal;
+								font-weight: bold;
 							}
 						}
 					}

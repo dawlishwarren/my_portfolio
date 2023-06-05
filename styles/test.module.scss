@@ -1,0 +1,33 @@
+.layout {
+	width: 100%;
+}
+.gradient_rotation_wrapper {
+	width: 100vw;
+	height: 100vh;
+	.form_container {
+		display: flex;
+		padding: 110px;
+
+		gap: 20px;
+	}
+	.form {
+		max-width: 470px;
+		width: 100%;
+		height: 500px;
+		padding: 32px;
+		border-radius: 20px;
+		border: 2px solid transparent;
+		box-shadow: 0 -3px 5px -1px #ebebeb;
+		background-image: linear-gradient(#fff, #fff),
+			linear-gradient(
+				calc(var(--rotation)),
+				#8a63d2 0,
+				#f81ce5 20%,
+				rgba(121, 40, 202, 0) 80%
+			);
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+}

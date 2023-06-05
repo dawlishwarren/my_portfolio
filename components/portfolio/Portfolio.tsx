@@ -10,8 +10,8 @@ import styles from './portfolio.module.scss';
 import tourism from '../../public/tourism.png';
 import directory from '../../public/directory.png';
 import logo from '../../public/logo.png';
-import portfolio from '../../public/portfolio.png';
 import consultation from '../../public/consultation.png';
+import colour_guesser from '../../public/colour_guesser.png';
 import { AiFillGithub } from 'react-icons/ai';
 import ProgressEllipse from '../progressEllipse/ProgressEllipse';
 // Prop Types
@@ -71,33 +71,34 @@ const carouselData = [
 	},
 	{
 		index: 3,
-		title: 'Responsive Layout',
-		url: portfolio,
-		alt: 'Landing page with responsive layout',
+		title: 'Testing',
+		url: colour_guesser,
+		alt: 'A colour guessing app',
 		text: (
 			<p className={styles.text}>
-				My first draft of a portfolio website. Heavily inspired by the art
-				language of Piet Mondrian and of layouts that make use of the principles
-				of the Golden Ratio. While only a sketch it is a good example of a{' '}
-				<span className={styles.strong}>fully responsive</span> design.
+				A simple app built with
+				<span className={styles.strong}> TDD </span>in mind. I designed the
+				function that generates the HEX first, tested it in Jest and once happy
+				that it works, built out the front end.
 			</p>
 		),
+		repo: 'https://github.com/dawlishwarren/colour-game-with-tests',
+		link: 'https://dawlishwarren.github.io/colour-game-with-tests/',
 	},
 	{
 		index: 4,
-		title: 'Consultation',
+		title: 'Accessibility & Consultation',
 		url: consultation,
 		alt: 'Screenshot of tourism website',
 		text: (
 			<p className={styles.text}>
 				The working version of the hometown tourism website featured on the
-				first slide, I was heavily involved in the creation of this site. It
-				involved <span className={styles.strong}>working with the client</span>{' '}
-				to better identify what the brief was, and how to overcome issues
-				related to{' '}
+				first slide,{' '}
 				<span className={styles.strong}>
-					SEO, authentication requirements, and UI design choices.
+					I advised the client on accessibility considerations
 				</span>
+				, specifically meeting WCAG standards of perceivability and creating an
+				understandable site architecture and navigation system
 			</p>
 		),
 		link: 'https://www.lovebudleigh.co.uk/',
